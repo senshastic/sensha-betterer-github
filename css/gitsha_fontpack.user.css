@@ -1,0 +1,249 @@
+/* ==UserStyle==
+@name           Gitsha_fontpack
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Snesh
+@preprocessor	less
+@var select		mainFont    "Main Font" ["xenon:Xenon", "argon: Argon", "neon:Neon", "radon: Radon", "krypton: Krypton", "none: None*"]
+@var select		codeFont    "Code Font" ["xenon:Xenon*", "argon: Argon", "neon:Neon", "radon: Radon", "krypton: Krypton", "none: None"]
+==/UserStyle== */
+
+@-moz-document domain("github.com") {
+
+
+	
+	/*SECTION [SNESHLIB - Start] */
+	
+	/*ANCHOR [VARIABLES]*/
+
+	@hap				: url('https://github.com/senshastic/sneshGPT/blob/main/assets/Hap.png?raw=true');
+	@borderRadius		: 12px;
+	@creamColor			: #d0b575;
+	
+	
+	
+	/*ANCHOR [DETACHED RULESETS] */
+	
+	@gradientBackground: {
+		background: linear-gradient(109.6deg, @gradcolor3 0%, @gradcolor4 25%, @gradcolor1 50%, @gradcolor2 100%);
+	}
+
+	@gradientAnimation: {
+		0% {
+			background-position: 0% 0%;
+		}
+		50% {
+			background-position: 100% 100%;
+		}
+		100% {
+			background-position: 0% 0%;
+		}
+	}
+	
+	@buttons: {
+		background-color: rgba(5, 5, 5, .18) !important;
+		border-radius: 12px !important;
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
+		backdrop-filter: blur(100px) saturate(110%);
+		-webkit-backdrop-filter: blur(100px);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	}
+	
+	@buttonsHover: {
+		background-color: rgba(5, 5, 5, 0) !important;
+		border-radius: 12px;
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
+		backdrop-filter: blur(100px) saturate(110%);
+		-webkit-backdrop-filter: blur(100px);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+		transform: translateY(-4px);
+	}
+	
+	@transparentButtons: {
+		border-radius: 12px !important;
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
+		backdrop-filter: blur(100px) saturate(110%);
+		-webkit-backdrop-filter: blur(100px);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	}
+	
+	@buttonsFlat: {
+		border-radius: 12px !important;
+		backdrop-filter: blur(100px) saturate(110%);
+		-webkit-backdrop-filter: blur(100px);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	}
+	
+	
+	@transparentButtonsHover: {
+		border-radius: 12px;
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
+		-webkit-backdrop-filter: blur(100px);
+		backdrop-filter: blur(100px) saturate(110%);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+		transform: translateY(-4px);
+	}
+	
+	
+	@buttonsHoverWhite: {
+		background-color: rgba(5, 5, 5, 0) !important;
+		border-radius: 12px;
+		box-shadow: 0 8px 15px rgba(255, 255, 255, .37) !important;
+		backdrop-filter: blur(100px) saturate(110%);
+		-webkit-backdrop-filter: blur(100px);
+		transform: translateY(-4px);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform box-shadow 0.3s ease-in-out;
+	}
+	
+	@menuItemHover: {
+		border: 1px solid rgba(0, 204, 255, 0.6);
+		background-color: rgba(5, 5, 5, 0.35) !important;
+		box-shadow: 0 0 10px 2px rgba(0, 204, 255, 0.3);
+		transform: translateY(-2px);
+		transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+		border-radius: 12px;
+	}
+	
+	@grainyTexture: {
+		content: "" !important;
+		position: absolute !important;
+		top: 0 !important;
+		left: 0 !important;
+		width: 100% !important;
+		height: 100% !important;
+		pointer-events: none !important;
+		z-index: 0 !important;
+		background: url("https://grainy-gradients.vercel.app/noise.svg") repeat !important;
+		opacity: 0.23 !important;
+	}
+	
+	@backdrop: {
+		background-color: rgba(5, 5, 5, .18) !important;
+		border-radius: 12px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(100px) saturate(110%);
+		-webkit-backdrop-filter: blur(100px);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+		padding: 5px;
+	}
+	
+	@disappear: {
+		background: transparent !important;
+		border: 0px;
+		box-shadow: none;
+	}
+	
+	@transparent: {
+		background: transparent;
+	}
+	
+	@noise: {
+		content: "" !important;
+		background: url("https://grainy-gradients.vercel.app/noise.svg") repeat !important;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: fixed; 
+		top: 0 !important;
+		left: 0 !important;
+		width: 100% !important;
+		height: 100% !important;
+		pointer-events: none !important;
+		z-index: -1 !important; 
+		opacity: 0.23 !important;
+	}
+
+	@hoverChannelSlide: {
+		margin-left: 10px !important;
+		transition: margin-left 0.2s ease;
+		background-color: transparent;
+	 }
+	 
+	 @boxShadowHover: {
+	 	box-shadow: 0 0px 10px rgba(0, 204, 255, 0.6);
+		background-color: rgba(0, 81, 255, 0.1);
+	 }
+
+	/*!SECTION [SNESHLIB - End]*/
+	
+	/* ANCHOR [IMPORT FONTS] */
+	
+	/* Import fonts */
+	@font-face {
+		src: local('CC Wild Words');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		src: local('CMU Concrete');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		src: local('Whitney');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	@font-face {
+		src: local('Comic Code');
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+	 @font-face {
+	src: local('Monaspace Argon');
+	font-weight: normal;
+	font-style: normal;
+	}
+
+	@font-face {
+		src: local('Monaspace Krypton');
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+	@font-face {
+		src: local('Monaspace Neon');
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+	@font-face {
+		src: local('Monaspace Radon');
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+	@font-face {
+		src: local('Monaspace Xenon');
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+	/* ANCHOR [CODE BLOCKS] */ 
+	
+	
+	.react-blob-textarea when (@codeFont =argon) {
+		font-family: 'Monaspace Argon' !important;
+	}
+	
+	.react-blob-textarea when (@codeFont =xenon) {
+		font-family: 'Monaspace Xenon' !important;
+	}
+	.react-blob-textarea when (@codeFont =radon){
+		font-family: 'Monaspace Radon' !important;
+	}
+	.react-blob-textarea when (@codeFont =neon) {
+		font-family: 'Monaspace Neon' !important;
+	}
+	.react-blob-textarea when (@codeFont =krypton) {
+		font-family: 'Monaspace Krypton' !important;
+	}
+	
+	.Box-sc-g0xbh4-0.dGXHv {
+		font-family: 'Monaspace Xenon' !important;
+	}
+	
+	}
