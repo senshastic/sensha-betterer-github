@@ -7,10 +7,10 @@
 @preprocessor	less
 @var select		gradType    "Gradient style" ["animated:Animated*", "flouss: Static", "nouss:None"]
 @var checkbox	grain "Grainy texture" 1
-@var color   	gradcolor1 "Gradient Color 1" rgb(43, 1, 91)
-@var color   	gradcolor2 "Gradient Color 2" rgb(122, 2, 54)
-@var color   	gradcolor3 "Gradient Color 3" rgb(8, 19, 54)
-@var color   	gradcolor4 "Gradient Color 4" rgb(26, 58, 102)
+@var color   	gradcolor1 "Gradient Color 1" rgb(8, 19, 54)
+@var color   	gradcolor2 "Gradient Color 2" rgb(26, 58, 102)
+@var color   	gradcolor3 "Gradient Color 3" rgb(43, 1, 91)
+@var color   	gradcolor4 "Gradient Color 4" rgb(122, 2, 54)
 ==/UserStyle== */
 @-moz-document domain("github.com") {
 
@@ -27,7 +27,7 @@
 
 	/*ANCHOR [DETACHED RULESETS] */
 	@gradientBackground: {
-		background: linear-gradient(109.6deg, @gradcolor3 0%, @gradcolor4 25%, @gradcolor1 50%, @gradcolor2 100%);
+		background: linear-gradient(109.6deg, @gradcolor1 0%, @gradcolor2 25%, @gradcolor3 50%, @gradcolor4 100%);
 	}
 
 	@gradientAnimation: {
@@ -367,6 +367,9 @@
 	.Box-body {
 		border: none !important;
 	}
+
+	/*ANCHOR [MOSAIC] */
+	
 	
 	
 	/* Targeting the mosaic element */
@@ -377,6 +380,16 @@
 	/* Adding the animated glowing gradient border using a pseudo-element  div.relative.max-w-\[70\%\].rounded-3xl::before, */
 	.graph-before-activity-overview::before {	
 		@snakeBefore();
+	}
+	
+	/*colors mosaic gradient */ 
+	
+	:root {
+		--color-calendar-graph-day-L1-bg: @gradcolor1 !important;
+		--color-calendar-graph-day-L2-bg: @gradcolor3 !important;
+		--color-calendar-graph-day-L3-bg: @gradcolor2 !important;
+		--color-calendar-graph-day-L4-bg: @gradcolor4 !important;
+		--color-calendar-graph-day-bg: @creamColorMuted !important;
 	}
 
 	
@@ -475,9 +488,84 @@
 	.notifications-list-item.notification-read, .notifications-list-item.notification-archived {
 		@disappear();
 	}
+	
+	
+		/*ANCHOR [SEARCH BAR] */
+	
+/* When the search bar is clicked or focused */
+.AppHeader-searchButton:focus, 
+.AppHeader-searchButton:active, 
+.AppHeader-searchButton:hover {
+    z-index: 1000;
+    position: fixed !important;
+    top: 20vh !important;
+    left: 20vw !important;
+    right: 20vw !important;
+    width: 60vw !important;
+
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* The search suggestions dropdown */
+.search-suggestions {
+    position: fixed !important;
+    top: 30vh !important;
+    left: 20vw !important;
+    right: 20vw !important;
+    width: 60vw !important;
+
+    z-index: 1000;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Blur the background when the search bar is active */
+body.search-active::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+}
+
+/* Optionally remove the fixed position and blur effect when search loses focus */
+body:not(.search-active) .AppHeader-searchButton {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    z-index: 1;
+    box-shadow: none;
+    width: auto !important;  /* Reset width */
+    transition: width 0.3s ease; /* Smooth shrinking */
+}
+
+
+.search-suggestions{
+	@backdrop();
+}
+
+.QueryBuilder-StyledInput{
+	@backdrop();
+	border:none;
+}
+
+.QueryBuilder-focus{
+	outline:none;
+}
+
 
 	
 }
 
-/* .feed-item-content.d-flex.flex-column.pt-2.pb-2.border.color-border-default.rounded-2.color-shadow-small.width-full.height-fit */
+/* .feed-item-content.d-flex.flex-column.pt-2.pb-2.border.color-border-default.rounded-2.color-shadow-small.width-full.height-fit 
+
+*/
 	
