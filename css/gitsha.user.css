@@ -539,7 +539,7 @@
 /* The search suggestions dropdown */
 .search-suggestions {
     position: fixed !important;
-    top: 30vh !important;
+    top: 25vh !important;
     left: 20vw !important;
     right: 20vw !important;
     width: 60vw !important;
@@ -571,7 +571,7 @@ body:not(.search-active) .AppHeader-searchButton {
     top: auto !important;
     z-index: 1;
     box-shadow: none;
-    width: auto !important;  /* Reset width */
+    width: 100% !important;  /* Reset width */
     transition: width 0.3s ease; /* Smooth shrinking */
 }
 
@@ -620,6 +620,12 @@ dialog{
 	@disappear();
 }
 	
+/*ANCHOR [PROJECTS] */
+
+.border-top{
+	border: none!important;
+	
+}
 }
 
 /* .feed-item-content.d-flex.flex-column.pt-2.pb-2.border.color-border-default.rounded-2.color-shadow-small.width-full.height-fit 
