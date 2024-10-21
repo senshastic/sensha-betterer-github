@@ -219,6 +219,27 @@
 		--borderColor-muted: @creamColorMuted !important;
 	}
 	
+	.Button--secondary{
+		background: transparent;
+		border: none;
+		color: @creamColor;
+	}
+	
+	.Button--secondary:hover{
+		@buttonsHover();
+		color: @creamColor;
+	}
+	
+	.Button--danger{
+		background: transparent !important;
+		border: none;
+	}
+	
+	.Button--danger:hover{
+		@transparentButtonsHover();
+		background-color: var(--button-danger-iconColor-rest) !important;
+	}
+	
 	
 	/*ANCHOR [Top bar] */
 	
@@ -562,6 +583,11 @@ body:not(.search-active) .AppHeader-searchButton {
 }
 
 
+/*ANCHOR [SETTINGS] */
+
+dialog{
+	@backdrop();
+}
 	
 }
 
