@@ -356,12 +356,14 @@
 		@boxShadowHover();
 	}
 
-	.btn {
+	.btn,
+	.drIBIt {
 		@disappear();
 		border: none !important
 	}
 
-	.btn:hover {
+	.btn:hover,
+	.drIBIt:hover {
 		@buttonsHover();
 		border: none !important
 	}
@@ -445,12 +447,17 @@
 	
 	/* Modal */ 
 	
-	.SelectMenu-modal {
+	.SelectMenu-modal,
+	.gAwGiF {
 		@backdrop();
 	}
 	
+	
+	
 	.SelectMenu-item,
-	.SelectMenu-list {
+	.SelectMenu-list,
+	.jxcXqM,
+	.dlnypB {
 		@disappear();
 	}
 	
@@ -585,8 +592,32 @@ body:not(.search-active) .AppHeader-searchButton {
 
 /*ANCHOR [SETTINGS] */
 
+
 dialog{
 	@backdrop();
+}
+
+.flash-banner, .flash-full {
+	@backdrop();
+}
+
+/*ANCHOR [NOTIFICATIONS] */
+
+.btn.selected, .btn[aria-selected=true]{
+	@disappear();
+}
+
+.btn.selected:hover, .btn[aria-selected=true]:hover{
+	@buttonsHover();
+}
+/*NOTE [WAIT FOR FALLEN] */
+
+.ActionList-sectionDivider{
+	@backdrop();
+}
+
+.FormControl-input {
+	@disappear();
 }
 	
 }
