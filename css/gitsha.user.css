@@ -160,17 +160,15 @@
 		box-shadow: 0 0px 10px rgba(0, 204, 255, 0.6);
 		background-color: rgba(0, 81, 255, 0.1);
 	}
-	
-	/* ANCHOR [ANIMATIONS] */ 
-	
+
+	/* ANCHOR [ANIMATIONS] */
 	@hoverChannelSlide: {
 		margin-left: 10px !important;
 		transition: margin-left 0.2s ease;
 		background-color: transparent;
 	}
-	
-	/* Snake */ 
-	
+
+	/* Snake */
 	@snakeTarget: {
 		position: relative;
 		padding: 16px;
@@ -179,8 +177,8 @@
 		z-index: 1;
 		overflow: hidden;
 	}
-	
-	
+
+
 	@snakeBefore: {
 		content: '';
 		position: absolute;
@@ -199,7 +197,7 @@
 		mask-composite: exclude;
 		z-index: -1;
 	}
-	
+
 	@keyframes smoothSnakeLine {
 		0% {
 			background-position: 0% 50%;
@@ -210,39 +208,36 @@
 	}
 
 	/*!SECTION [SNESHLIB - End]*/
-	
 	/*ANCHOR [ROOT] */
-	
 	:root {
 		--fgColor-accent: @creamColor !important;
 		--borderColor-default: @creamColor !important;
 		--borderColor-muted: @creamColorMuted !important;
 	}
-	
-	.Button--secondary{
+
+	.Button--secondary {
 		background: transparent;
 		border: none;
 		color: @creamColor;
 	}
-	
-	.Button--secondary:hover{
+
+	.Button--secondary:hover {
 		@buttonsHover();
 		color: @creamColor;
 	}
-	
-	.Button--danger{
+
+	.Button--danger {
 		background: transparent !important;
 		border: none;
 	}
-	
-	.Button--danger:hover{
+
+	.Button--danger:hover {
 		@transparentButtonsHover();
 		background-color: var(--button-danger-iconColor-rest) !important;
 	}
-	
-	
+
+
 	/*ANCHOR [Top bar] */
-	
 	/* Replaces with hap */
 	#js-logo-nav {
 		display: block;
@@ -260,7 +255,7 @@
 	}
 
 	/* modals */
-	.fXBJSr{
+	.fXBJSr {
 		@backdrop();
 	}
 
@@ -292,9 +287,8 @@
 		@noise();
 		z-index: 0 !important;
 	}
-	
-	/* Dashboard */ 
-	
+
+	/* Dashboard */
 	.feed-background when (@gradType =flouss) {
 		@gradientBackground();
 	}
@@ -314,7 +308,6 @@
 
 
 	/*ANCHOR [Header] */
-
 	.AppHeader-logo::before {
 		content: "";
 		display: block;
@@ -340,11 +333,7 @@
 	}
 
 	/*ANCHOR [Transparenting shit] */
-	
-	
 	/*ANCHOR [Sidebar Styling] */
-	
-	
 	/*ANCHOR [USER PAGE] */
 	.Box,
 	.graph-before-activity-overview {
@@ -386,27 +375,23 @@
 	.js-year-link:hover {
 		@buttonsHover();
 	}
-	
+
 	.Box-body {
 		border: none !important;
 	}
 
 	/*ANCHOR [MOSAIC] */
-	
-	
-	
 	/* Targeting the mosaic element */
 	.graph-before-activity-overview {
 		@snakeTarget();
 	}
 
 	/* Adding the animated glowing gradient border using a pseudo-element  div.relative.max-w-\[70\%\].rounded-3xl::before, */
-	.graph-before-activity-overview::before {	
+	.graph-before-activity-overview::before {
 		@snakeBefore();
 	}
-	
-	/*colors mosaic gradient */ 
-	
+
+	/*colors mosaic gradient */
 	:root {
 		--color-calendar-graph-day-L1-bg: @gradcolor1 !important;
 		--color-calendar-graph-day-L2-bg: @gradcolor3 !important;
@@ -415,220 +400,217 @@
 		--color-calendar-graph-day-bg: @creamColorMuted !important;
 	}
 
-	
-	
-	
+
+
+
 	/*ANCHOR [DASHBOARD] */
-	
 	.p-3.mt-2.border.color-border-muted.rounded-1.color-shadow-medium.height-full.color-bg-overlay,
 	.feed-item-content.rounded-2,
-	.color-bg-subtle, .bgColor-muted,
+	.color-bg-subtle,
+	.bgColor-muted,
 	{
 		@backdrop();
-		border:none !important;
-
+		border: none !important;
 	}
-	
+
 	.feed-item-content.rounded-1 {
 		@disappear();
 	}
-	
+
 	.py-3.border-bottom:hover,
 	.py-3.border-0:hover {
 		@boxShadowHover();
 		padding: 7px;
 	}
-	
-	
+
+
 	.py-3.border-bottom,
 	.py-3.border-0 {
 		padding: 7px;
 	}
-	
-	/* Modal */ 
-	
+
+	/* Modal */
 	.SelectMenu-modal,
 	.gAwGiF {
 		@backdrop();
 	}
-	
-	
-	
+
+
+
 	.SelectMenu-item,
 	.SelectMenu-list,
 	.jxcXqM,
 	.dlnypB {
 		@disappear();
 	}
-	
+
 	/*ANCHOR [REPO PAGE] */
-	
 	.Box-sc-g0xbh4-0.QkQOb.js-snippet-clipboard-copy-unpositioned {
 		@backdrop();
 	}
-	
-	.react-directory-row:hover{
+
+	.react-directory-row:hover {
 		@menuItemHover();
 	}
-	
+
 	.react-directory-row td {
-		border-top : max(0.5px, 0.0625rem) solid @creamColor !important;
+		border-top: max(0.5px, 0.0625rem) solid @creamColor !important;
 	}
-	
+
 
 	.kRIEXD {
 		border: 2px solid @creamColor !important;
 	}
-	
-	.mb-2.p-3.border.rounded-2:hover{
+
+	.mb-2.p-3.border.rounded-2:hover {
 		@boxShadowHover();
 	}
-	
+
 	/*ANCHOR [REPO LIST] */
-	
 	.col-12.d-flex.flex-justify-between.width-full.py-4.border-bottom.color-border-muted:hover {
 		@boxShadowHover();
 	}
-	
+
 	.col-12.d-flex.flex-justify-between.width-full.py-4.border-bottom.color-border-muted {
 		@backdrop();
 		margin-top: 10px;
 		border: none !important;
 	}
-	
+
 	/*ANCHOR [STARS MENU] */
-	
-	.ActionListWrap--inset.ActionListWrap{
+	.ActionListWrap--inset.ActionListWrap {
 		@backdrop();
 	}
-	
+
 	/*NOTE [THIS IS A BIG ONE NGL] */
-	
-	.Overlay{
+	.Overlay {
 		@disappear();
 	}
 
 	/*ANCHOR [NOTIFICATIONS PAGE ] */
-	.Box-header{
+	.Box-header {
 		@disappear();
 	}
-	
-	.notifications-list-item.notification-read, .notifications-list-item.notification-archived {
+
+	.notifications-list-item.notification-read,
+	.notifications-list-item.notification-archived {
 		@disappear();
 	}
-	
-	
-		/*ANCHOR [SEARCH BAR] */
-	
-/* When the search bar is clicked or focused */
-.AppHeader-searchButton:focus, 
-.AppHeader-searchButton:active, 
-.AppHeader-searchButton:hover {
-    z-index: 1000;
-    position: fixed !important;
-    top: 20vh !important;
-    left: 20vw !important;
-    right: 20vw !important;
-    width: 60vw !important;
-
-    background-color: white;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* The search suggestions dropdown */
-.search-suggestions {
-    position: fixed !important;
-    top: 25vh !important;
-    left: 20vw !important;
-    right: 20vw !important;
-    width: 60vw !important;
-
-    z-index: 1000;
-    border-radius: 12px;
-    background-color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Blur the background when the search bar is active */
-body.search-active::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
-    z-index: 999;
-}
-
-/* Optionally remove the fixed position and blur effect when search loses focus */
-body:not(.search-active) .AppHeader-searchButton {
-    position: static !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    z-index: 1;
-    box-shadow: none;
-    width: 100% !important;  /* Reset width */
-    transition: width 0.3s ease; /* Smooth shrinking */
-}
 
 
-.search-suggestions{
-	@backdrop();
-}
+	/*ANCHOR [SEARCH BAR] */
+	/* When the search bar is clicked or focused */
+	.AppHeader-searchButton:focus,
+	.AppHeader-searchButton:active,
+	.AppHeader-searchButton:hover {
+		z-index: 1000;
+		position: fixed !important;
+		top: 20vh !important;
+		left: 20vw !important;
+		right: 20vw !important;
+		width: 60vw !important;
 
-.QueryBuilder-StyledInput{
-	@backdrop();
-	border:none;
-}
+		background-color: white;
+		border: 1px solid #ccc;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	}
 
-.QueryBuilder-focus{
-	outline:none;
-}
+	/* The search suggestions dropdown */
+	.search-suggestions {
+		position: fixed !important;
+		top: 20% !important;
+		left: 20vw !important;
+		right: 20vw !important;
+		width: 60vw !important;
+
+		z-index: 1000;
+		border-radius: 12px;
+		background-color: white;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	}
+
+	/* Blur the background when the search bar is active */
+	body.search-active::after {
+		content: "";
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.3);
+		backdrop-filter: blur(5px);
+		z-index: 999;
+	}
+
+	/* Optionally remove the fixed position and blur effect when search loses focus */
+	body:not(.search-active) .AppHeader-searchButton {
+		position: static !important;
+		left: auto !important;
+		right: auto !important;
+		top: auto !important;
+		z-index: 1;
+		box-shadow: none;
+		width: 100% !important;
+		/* Reset width */
+		transition: width 0.3s ease;
+		/* Smooth shrinking */
+	}
 
 
-/*ANCHOR [SETTINGS] */
+	.search-suggestions {
+		@backdrop();
+	}
 
+	.QueryBuilder-StyledInput {
+		@backdrop();
+		border: none;
+	}
 
-dialog{
-	@backdrop();
-}
+	.QueryBuilder-focus {
+		outline: none;
+	}
 
-.flash-banner, .flash-full {
-	@backdrop();
-}
+	.search-input.expanded>div>div.AppHeader-search-whenRegular{
+		display:none !important;
+	}
 
-/*ANCHOR [NOTIFICATIONS] */
+	/*ANCHOR [SETTINGS] */
+	dialog {
+		@backdrop();
+	}
 
-.btn.selected, .btn[aria-selected=true]{
-	@disappear();
-}
+	.flash-banner,
+	.flash-full {
+		@backdrop();
+	}
 
-.btn.selected:hover, .btn[aria-selected=true]:hover{
-	@buttonsHover();
-}
-/*NOTE [WAIT FOR FALLEN] */
+	/*ANCHOR [NOTIFICATIONS] */
+	.btn.selected,
+	.btn[aria-selected=true] {
+		@disappear();
+	}
 
-.ActionList-sectionDivider{
-	@backdrop();
-}
+	.btn.selected:hover,
+	.btn[aria-selected=true]:hover {
+		@buttonsHover();
+	}
+	/*NOTE [WAIT FOR FALLEN] */
+	.ActionList-sectionDivider {
+		@backdrop();
+	}
 
-.FormControl-input {
-	@disappear();
-}
-	
-/*ANCHOR [PROJECTS] */
+	.FormControl-input {
+		@disappear();
+	}
 
-.border-top{
-	border: none!important;
-	
-}
+	/*ANCHOR [PROJECTS] */
+	.border-top {
+		border: none!important;
+	}
+
+	/*ANCHOR [CODE FILE PAGE] */
 }
 
 /* .feed-item-content.d-flex.flex-column.pt-2.pb-2.border.color-border-default.rounded-2.color-shadow-small.width-full.height-fit 
 
 */
-	
