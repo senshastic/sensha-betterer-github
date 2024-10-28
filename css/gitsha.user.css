@@ -258,11 +258,14 @@
 		display: none;
 		/* Hides the original SVG */
 	}
-
-	/* modals */
-	.fXBJSr {
-		@backdrop();
+	
+	.AppHeader-button,
+	.AppHeader .AppHeader-globalBar .AppHeader-search input[type=search], .AppHeader .AppHeader-globalBar .AppHeader-search .AppHeader-searchButton {
+		border: 1px solid @creamColorMuted !important;
 	}
+	
+	
+	/* modals */
 
 	/*ANCHOR [Gradient background options and grain] */
 	body when (@gradType =flouss) {
@@ -281,21 +284,6 @@
 		background-color: @gradcolor3 !important;
 	}
 	
-	main when (@gradType =flouss) {
-		@gradientBackground();
-	}
-
-
-	main when (@gradType =animated) {
-		@gradientBackground();
-		background-size: 400% 400%;
-		animation: gradientAnimation 20s ease infinite;
-	}
-
-
-	main when (@gradType =nouss) {
-		background-color: @gradcolor3 !important;
-	}
 	
 	footer:not(.Panel-module__footer--fkpWR) when (@gradType =flouss) {
 		@backdrop();
@@ -495,13 +483,26 @@
 	.SelectMenu-modal,
 	.gAwGiF {
 		@backdrop();
+		border: 1px solid @creamColor !important;
 	}
 
 	.gfgFTT {
 		border: 1.5px solid @creamColor !important;
 		background-color: transparent !important;
 	}
-
+	
+	.topic-tag:hover{
+		@buttonsHover();
+	}
+	
+	
+	button[aria-label="master branch"],
+	.fJiNYL{
+		@backdrop();
+		border: 1px solid @creamColor !important;
+	}
+	
+	
 	.jqwEBk.selected,
 	.gJSxwI.selected,
 	.fQHyfn.selected {
@@ -553,7 +554,45 @@
 	.mb-2.p-3.border.rounded-2:hover {
 		@boxShadowHover();
 	}
-
+	
+	.dJnomT{
+		background-color: rgba(5, 5, 5, .18) !important;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(100px) saturate(110%);
+		-webkit-backdrop-filter: blur(100px);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	}
+	
+	.kgetqy{
+		@disappear();
+	}
+	
+	
+	/*ANCHOR [FILE PAGE] */
+	.gpHFJV{
+		background-color: rgba(5, 5, 5, .18) !important;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(100px) saturate(110%);
+		-webkit-backdrop-filter: blur(100px);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	}
+	
+	
+	.cDbgyb,
+	.XlAvl {
+		@backdrop();
+		border:none !important;
+	}
+	
+	.cDbgyb:hover,
+	.XlAvl:hover {
+		@buttonsHover();
+	}
+	
+	.fXBJSr{
+		@disappear();
+	}
+	
 	/*ANCHOR [REPO LIST] */
 	.col-12.d-flex.flex-justify-between.width-full.py-4.border-bottom.color-border-muted:hover {
 		@boxShadowHover();
@@ -584,7 +623,11 @@
 	.notifications-list-item.notification-archived {
 		@disappear();
 	}
-
+	
+	
+	.ActionListContent:hover{
+		@hoverChannelSlide();
+	}
 
 	/*ANCHOR [SEARCH BAR] */
 	/* When the search bar is clicked or focused */
@@ -660,6 +703,9 @@
 
 	.search-input.expanded > div > div.AppHeader-search-whenRegular {
 		display: none !important;
+	}
+	.search-suggestions{
+		border: 0.5px solid @creamColor !important;
 	}
 
 	/*ANCHOR [SETTINGS] */
@@ -751,7 +797,12 @@
 
 
 	table {
+		@backdrop();
 		border-color: @creamColor !important;
+	}
+	
+	.TableHeader{
+		@disappear();
 	}
 
 
@@ -833,6 +884,57 @@
 	.ListItem-module__listItem--kHali:hover{
 		@boxShadowHover();
 	}
+	
+	/*ANCHOR [COPILOT] */
+	
+	.ivKSmi{
+		@backdrop();
+		border: 1px solid @creamColor !important;
+	}
+	
+	.leXapx{
+		@textArea();
+	}
+	
+	.ivKSmi,
+	.dgBfwJ {
+		@disappear();
+	}
+	
+	/*ANCHOR [PULL REQUESTS] */
+	
+	.subnav-item.selected, .subnav-item[aria-selected=true], .subnav-item[aria-current]:not([aria-current=false]){
+		background-color: @creamColor !important;
+		border: 1px solid @creamColor !important;
+	}
+	
+	.subnav-item:hover{
+		background-color: @creamColorMuted !important;
+	}
+	
+	
+	.subnav-item,
+	input[id="js-issues-search"]{
+		border: 1px solid @creamColor !important;
+	}
+	
+	.SelectMenu-modal{
+	z-index:1000;
+	}
+	
+	.SelectMenu-divider{
+		@disappear();
+	}
+	
+	.dropdown-menu{
+		@backdrop();
+	}
+	
+	.dropdown-menu:after{
+		@disappear();
+	}
+	
+
 
 }
 
