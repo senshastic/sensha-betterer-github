@@ -691,6 +691,48 @@
 	.cujkRS {
 		@textArea();
 	}
+
+	/*ANCHOR [GITHUB DOCS] */
+	.fDlMNy,
+	.jXUMlK,
+	.dA-dVZO {
+		@backdrop();
+	}
+
+	.markdown-body table tr {
+		@backdrop();
+		border-top: none !important;
+	}
+
+	.MarkdownContent_markdownBody__v5MYy table thead td,
+	.MarkdownContent_markdownBody__v5MYy table thead th {
+		box-shadow: inset 0 -2px @creamColor;
+	}
+
+	.MarkdownContent_markdownBody__v5MYy table tbody td,
+	.MarkdownContent_markdownBody__v5MYy table tbody th {
+		box-shadow: inset 0 -1px @creamColorMuted;
+	}
+
+
+	table {
+		border-color: @creamColor !important;
+	}
+
+
+	.hNkDDR {
+		background-color: transparent !important
+	}
+
+	.cHTOlv:hover,
+	.cXuGuz:hover,
+	.biIjJG:hover {
+		@hoverChannelSlide();
+	}
+
+	.dYDZmW {
+		@textArea();
+	}
 }
 
 /* .feed-item-content.d-flex.flex-column.pt-2.pb-2.border.color-border-default.rounded-2.color-shadow-small.width-full.height-fit 
