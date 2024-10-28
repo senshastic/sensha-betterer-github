@@ -280,6 +280,41 @@
 	body when (@gradType =nouss) {
 		background-color: @gradcolor3 !important;
 	}
+	
+	main when (@gradType =flouss) {
+		@gradientBackground();
+	}
+
+
+	main when (@gradType =animated) {
+		@gradientBackground();
+		background-size: 400% 400%;
+		animation: gradientAnimation 20s ease infinite;
+	}
+
+
+	main when (@gradType =nouss) {
+		background-color: @gradcolor3 !important;
+	}
+	
+	footer:not(.Panel-module__footer--fkpWR) when (@gradType =flouss) {
+		@backdrop();
+		@gradientBackground();
+	}
+
+
+	footer:not(.Panel-module__footer--fkpWR) when (@gradType =animated) {
+		@backdrop();
+		@gradientBackground();
+		background-size: 400% 400%;
+		animation: gradientAnimation 20s ease infinite;
+	}
+
+	footer:not(.Panel-module__footer--fkpWR) when (@gradType =nouss) {
+		@backdrop();
+		background-color: @gradcolor3 !important;
+	}
+
 
 
 
@@ -733,6 +768,72 @@
 	.dYDZmW {
 		@textArea();
 	}
+	
+	
+	/*ANCHOR [COMMUNITY] */
+	
+	.select-menu-modal {
+		@backdrop();
+	}
+	.select-menu-item{
+		@disappear();
+	}
+	
+	.ActionList-item:hover{
+		@hoverChannelSlide();
+	}
+	
+	body > div.logged-in.env-production.page-responsive.color-bg-inset > div.application-main > main > div > div.container-xl.p-responsive.clearfix > div.clearfix.container-xl > div > div.Layout-main > div > div.Layout-main > ul.list-style-none.border.px-3.mb-2.color-bg-overlay.rounded-2,
+	body > div.logged-in.env-production.page-responsive.color-bg-inset > div.application-main > main > div > div.container-xl.p-responsive.clearfix > div.clearfix.container-xl > div > div.Layout-main > div > div.Layout-main > ul:nth-child(5){
+		@backdrop()
+	}
+	
+	
+	.Box-row:hover {
+		@boxShadowHover();
+	}
+	
+	.bg-discussions-row-emoji-box{
+		@disappear();
+	}
+	
+	/*ANCHOR [COMMITS] */
+	
+	
+	.Panel-module__container--i4g9d{
+		@disappear();
+	}
+	
+	button[aria-label="Go to previous month"],
+	button[aria-label="Go to next month"]{
+		@disappear();
+	}
+	
+	button[aria-label="Go to previous month"]:hover,
+	button[aria-label="Go to next month"]:hover {
+		@buttonsHover();
+	}
+	
+	.Day-module__day--ZcbvX:hover{
+		@buttonsHover();
+	}
+	
+	.Day-module__day--ZcbvX.Day-module__selected--DfMaK{
+		background-color: @creamColor !important;
+	}
+	
+	.Day-module__day--ZcbvX.Day-module__selected--DfMaK.Day-module__rangeMiddle--gfg7k{
+		background-color: @creamColorMuted !important;
+	}
+	
+	.Panel-module__picker--gTDgA{
+		@backdrop();
+	}
+	
+	.ListItem-module__listItem--kHali:hover{
+		@boxShadowHover();
+	}
+
 }
 
 /* .feed-item-content.d-flex.flex-column.pt-2.pb-2.border.color-border-default.rounded-2.color-shadow-small.width-full.height-fit 
