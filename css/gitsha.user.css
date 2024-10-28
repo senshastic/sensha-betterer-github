@@ -414,6 +414,10 @@
 		padding-bottom: 19px !important;
 	}
 
+	
+body > div.logged-in.env-production.page-responsive.full-width > div.application-main > div > div > aside > div > div > loading-context > div > div.Details.js-repos-container.mt-5 > div > ul > li:hover{
+@hoverChannelSlide();
+}
 
 	/*ANCHOR [EDIT PROFILE] */
 	textarea[id="user_profile_bio"],
