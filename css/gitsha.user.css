@@ -161,6 +161,11 @@
 		background-color: rgba(0, 81, 255, 0.1);
 	}
 
+	@textArea: {
+		border: 1.5px solid @creamColor !important;
+		background-color: transparent !important;
+	}
+
 	/* ANCHOR [ANIMATIONS] */
 	@hoverChannelSlide: {
 		margin-left: 10px !important;
@@ -363,7 +368,8 @@
 		border: none !important
 	}
 
-	.user-status-circle-badge {
+	.user-status-circle-badge,
+	.TimelineItem-badge {
 		@gradientBackground();
 		border: none !important
 	}
@@ -379,6 +385,27 @@
 	.Box-body {
 		border: none !important;
 	}
+
+	/* Fix line */
+	.h6.pr-2.py-1.border-bottom.mb-3 {
+		padding-bottom: 19px !important;
+	}
+
+
+	/*ANCHOR [EDIT PROFILE] */
+	textarea[id="user_profile_bio"],
+	input[id="user_profile_name"],
+	input[aria-label="Company"],
+	input[aria-label="Location"],
+	select[id="user_profile_email"],
+	input[aria-label="Website"],
+	input[aria-label="Link to social profile"],
+	select[aria-label="Time zone"],
+	select[name="user[profile_pronouns]"],
+	input[id="dashboard-repos-filter-left"] {
+		@textArea();
+	}
+
 
 	/*ANCHOR [MOSAIC] */
 	/* Targeting the mosaic element */
@@ -435,7 +462,33 @@
 		@backdrop();
 	}
 
+	.gfgFTT {
+		border: 1.5px solid @creamColor !important;
+		background-color: transparent !important;
+	}
 
+	.jqwEBk.selected,
+	.gJSxwI.selected,
+	.fQHyfn.selected {
+		background-color: @creamColorMuted !important;
+	}
+
+	button[aria-controls="branches"][aria-selected="false"].hover {
+		background-color: none !important;
+	}
+
+	.cBcJJc,
+	.gFTAHK {
+		@disappear();
+	}
+
+	.bOZZCe {
+		@backdrop();
+	}
+
+	.bOuPbH {
+		box-shadow: @creamColor 0px 0px 0px 2px !important;
+	}
 
 	.SelectMenu-item,
 	.SelectMenu-list,
@@ -570,8 +623,8 @@
 		outline: none;
 	}
 
-	.search-input.expanded>div>div.AppHeader-search-whenRegular{
-		display:none !important;
+	.search-input.expanded > div > div.AppHeader-search-whenRegular {
+		display: none !important;
 	}
 
 	/*ANCHOR [SETTINGS] */
@@ -594,7 +647,7 @@
 	.btn[aria-selected=true]:hover {
 		@buttonsHover();
 	}
-	/*NOTE [WAIT FOR FALLEN] */
+
 	.ActionList-sectionDivider {
 		@backdrop();
 	}
@@ -609,8 +662,42 @@
 	}
 
 	/*ANCHOR [CODE FILE PAGE] */
+	.panel-content-narrow-styles {
+		@backdrop();
+	}
+
+	.kexQoK,
+	.haQWCL,
+	.eEsVFK:disabled {
+		@disappear();
+	}
+
+	[aria-label="Previous reference"]:hover,
+	[aria-label="Next reference"]:hover {
+		@buttonsHover();
+	}
+
+	.Box-sc-g0xbh4-0.kTMYBM:hover {
+
+		background-color: var(--control-transparent-bgColor-hover) !important;
+	}
+
+
+	/*ANCHOR [CREATE A REPO PAGE] */
+	.iBpOGA {
+		@backdrop();
+	}
+
+	.cujkRS {
+		@textArea();
+	}
 }
 
 /* .feed-item-content.d-flex.flex-column.pt-2.pb-2.border.color-border-default.rounded-2.color-shadow-small.width-full.height-fit 
 
+
+background-color: var(--control-transparent-bgColor-hover) !important;
+    color: var(--fgColor-default,var(--color-fg-default,#e6edf3));
+    box-shadow: inset 0 0 0 max(1px,0.0625rem) var(--control-transparent-borderColor-active,var(--color-action-list-item-default-active-border,transparent));
+	
 */
