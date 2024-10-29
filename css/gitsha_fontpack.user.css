@@ -5,28 +5,24 @@
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
-@var select		mainFont    "Main Font" ["xenon:Xenon", "argon: Argon", "neon:Neon", "radon: Radon", "krypton: Krypton", "none: None*"]
-@var select		codeFont    "Code Font" ["xenon:Xenon*", "argon: Argon", "neon:Neon", "radon: Radon", "krypton: Krypton", "none: None"]
+@var select		codeFont    "Code Font" ["xenon:Xenon", "argon: Argon", "neon:Neon", "radon: Radon", "krypton: Krypton*", "none: None"]
 ==/UserStyle== */
-
 @-moz-document domain("github.com") {
 
 
-	
-	/*SECTION [SNESHLIB - Start] */
-	
-	/*ANCHOR [VARIABLES]*/
 
+	/*SECTION [SNESHLIB - Start] */
+	/*ANCHOR [VARIABLES]*/
 	@hap				: url('https://github.com/senshastic/sneshGPT/blob/main/assets/Hap.png?raw=true');
 	@borderRadius		: 12px;
 	@creamColor			: #d0b575;
-	
-	
-	
+	@creamColorMuted	: #4f4733;
+
+
+
 	/*ANCHOR [DETACHED RULESETS] */
-	
 	@gradientBackground: {
-		background: linear-gradient(109.6deg, @gradcolor3 0%, @gradcolor4 25%, @gradcolor1 50%, @gradcolor2 100%);
+		background: linear-gradient(109.6deg, @gradcolor1 0%, @gradcolor2 25%, @gradcolor3 50%, @gradcolor4 100%);
 	}
 
 	@gradientAnimation: {
@@ -40,7 +36,7 @@
 			background-position: 0% 0%;
 		}
 	}
-	
+
 	@buttons: {
 		background-color: rgba(5, 5, 5, .18) !important;
 		border-radius: 12px !important;
@@ -49,7 +45,7 @@
 		-webkit-backdrop-filter: blur(100px);
 		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 	}
-	
+
 	@buttonsHover: {
 		background-color: rgba(5, 5, 5, 0) !important;
 		border-radius: 12px;
@@ -59,7 +55,7 @@
 		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 		transform: translateY(-4px);
 	}
-	
+
 	@transparentButtons: {
 		border-radius: 12px !important;
 		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
@@ -67,15 +63,15 @@
 		-webkit-backdrop-filter: blur(100px);
 		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 	}
-	
+
 	@buttonsFlat: {
 		border-radius: 12px !important;
 		backdrop-filter: blur(100px) saturate(110%);
 		-webkit-backdrop-filter: blur(100px);
 		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 	}
-	
-	
+
+
 	@transparentButtonsHover: {
 		border-radius: 12px;
 		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
@@ -84,8 +80,8 @@
 		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 		transform: translateY(-4px);
 	}
-	
-	
+
+
 	@buttonsHoverWhite: {
 		background-color: rgba(5, 5, 5, 0) !important;
 		border-radius: 12px;
@@ -95,7 +91,7 @@
 		transform: translateY(-4px);
 		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform box-shadow 0.3s ease-in-out;
 	}
-	
+
 	@menuItemHover: {
 		border: 1px solid rgba(0, 204, 255, 0.6);
 		background-color: rgba(5, 5, 5, 0.35) !important;
@@ -104,7 +100,7 @@
 		transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 		border-radius: 12px;
 	}
-	
+
 	@grainyTexture: {
 		content: "" !important;
 		position: absolute !important;
@@ -114,10 +110,10 @@
 		height: 100% !important;
 		pointer-events: none !important;
 		z-index: 0 !important;
-		background: url("https://grainy-gradients.vercel.app/noise.svg") repeat !important;
+		background: url("https://raw.githubusercontent.com/senshastic/sensha-betterer-todoist/refs/heads/main/assets/noise.svg") repeat !important;
 		opacity: 0.23 !important;
 	}
-	
+
 	@backdrop: {
 		background-color: rgba(5, 5, 5, .18) !important;
 		border-radius: 12px;
@@ -127,48 +123,94 @@
 		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 		padding: 5px;
 	}
-	
+
 	@disappear: {
 		background: transparent !important;
 		border: 0px;
 		box-shadow: none;
 	}
-	
+
 	@transparent: {
 		background: transparent;
 	}
-	
+
 	@noise: {
 		content: "" !important;
-		background: url("https://grainy-gradients.vercel.app/noise.svg") repeat !important;
+		background: url("https://raw.githubusercontent.com/senshastic/sensha-betterer-todoist/refs/heads/main/assets/noise.svg") repeat !important;
 		background-attachment: fixed;
 		background-repeat: no-repeat;
 		background-size: cover;
-		position: fixed; 
+		position: fixed;
 		top: 0 !important;
 		left: 0 !important;
 		width: 100% !important;
 		height: 100% !important;
 		pointer-events: none !important;
-		z-index: -1 !important; 
+		z-index: -1 !important;
 		opacity: 0.23 !important;
 	}
 
+
+	@boxShadowHover: {
+		box-shadow: 0 0px 10px rgba(0, 204, 255, 0.6);
+		background-color: rgba(0, 81, 255, 0.1);
+	}
+
+	@textArea: {
+		border: 1.5px solid @creamColor !important;
+		background-color: transparent !important;
+	}
+
+	/* ANCHOR [ANIMATIONS] */
 	@hoverChannelSlide: {
 		margin-left: 10px !important;
 		transition: margin-left 0.2s ease;
 		background-color: transparent;
-	 }
-	 
-	 @boxShadowHover: {
-	 	box-shadow: 0 0px 10px rgba(0, 204, 255, 0.6);
-		background-color: rgba(0, 81, 255, 0.1);
-	 }
+	}
+
+	/* Snake */
+	@snakeTarget: {
+		position: relative;
+		padding: 16px;
+		border-radius: 18px;
+		background: rgba(0, 0, 0, 0.7);
+		z-index: 1;
+		overflow: hidden;
+	}
+
+
+	@snakeBefore: {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-radius: inherit;
+		padding: 3px;
+		background: linear-gradient(90deg, transparent 0%, transparent 40%, white 50%, transparent 60%, transparent 100%);
+		background-size: 200% 200%;
+		animation: smoothSnakeLine 6s linear infinite;
+		-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+		mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+		z-index: -1;
+	}
+
+	@keyframes smoothSnakeLine {
+		0% {
+			background-position: 0% 50%;
+		}
+		100% {
+			background-position: 200% 50%;
+		}
+	}
 
 	/*!SECTION [SNESHLIB - End]*/
 	
-	/* ANCHOR [IMPORT FONTS] */
 	
+	/* ANCHOR [IMPORT FONTS] */
 	/* Import fonts */
 	@font-face {
 		src: local('CC Wild Words');
@@ -191,11 +233,11 @@
 		font-weight: normal;
 		font-style: normal;
 	}
-	
-	 @font-face {
-	src: local('Monaspace Argon');
-	font-weight: normal;
-	font-style: normal;
+
+	@font-face {
+		src: local('Monaspace Argon');
+		font-weight: normal;
+		font-style: normal;
 	}
 
 	@font-face {
@@ -203,47 +245,67 @@
 		font-weight: normal;
 		font-style: normal;
 	}
-	
+
 	@font-face {
 		src: local('Monaspace Neon');
 		font-weight: normal;
 		font-style: normal;
 	}
-	
+
 	@font-face {
 		src: local('Monaspace Radon');
 		font-weight: normal;
 		font-style: normal;
 	}
-	
+
 	@font-face {
 		src: local('Monaspace Xenon');
 		font-weight: normal;
 		font-style: normal;
 	}
+
+	/* ANCHOR [CODE BLOCKS]  */
 	
-	/* ANCHOR [CODE BLOCKS] */ 
+	.vcard-fullname, .AppHeader .AppHeader-globalBar .AppHeader-context .AppHeader-context-item{
+		font-family: 'CC Wild Words' !important;
+	}
 	
-	
-	.react-blob-textarea when (@codeFont =argon) {
+	.react-code-text when (@codeFont =argon) {
 		font-family: 'Monaspace Argon' !important;
 	}
 	
-	.react-blob-textarea when (@codeFont =xenon) {
+	.react-code-text when (@codeFont =xenon) {
 		font-family: 'Monaspace Xenon' !important;
 	}
-	.react-blob-textarea when (@codeFont =radon){
+	.react-code-text when (@codeFont =radon){
 		font-family: 'Monaspace Radon' !important;
 	}
-	.react-blob-textarea when (@codeFont =neon) {
+	.react-code-text when (@codeFont =neon) {
 		font-family: 'Monaspace Neon' !important;
 	}
-	.react-blob-textarea when (@codeFont =krypton) {
+	.react-code-text when (@codeFont =krypton) {
 		font-family: 'Monaspace Krypton' !important;
 	}
 	
-	.Box-sc-g0xbh4-0.dGXHv {
-		font-family: 'Monaspace Xenon' !important;
+	
+	.react-code-line-contents when (@codeFont =argon) {
+		font-family: 'Monaspace Argon' !important;
 	}
 	
+	.react-code-line-contents when (@codeFont =xenon) {
+		font-family: 'Monaspace Xenon' !important;
 	}
+	.react-code-line-contents when (@codeFont =radon){
+		font-family: 'Monaspace Radon' !important;
+	}
+
+	.react-code-line-contents when (@codeFont =neon) {
+		font-family: 'Monaspace Neon' !important;
+	}
+
+	.react-code-line-contents when (@codeFont =krypton) {
+		font-family: 'Monaspace Krypton' !important;
+	}
+	
+	
+}

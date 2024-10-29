@@ -281,7 +281,7 @@
 
 
 	body when (@gradType =nouss) {
-		background-color: @gradcolor3 !important;
+		background-color: @gradcolor1 !important;
 	}
 
 	div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =flouss) {
@@ -297,7 +297,7 @@
 
 
 	div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =nouss) {
-		background-color: @gradcolor3 !important;
+		background-color: @gradcolor1 !important;
 	}
 
 
@@ -325,7 +325,11 @@
 
 
 	.feed-background when (@gradType =nouss) {
-		background-color: @gradcolor3 !important;
+		background-color: @gradcolor1 !important;
+	}
+	
+	.select-menu-header, .select-menu-divider, .select-menu-filters {
+		background-color: transparent;
 	}
 
 
@@ -873,7 +877,8 @@
 	}
 
 
-	.hNkDDR {
+	.hNkDDR,
+	.crArEc {
 		background-color: transparent !important
 	}
 
@@ -999,7 +1004,8 @@
 		@disappear();
 	}
 
-	.menu {
+	.menu,
+	.kAsnol {
 		@backdrop();
 		border: 1px solid @creamColor !important;
 	}
@@ -1045,6 +1051,53 @@
 	.dropdown-menu:after {
 		@disappear();
 	}
+	
+	/*ANCHOR [COMMIT DETAILS] */
+	
+	.TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.gvtfsN.fCHmyD.TextInput-wrapper{
+		@textArea();
+	}
+	
+	
+	.hDaTHW {
+		@disappear();
+	}
+	
+	.gClVUD,
+	.drELTT {
+		background-color: transparent;
+		border: 1px solid @creamColor !important;
+	}
+	
+	.Diff-module__diffHeaderWrapper--rsdD4:before,
+	.Diff-module__diffHeaderWrapper--rsdD4 {
+		background-color: transparent;
+	}
+	
+	.DiffFileHeader-module__diff-file-header--TjXyn, 
+	.d-flex.flex-items-center.flex-justify-between.gap-2.pt-3.pt-lg-4.pb-2.position-sticky.top-0.color-bg-default {
+		background-color: rgba(5, 5, 5, .18) !important;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(100px) saturate(110%);
+		-webkit-backdrop-filter: blur(100px);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+		border: 1px solid @creamColor !important;
+	}
+	
+	.dRfQdO {
+		@transparentButtons();
+		border: 0px solid @creamColor !important;
+		background: @creamColorMuted;
+		color: white !important;
+	}
+
+	.dRfQdO:hover {
+		@transparentButtonsHover();
+		background: @creamColor;
+		color: white !important;
+	}
+	
+	
 }
 
 /* .feed-item-content.d-flex.flex-column.pt-2.pb-2.border.color-border-default.rounded-2.color-shadow-small.width-full.height-fit 
