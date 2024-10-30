@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.0.6
+@version        1.0.7
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -273,6 +273,7 @@
 	
 
 	
+
 	
 	body when (@gradType =flouss) {
 		@gradientBackground();
@@ -439,7 +440,8 @@
 	input[id="dashboard-repos-filter-left"],
 	input[placeholder="Find a repository…"],
 	input[aria-label="Filter repositories"],
-	.jJiPKt{
+	.jJiPKt,
+	.kMKOXm {
 		@textArea();
 	}
 	
@@ -2283,7 +2285,6 @@ td#contribution-day-component-6-49 { animation-delay: 2.45s; }
 td#contribution-day-component-6-50 { animation-delay: 2.5s; }
 td#contribution-day-component-6-51 { animation-delay: 2.55s; }
 td#contribution-day-component-6-52 { animation-delay: 2.6s; }
-
 
 
 }
