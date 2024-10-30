@@ -1,4 +1,4 @@
-# SneshGPT 
+# Sensha's prettier GitHub 
 
 ![](assets/gitsha_repo_page.png)
 
