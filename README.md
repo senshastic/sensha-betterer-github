@@ -1,7 +1,7 @@
 # Sensha's prettier GitHub 
 
 <p align="center">
-    <img src="assets/gitsha_repo_page.png" alt="Gitsha Repo Page" />
+    <img src="assets/gitsha_repo_name.png" alt="Gitsha Repo Page" />
 </p>
 
 This is the fourth(?) in a - hopefully short - series of ""design"" projects. 
