@@ -3,6 +3,7 @@
 @namespace      github.com/openstyles/stylus
 @version        1.0.0
 @description    A new userstyle
+@UpdateURL		https://github.com/senshastic/Gitsha/raw/refs/heads/main/css/gitsha_fontpack.user.css
 @author         Snesh
 @preprocessor	less
 @var select		codeFont    "Code Font" ["xenon:Xenon", "argon: Argon", "neon:Neon", "radon: Radon", "krypton: Krypton*", "none: None"]

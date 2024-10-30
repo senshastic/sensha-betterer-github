@@ -5,6 +5,7 @@
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
+@updateURL		https://github.com/senshastic/Gitsha/raw/refs/heads/main/css/gitsha.user.css
 @var select		gradType    "Gradient style" ["animated:Animated*", "flouss: Static", "nouss:None"]
 @var checkbox	grain "Grainy texture" 1
 @var color   	gradcolor1 "Gradient Color 1" rgb(8, 19, 54)
@@ -1311,16 +1312,133 @@
 		@backdrop();
 	}
 	
-@keyframes glowWave {
+
+	/*ANCHOR [MOSAIC DRAMA] */
+
+@keyframes glowWaveBlue {
     0%, 100% {
-        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* Faint glow */
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
     }
     50% {
-        box-shadow: 0 0 5px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255), 0 0 20px rgba(255, 255, 255, .8); /* Bright glow */
+        box-shadow: 0 0 2px rgba(60, 141, 214, .7), 0 0 5px rgb(13, 97, 203), 0 0 10px rgba(46, 167, 203, .58);
+        transform: translateY(-1px);
     }
 }
 
-/* Apply the glowing wave effect to each block */
+.applyGlowWaveBlue() when (@mosaicType = ocean) {
+        animation: glowWaveBlue 1.5s ease-in-out infinite;
+    }
+	
+@keyframes glowWaveGreen {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(60, 214, 60, .7), 0 0 5px rgb(35, 203, 13), 0 0 10px rgba(64, 203, 46, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWaveGreen() when (@mosaicType = forest) {
+        animation: glowWaveGreen 1.5s ease-in-out infinite;
+    }
+	
+	
+	@keyframes glowWaveBerry {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(214, 60, 147, .7), 0 0 5px rgb(203, 13, 130), 0 0 10px rgba(203, 46, 174, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWaveBerry() when (@mosaicType = berry) {
+        animation: glowWaveBerry 1.5s ease-in-out infinite;
+    }
+	
+	
+		@keyframes glowWaveTwilight {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(168, 60, 214, .7), 0 0 5px rgb(81, 23, 190), 0 0 10px rgba(145, 46, 203, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWaveTwilight() when (@mosaicType = twilight) {
+        animation: glowWaveTwilight 1.5s ease-in-out infinite;
+    }
+	
+	
+			@keyframes glowWaveCitrus{
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(211, 214, 60, .49), 0 0 5px rgba(184, 175, 9, .56), 0 0 10px rgba(203, 143, 46, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWaveCitrus() when (@mosaicType = citrus) {
+        animation: glowWaveCitrus 1.5s ease-in-out infinite;
+    }
+	
+	@keyframes glowWavePink{
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(214, 60, 178, .7), 0 0 5px rgba(181, 1, 103, .65), 0 0 10px rgba(203, 46, 193, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWavePink() when (@mosaicType = pink) {
+        animation: glowWavePink 1.5s ease-in-out infinite;
+    }
+
+@keyframes glowWaveDrama{
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(28, 0, 39, .7), 0 0 5px rgb(11, 0, 33), 0 0 10px rgba(18, 0, 29, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWaveDrama() when (@mosaicType = drama) {
+        animation: glowWaveDrama 1.5s ease-in-out infinite;
+    }
+	
+	@keyframes glowWaveNeon{
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(255, 233, 0, .7), 0 0 5px rgba(255, 251, 0, .58), 0 0 10px rgba(255, 230, 6, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWaveNeon() when (@mosaicType = neon) {
+        animation: glowWaveNeon 1.5s ease-in-out infinite;
+    }
+
+
 td#contribution-day-component-0-0,
 td#contribution-day-component-0-1,
 td#contribution-day-component-0-2,
@@ -1698,7 +1816,16 @@ td#contribution-day-component-6-49,
 td#contribution-day-component-6-50,
 td#contribution-day-component-6-51,
 td#contribution-day-component-6-52 {
-    animation: glowWave 1.5s ease-in-out infinite;
+    .applyGlowWaveBlue();
+	.applyGlowWaveGreen();
+	.applyGlowWaveBerry();
+	.applyGlowWaveTwilight();
+	.applyGlowWavePink();
+	.applyGlowWaveCitrus();
+	.applyGlowWaveDrama();
+	.applyGlowWaveNeon();
+	
+
 }
 
 /* Adjust animation delay for a wave effect */
