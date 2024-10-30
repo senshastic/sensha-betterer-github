@@ -1,18 +1,18 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.0.1
+@version        1.0.2
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
 @updateURL		https://github.com/senshastic/Gitsha/raw/refs/heads/main/css/gitsha.user.css
 @var select		gradType    "Gradient style" ["animated:Animated*", "flouss: Static", "nouss:None"]
+@var select		mosaicType    "Mosaic style" ["pink:Lollipop Pink", "citrus: Flaming Citrus", "berry:Electric Berry", "ocean:Cyber Ocean*", "forest:Electric Forest", "twilight:Neon Twilight", "drama:Dark Queen", "neon:Neon Yellow", "nouss:None"]
 @var checkbox	grain "Grainy texture" 1
 @var color   	gradcolor1 "Gradient Color 1" rgb(8, 19, 54)
 @var color   	gradcolor2 "Gradient Color 2" rgb(26, 58, 102)
 @var color   	gradcolor3 "Gradient Color 3" rgb(43, 1, 91)
 @var color   	gradcolor4 "Gradient Color 4" rgb(122, 2, 54)
-@var select		mosaicType    "Mosaic style" ["pink:Lollipop Pink", "citrus: Flaming Citrus", "berry:Electric Berry", "ocean:Cyber Ocean*", "forest:Electric Forest", "twilight:Neon Twilight", "drama:Dark Queen", "neon:Neon Yellow", "nouss:None"]
 ==/UserStyle== */
 @-moz-document domain("github.com") {
 
