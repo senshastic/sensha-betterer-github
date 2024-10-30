@@ -327,8 +327,10 @@
 	.feed-background when (@gradType =nouss) {
 		background-color: @gradcolor1 !important;
 	}
-	
-	.select-menu-header, .select-menu-divider, .select-menu-filters {
+
+	.select-menu-header,
+	.select-menu-divider,
+	.select-menu-filters {
 		background-color: transparent;
 	}
 
@@ -428,7 +430,8 @@
 	input[aria-label="Link to social profile"],
 	select[aria-label="Time zone"],
 	select[name="user[profile_pronouns]"],
-	input[id="dashboard-repos-filter-left"] {
+	input[id="dashboard-repos-filter-left"],
+	input[placeholder="Find a repository…"] {
 		@textArea();
 	}
 
@@ -451,6 +454,7 @@
 		--color-calendar-graph-day-L3-bg: @gradcolor2 !important;
 		--color-calendar-graph-day-L4-bg: @gradcolor4 !important;
 		--color-calendar-graph-day-bg: @creamColorMuted !important;
+		--bgColor-accent-emphasis: @creamColor !important;
 	}
 
 
@@ -833,6 +837,10 @@
 		@textArea();
 	}
 
+	.eoIeZr {
+		@disappear();
+	}
+
 
 
 	/*ANCHOR [CREATE A REPO PAGE] */
@@ -988,6 +996,10 @@
 	.ListItem-module__listItem--kHali:hover {
 		@boxShadowHover();
 	}
+	
+	.FilterInputWrapper-module__Box_1--vewob{
+		@disappear();
+	}
 
 	/*ANCHOR [COPILOT] */
 	.ivKSmi {
@@ -1051,30 +1063,29 @@
 	.dropdown-menu:after {
 		@disappear();
 	}
-	
+
 	/*ANCHOR [COMMIT DETAILS] */
-	
-	.TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.gvtfsN.fCHmyD.TextInput-wrapper{
+	.TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.gvtfsN.fCHmyD.TextInput-wrapper {
 		@textArea();
 	}
-	
-	
+
+
 	.hDaTHW {
 		@disappear();
 	}
-	
+
 	.gClVUD,
 	.drELTT {
 		background-color: transparent;
 		border: 1px solid @creamColor !important;
 	}
-	
+
 	.Diff-module__diffHeaderWrapper--rsdD4:before,
 	.Diff-module__diffHeaderWrapper--rsdD4 {
 		background-color: transparent;
 	}
-	
-	.DiffFileHeader-module__diff-file-header--TjXyn, 
+
+	.DiffFileHeader-module__diff-file-header--TjXyn,
 	.d-flex.flex-items-center.flex-justify-between.gap-2.pt-3.pt-lg-4.pb-2.position-sticky.top-0.color-bg-default {
 		background-color: rgba(5, 5, 5, .18) !important;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1083,7 +1094,7 @@
 		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 		border: 1px solid @creamColor !important;
 	}
-	
+
 	.dRfQdO {
 		@transparentButtons();
 		border: 0px solid @creamColor !important;
@@ -1095,6 +1106,54 @@
 		@transparentButtonsHover();
 		background: @creamColor;
 		color: white !important;
+	}
+
+	/* ANCHOR [JS Sidebar Styling] */
+	.SidePanel,
+	.jBUQU {
+		opacity: 1;
+		position: fixed;
+		background-color: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(25px) saturate(200%) contrast(90%);
+		-webkit-backdrop-filter: blur(25px) saturate(200%) contrast(90%);
+		color: white;
+		z-index: 1001;
+		overflow-y: auto;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	/* Optional: Sidebar Buttons Styling */
+	.SidePanel button,
+	.SidePanel a {
+		color: white;
+		opacity: 0.9;
+		transition: color 0.3s ease, opacity 0.3s ease;
+	}
+
+	.SidePanel button:hover,
+	.SidePanel a:hover {
+		color: rgba(255, 255, 255, 1);
+		opacity: 1;
+	}
+
+	.Overlay-closeButton.close-button:hover {
+		@buttonsHover();
+	}
+
+	.Overlay-closeButton:focus,
+	.Overlay-closeButton:hover {
+		background: transparent !important;
+	}
+
+	.Item__LiBox-sc-yeql7o-0.imEANS:hover {
+		@hoverChannelSlide();
+	}
+
+	/*ANCHOR [GITHUB SUPPORT] */
+	
+	.Dialog__StyledDialog-sc-uaxjsn-1 {
+		@backdrop();
 	}
 	
 	
