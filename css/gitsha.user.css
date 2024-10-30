@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.0.4
+@version        1.0.5
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -451,20 +451,6 @@
 	}
 
 	/*colors mosaic gradient */
-	:root when (@mosaicType =pink) {
-
-		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-		/* Almost transparent */
-		--color-calendar-graph-day-L1-bg: #ffd1e3 !important;
-		/* Softer blush pink */
-		--color-calendar-graph-day-L2-bg: #ff99c2 !important;
-		/* Slightly deeper soft pink */
-		--color-calendar-graph-day-L3-bg: #ff66b2 !important;
-		/* Medium pink */
-		--color-calendar-graph-day-L4-bg: #cc0052 !important;
-		/* Dark pink */
-		--bgColor-accent-emphasis: @creamColor !important;
-	}
 
 
 	:root when (@mosaicType =pink) {
@@ -480,6 +466,7 @@
 		--color-calendar-graph-day-L4-bg: #cc0052 !important;
 		/* Dark pink */
 		--bgColor-accent-emphasis: @creamColor !important;
+		--tooltip-bgColor: transparent !important;
 	}
 
 
@@ -512,6 +499,7 @@
 		--color-calendar-graph-day-L4-bg: #663300 !important;
 		/* Dark burnt orange */
 		--bgColor-accent-emphasis: @creamColor !important;
+		--tooltip-bgColor: transparent !important;
 	}
 
 
@@ -528,6 +516,7 @@
 		--color-calendar-graph-day-L4-bg: #4d0033 !important;
 		/* Dark magenta */
 		--bgColor-accent-emphasis: @creamColor !important;
+		--tooltip-bgColor: transparent !important;
 	}
 
 
@@ -544,6 +533,7 @@
 		--color-calendar-graph-day-L4-bg: #002b66 !important;
 		/* Dark navy */
 		--bgColor-accent-emphasis: @creamColor !important;
+		--tooltip-bgColor: transparent !important;
 	}
 	
 	:root when (@mosaicType =crimson) {
@@ -555,6 +545,7 @@
 --color-calendar-graph-day-L4-bg: #6f1414 !important; /* Dark crimson */
 
 		--bgColor-accent-emphasis: @creamColor !important;
+		--tooltip-bgColor: transparent !important;
 	}
 
 
@@ -571,6 +562,7 @@
 		--color-calendar-graph-day-L4-bg: #004d26 !important;
 		/* Deep teal */
 		--bgColor-accent-emphasis: @creamColor !important;
+		--tooltip-bgColor: transparent !important;
 	}
 
 
@@ -587,6 +579,7 @@
 		--color-calendar-graph-day-L4-bg: #4a007d !important;
 		/* Deep purple */
 		--bgColor-accent-emphasis: @creamColor !important;
+		--tooltip-bgColor: transparent !important;
 	}
 
 	:root when (@mosaicType =drama) {
@@ -602,6 +595,7 @@
 		--color-calendar-graph-day-L4-bg: #7a3a45 !important;
 		/* Soft, lighter maroon */
 		--bgColor-accent-emphasis: @creamColor !important;
+		--tooltip-bgColor: transparent !important;
 	}
 
 	:root when (@mosaicType =neon) {
@@ -617,10 +611,12 @@
 		--color-calendar-graph-day-L4-bg: #ffff00 !important;
 		/* Bright neon yellow */
 		--bgColor-accent-emphasis: @creamColor !important;
+		--tooltip-bgColor: transparent !important;
 	}
 
 	:root when (@mosaicType =nouss) {
 		--bgColor-accent-emphasis: @creamColor !important;
+		--tooltip-bgColor: transparent !important;
 	}
 
 
@@ -629,6 +625,10 @@
 
 
 	/*ANCHOR [DASHBOARD] */
+	
+	tool-tip{
+		@backdrop();
+	}
 	.p-3.mt-2.border.color-border-muted.rounded-1.color-shadow-medium.height-full.color-bg-overlay,
 	.feed-item-content.rounded-2,
 	.color-bg-subtle,
