@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.0.2
+@version        1.0.4
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -1216,7 +1216,9 @@
 		border: 1px solid @creamColor !important;
 	}
 	
-	.Box-row--focus-gray.navigation-focus{
+	.Box-row--focus-gray.navigation-focus,
+	.gh-header,
+	.timeline-comment-header {
 		background-color: transparent !important;
 	}
 
