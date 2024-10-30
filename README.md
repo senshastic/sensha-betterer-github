@@ -1,16 +1,25 @@
 # Sensha's prettier GitHub 
 
-![](assets/gitsha_repo_page.png)
+<p align="center">
+    <img src="assets/gitsha_repo_page.png" alt="Gitsha Repo Page" />
+</p>
 
 This is the fourth(?) in a - hopefully short - series of ""design"" projects. 
 
 ## Visuals 
 
-![](assets/gitsha_user_page.gif)
+<p align="center">
+    <img src="assets/gitsha_user_page.gif" alt="Gitsha User Page" />
+</p>
+
 
 This GitHub interface is prettier and that's about it. 
 
-![](assets/gitsha_search_bar.gif)
+
+<p align="center">
+    <img src="assets/gitsha_search_bar.gif" alt="Gitsha Search Bar" />
+</p>
+
 
 If you do not like the gradient or if you are like me and you like changing colors all the time, you can change the colors directly through Stylus' UI. It's pretty neat and instantaneous. I also added a toggle for the grainy texture and the background now comes with three options: 
 - Animated gradient (default)
@@ -19,7 +28,12 @@ If you do not like the gradient or if you are like me and you like changing colo
 
 The mosaic also comes in plenty of color options with fancy names such as Cyber Ocean or Electric Forest. It has a wave and everything but you can disable all of that by selecting "none" in the Stylus options. 
   
-![](assets/SneshGPT_gui.png)
+<div align="center">
+    <img src="assets/gitcha_options.png" alt="Gitcha Options" width="400" style="margin-right: 20px;"/>
+    <img src="assets/gitsha_font_options.png" alt="Gitsha Font Options" width="400"/>
+</div>
+
+
 
 ### Installation 
 
@@ -36,7 +50,10 @@ There used to be JavaScript but they are no deprecated because I think it's impo
 
 ### Fonts & Styles
 
-![](assets/gitsha_fontex.png)
+
+<p align="center">
+    <img src="assets/gitsha_fontex.png" alt="Gitsha Font Example" />
+</p>
 
 I made an add-on that lets you change some of the fonts and colors of the interface. You can find and install the add-on here: 
 
@@ -58,4 +75,8 @@ It also uses the following font if installed on your computer:
 - Pelote - may you not get stuck in a tree for the 40th time, that'd be neat. 
 - My mom, she doesn't get why I am wasting so much time but tbh that's okay. 
 
-![](assets/gitsha_cmty.png) 
+
+<p align="center">
+    <img src="assets/gitsha_cmty.png" alt="Gitsha Community Page Example" />
+</p>
+
