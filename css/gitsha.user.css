@@ -11,6 +11,7 @@
 @var color   	gradcolor2 "Gradient Color 2" rgb(26, 58, 102)
 @var color   	gradcolor3 "Gradient Color 3" rgb(43, 1, 91)
 @var color   	gradcolor4 "Gradient Color 4" rgb(122, 2, 54)
+@var select		mosaicType    "Mosaic style" ["pink:Lollipop Pink", "citrus: Flaming Citrus", "berry:Electric Berry", "ocean:Cyber Ocean*", "forest:Electric Forest", "twilight:Neon Twilight", "drama:Dark Queen", "neon:Neon Yellow", "nouss:None"]
 ==/UserStyle== */
 @-moz-document domain("github.com") {
 
@@ -431,7 +432,8 @@
 	select[aria-label="Time zone"],
 	select[name="user[profile_pronouns]"],
 	input[id="dashboard-repos-filter-left"],
-	input[placeholder="Find a repository…"] {
+	input[placeholder="Find a repository…"],
+	input[aria-label="Filter repositories"] {
 		@textArea();
 	}
 
@@ -448,14 +450,168 @@
 	}
 
 	/*colors mosaic gradient */
-	:root {
-		--color-calendar-graph-day-L1-bg: @gradcolor1 !important;
-		--color-calendar-graph-day-L2-bg: @gradcolor3 !important;
-		--color-calendar-graph-day-L3-bg: @gradcolor2 !important;
-		--color-calendar-graph-day-L4-bg: @gradcolor4 !important;
-		--color-calendar-graph-day-bg: @creamColorMuted !important;
+	:root when (@mosaicType =pink) {
+
+		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+		/* Almost transparent */
+		--color-calendar-graph-day-L1-bg: #ffd1e3 !important;
+		/* Softer blush pink */
+		--color-calendar-graph-day-L2-bg: #ff99c2 !important;
+		/* Slightly deeper soft pink */
+		--color-calendar-graph-day-L3-bg: #ff66b2 !important;
+		/* Medium pink */
+		--color-calendar-graph-day-L4-bg: #cc0052 !important;
+		/* Dark pink */
 		--bgColor-accent-emphasis: @creamColor !important;
 	}
+
+
+	:root when (@mosaicType =pink) {
+
+		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+		/* Almost transparent */
+		--color-calendar-graph-day-L1-bg: #ffd1e3 !important;
+		/* Softer blush pink */
+		--color-calendar-graph-day-L2-bg: #ff99c2 !important;
+		/* Slightly deeper soft pink */
+		--color-calendar-graph-day-L3-bg: #ff66b2 !important;
+		/* Medium pink */
+		--color-calendar-graph-day-L4-bg: #cc0052 !important;
+		/* Dark pink */
+		--bgColor-accent-emphasis: @creamColor !important;
+	}
+
+
+	:root when (@mosaicType =pink) {
+
+		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+		/* Almost transparent */
+		--color-calendar-graph-day-L1-bg: #ffd1e3 !important;
+		/* Softer blush pink */
+		--color-calendar-graph-day-L2-bg: #ff99c2 !important;
+		/* Slightly deeper soft pink */
+		--color-calendar-graph-day-L3-bg: #ff66b2 !important;
+		/* Medium pink */
+		--color-calendar-graph-day-L4-bg: #cc0052 !important;
+		/* Dark pink */
+		--bgColor-accent-emphasis: @creamColor !important;
+	}
+
+
+	:root when (@mosaicType =citrus) {
+
+		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+		/* Almost transparent */
+		--color-calendar-graph-day-L1-bg: #ffcc66 !important;
+		/* Light neon yellow */
+		--color-calendar-graph-day-L2-bg: #ff9900 !important;
+		/* Bright yellow-orange */
+		--color-calendar-graph-day-L3-bg: #cc5200 !important;
+		/* Bold orange */
+		--color-calendar-graph-day-L4-bg: #663300 !important;
+		/* Dark burnt orange */
+		--bgColor-accent-emphasis: @creamColor !important;
+	}
+
+
+	:root when (@mosaicType =berry) {
+
+		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+		/* Almost transparent */
+		--color-calendar-graph-day-L1-bg: #ff99cc !important;
+		/* Light neon lavender */
+		--color-calendar-graph-day-L2-bg: #ff33a6 !important;
+		/* Neon pink */
+		--color-calendar-graph-day-L3-bg: #80004d !important;
+		/* Rich berry */
+		--color-calendar-graph-day-L4-bg: #4d0033 !important;
+		/* Dark magenta */
+		--bgColor-accent-emphasis: @creamColor !important;
+	}
+
+
+	:root when (@mosaicType =ocean) {
+
+		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+		/* Almost transparent */
+		--color-calendar-graph-day-L1-bg: #80eaff !important;
+		/* Light neon aqua */
+		--color-calendar-graph-day-L2-bg: #00bfff !important;
+		/* Neon aqua */
+		--color-calendar-graph-day-L3-bg: #004d99 !important;
+		/* Deep blue */
+		--color-calendar-graph-day-L4-bg: #002b66 !important;
+		/* Dark navy */
+		--bgColor-accent-emphasis: @creamColor !important;
+	}
+
+
+	:root when (@mosaicType =forest) {
+
+		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+		/* Almost transparent */
+		--color-calendar-graph-day-L1-bg: #80ffbf !important;
+		/* Light neon green */
+		--color-calendar-graph-day-L2-bg: #00ff80 !important;
+		/* Fluorescent green */
+		--color-calendar-graph-day-L3-bg: #007f4f !important;
+		/* Dark neon green */
+		--color-calendar-graph-day-L4-bg: #004d26 !important;
+		/* Deep teal */
+		--bgColor-accent-emphasis: @creamColor !important;
+	}
+
+
+	:root when (@mosaicType =twilight) {
+
+		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+		/* Almost transparent */
+		--color-calendar-graph-day-L1-bg: #ff99e6 !important;
+		/* Light neon pink */
+		--color-calendar-graph-day-L2-bg: #ff33cc !important;
+		/* Neon pink */
+		--color-calendar-graph-day-L3-bg: #8a00e6 !important;
+		/* Neon violet */
+		--color-calendar-graph-day-L4-bg: #4a007d !important;
+		/* Deep purple */
+		--bgColor-accent-emphasis: @creamColor !important;
+	}
+
+	:root when (@mosaicType =drama) {
+
+		--color-calendar-graph-day-bg: rgba(10, 10, 20, 0.2) !important;
+		/* Subtle, dark base */
+		--color-calendar-graph-day-L1-bg: #1c1c30 !important;
+		/* Deep blue-gray */
+		--color-calendar-graph-day-L2-bg: #3a243b !important;
+		/* Smoky dark maroon */
+		--color-calendar-graph-day-L3-bg: #60253f !important;
+		/* Muted crimson */
+		--color-calendar-graph-day-L4-bg: #7a3a45 !important;
+		/* Soft, lighter maroon */
+		--bgColor-accent-emphasis: @creamColor !important;
+	}
+
+	:root when (@mosaicType =neon) {
+
+		--color-calendar-graph-day-bg: rgba(255, 255, 200, 0.1) !important;
+		/* Almost transparent pale yellow */
+		--color-calendar-graph-day-L1-bg: #a76e0a !important;
+		/* Dark amber-yellow */
+		--color-calendar-graph-day-L2-bg: #ffb300 !important;
+		/* Bold bright yellow */
+		--color-calendar-graph-day-L3-bg: #ffda00 !important;
+		/* Vivid lemon yellow */
+		--color-calendar-graph-day-L4-bg: #ffff00 !important;
+		/* Bright neon yellow */
+		--bgColor-accent-emphasis: @creamColor !important;
+	}
+
+	:root when (@mosaicType =nouss) {
+		--bgColor-accent-emphasis: @creamColor !important;
+	}
+
+
 
 
 
@@ -996,8 +1152,8 @@
 	.ListItem-module__listItem--kHali:hover {
 		@boxShadowHover();
 	}
-	
-	.FilterInputWrapper-module__Box_1--vewob{
+
+	.FilterInputWrapper-module__Box_1--vewob {
 		@disappear();
 	}
 
@@ -1108,7 +1264,7 @@
 		color: white !important;
 	}
 
-	/* ANCHOR [JS Sidebar Styling] */
+	/* ANCHOR JS Sidebar Styling */
 	.SidePanel,
 	.jBUQU {
 		opacity: 1;
@@ -1151,12 +1307,9 @@
 	}
 
 	/*ANCHOR [GITHUB SUPPORT] */
-	
 	.Dialog__StyledDialog-sc-uaxjsn-1 {
 		@backdrop();
 	}
-	
-	
 }
 
 /* .feed-item-content.d-flex.flex-column.pt-2.pb-2.border.color-border-default.rounded-2.color-shadow-small.width-full.height-fit 
