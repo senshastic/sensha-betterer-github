@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.0.5
+@version        1.0.6
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -270,6 +270,10 @@
 
 	/* modals */
 	/*ANCHOR [Gradient background options and grain] */
+	
+
+	
+	
 	body when (@gradType =flouss) {
 		@gradientBackground();
 	}
@@ -434,10 +438,50 @@
 	select[name="user[profile_pronouns]"],
 	input[id="dashboard-repos-filter-left"],
 	input[placeholder="Find a repository…"],
-	input[aria-label="Filter repositories"] {
+	input[aria-label="Filter repositories"],
+	.jJiPKt{
 		@textArea();
 	}
+	
 
+	/*ANCHOR [WRITE README] */
+	.eWVknf{
+		background-color: rgba(5, 5, 5, .18) !important;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(100px) saturate(110%);
+		-webkit-backdrop-filter: blur(100px);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	}
+	
+	.ͼ5 .cm-content, .ͼ5 .cm-help-panel, .drag-and-drop, .ͼ8n .cm-content,
+	.Box-sc-g0xbh4-0.NWhVB{
+		@disappear();
+	}
+	.ͼ5, .ͼ8n {
+		background: #00000087;
+	}
+	
+	.TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.xffca.lmsUst {
+		background-color: rgba(5, 5, 5, .18) !important;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(100px) saturate(110%);
+		-webkit-backdrop-filter: blur(100px);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+		border: 1px solid @creamColor !important;
+	}
+	
+	.dQJPiZ{
+		background-color: rgba(5, 5, 5, .18) !important;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(100px) saturate(110%);
+		-webkit-backdrop-filter: blur(100px);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	}
+	
+	.Skzpj .segmentedControl-content,
+	.kTeWMB .segmentedControl-content {
+		border: 1px solid @creamColor !important;
+	}
 
 	/*ANCHOR [MOSAIC] */
 	/* Targeting the mosaic element */
