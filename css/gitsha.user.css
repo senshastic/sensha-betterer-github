@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.0.3
+@version        1.0.2
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -1214,6 +1214,10 @@
 	.subnav-item,
 	input[id="js-issues-search"] {
 		border: 1px solid @creamColor !important;
+	}
+	
+	.Box-row--focus-gray.navigation-focus{
+		background-color: transparent !important;
 	}
 
 	.SelectMenu-modal {
