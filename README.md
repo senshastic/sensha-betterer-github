@@ -46,7 +46,7 @@ Once you have Stylus, you can install it directly clicking here:
 
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-238b8b.svg)](https://github.com/senshastic/Gitsha/raw/refs/heads/main/css/gitsha.user.css)
 
-There used to be JavaScript but they are no deprecated because I think it's important to stay as close as possible as the base GitHub UI which is already pretty damn cool. 
+There used to be JS userscripts but they are now deprecated because I think it's important to stay as close as possible as the base GitHub UI which is already pretty damn cool. 
 
 ### Fonts & Styles
 
