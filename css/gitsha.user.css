@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.0.9
+@version        1.0.10
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -2289,6 +2289,36 @@ td#contribution-day-component-6-52 { animation-delay: 2.6s; }
 .dotcom{
 	@disappear();
 }
+
+/* ANCHOR [FOOTER] */ 
+
+ /* Select the footer element */
+div.d-flex.flex-items-center.flex-shrink-0.mx-2 span {
+    visibility: hidden; /* Hide the original content */
+    position: relative;
+}
+
+div.d-flex.flex-items-center.flex-shrink-0.mx-2 span::after {
+    content: "@1984, SneshCorp";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+}
+p.color-fg-subtle.text-small.text-light {
+    visibility: hidden;
+    position: relative;
+}
+
+p.color-fg-subtle.text-small.text-light::after {
+    content: "SneshCorp. @1984. All rights reserved (to FallenStar).";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    font-size: 0.9em; 
+}
+
+
+
 
 }
 
