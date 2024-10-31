@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.0.8
+@version        1.0.9
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -2286,6 +2286,9 @@ td#contribution-day-component-6-50 { animation-delay: 2.5s; }
 td#contribution-day-component-6-51 { animation-delay: 2.55s; }
 td#contribution-day-component-6-52 { animation-delay: 2.6s; }
 
+.dotcom{
+	@disappear();
+}
 
 }
 
