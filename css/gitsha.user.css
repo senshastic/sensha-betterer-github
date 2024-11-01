@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.0.14
+@version        1.0.15
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -443,7 +443,8 @@
 	.kMKOXm,
 	input[name="user_list[name]"],
 	textarea[name="user_list[description]"],
-	input[id="release-filter"]{
+	input[id="release-filter"],
+	input[name="repo_description"]{
 		@textArea();
 	}
 	
@@ -710,7 +711,8 @@
 	button[aria-describedby=":rr:-loading-announcement"],
 	button[aria-describedby=":ru:-loading-announcement"],
 	button[id=":rn:"],
-	button[id=":rq:"]{
+	button[id=":rq:"],
+	button[id=":R535ab:"]{
 		@backdrop();
 		border: 1px solid @creamColor !important;
 	}
@@ -727,12 +729,9 @@
 	/* NOTE the big button selector is .prc-Button-ButtonBase-c50BI but too much imo */
 	
 	.jJOpJy {
-		@backdrop();
+		@disappear();
 	}
 	
-	
-	
-
 
 	.jqwEBk.selected,
 	.gJSxwI.selected,
