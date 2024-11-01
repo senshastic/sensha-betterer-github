@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.0.12
+@version        1.0.13
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -706,7 +706,9 @@
 	.SelectMenu-modal,
 	.gAwGiF,
 	.jclhSs,
-	button[aria-describedby=":R5b5ab:-loading-announcement"] {
+	button[aria-describedby=":R5b5ab:-loading-announcement"],
+	button[aria-describedby=":rr:-loading-announcement"],
+	button[aria-describedby=":ru:-loading-announcement"] {
 		@backdrop();
 		border: 1px solid @creamColor !important;
 	}
