@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.0.15
+@version        1.0.16
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -708,14 +708,16 @@
 	.gAwGiF,
 	.jclhSs,
 	button[aria-describedby=":R5b5ab:-loading-announcement"],
-	button[aria-describedby=":rr:-loading-announcement"],
-	button[aria-describedby=":ru:-loading-announcement"],
 	button[id=":rn:"],
 	button[id=":rq:"],
-	button[id=":R535ab:"]{
+	button[id=":R535ab:"],
+	button[aria-describedby=":R535ab:-loading-announcement"],
+	button[aria-label="Add file"]{
 		@backdrop();
 		border: 1px solid @creamColor !important;
 	}
+	
+	
 
 	.gfgFTT {
 		border: 1.5px solid @creamColor !important;
@@ -728,8 +730,14 @@
 
 	/* NOTE the big button selector is .prc-Button-ButtonBase-c50BI but too much imo */
 	
-	.jJOpJy {
+	.jJOpJy,
+	button[aria-label="Close dialog"]{
 		@disappear();
+	}
+	
+	.jJOpJy:hover,
+	button[aria-label="Close dialog"]:hover{
+		@buttonsHover();
 	}
 	
 
