@@ -1,13 +1,14 @@
 /* ==UserStyle==
 @name           Gitsha_fontpack
 @namespace      github.com/openstyles/stylus
-@version        1.0.2
+@version        1.0.3
 @description    A new userstyle
 @updateURL		https://github.com/senshastic/Gitsha/raw/refs/heads/main/css/gitsha_fontpack.user.css
 @author         Snesh
 @preprocessor	less
 @var select		readmeFont    "README Font" ["xenon:Xenon", "argon: Argon*", "neon:Neon", "radon: Radon", "krypton: Krypton", "none: None"]
 @var select		codeFont    "Code Font" ["xenon:Xenon", "argon: Argon", "neon:Neon", "radon: Radon", "krypton: Krypton*", "none: None"]
+@var checkbox	funny "Wild Word Font" 0
 ==/UserStyle== */
 @-moz-document domain("github.com") {
 
@@ -268,7 +269,15 @@
 
 	/* ANCHOR [CODE BLOCKS]  */
 	
-	.vcard-fullname, .AppHeader .AppHeader-globalBar .AppHeader-context .AppHeader-context-item, .Truncate__StyledTruncate-sc-23o1d2-0.cBdrp{
+	.vcard-fullname  when (@funny =1) {
+		font-family: 'CC Wild Words' !important;
+	}
+
+	.AppHeader .AppHeader-globalBar .AppHeader-context .AppHeader-context-item  when (@funny =1){
+		font-family: 'CC Wild Words' !important;
+	}
+
+	.Truncate__StyledTruncate-sc-23o1d2-0.cBdrp  when (@funny =1){
 		font-family: 'CC Wild Words' !important;
 	}
 	
