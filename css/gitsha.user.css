@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.0.10
+@version        1.0.11
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -1282,6 +1282,28 @@
 
 	.dropdown-menu:after {
 		@disappear();
+	}
+	
+	.range-editor,
+	.branch-action-state-clean .branch-action-body::before{
+		background: transparent;
+	}
+	
+	.TimelineItem-break{
+		background: transparent;
+	}
+	
+	.notifications-list-item.notification-unread{
+		@disappear();
+	}
+	
+	.file-header,
+	.branch-action-body{
+		background-color: rgba(5, 5, 5, .18) !important;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(100px) saturate(110%);
+		-webkit-backdrop-filter: blur(100px);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 	}
 
 	/*ANCHOR [COMMIT DETAILS] */
