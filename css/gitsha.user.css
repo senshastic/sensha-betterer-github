@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.0.17
+@version        1.0.18
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -759,9 +759,14 @@
 		@disappear();
 	}
 
-	.bOZZCe {
+	.bOZZCe,
+	.jNzEbl{
 		@backdrop();
 		border: 1px solid @creamColor !important;
+	}
+	
+	.jNzEbl:hover{
+		@buttonsHover();
 	}
 
 	.SelectMenu-footer.px-2 {
@@ -780,7 +785,10 @@
 	}
 
 	/*ANCHOR [REPO PAGE] */
-	.Box-sc-g0xbh4-0.QkQOb.js-snippet-clipboard-copy-unpositioned {
+	.Box-sc-g0xbh4-0.QkQOb.js-snippet-clipboard-copy-unpositioned,
+	.emuNsQ,
+	.kcCxPI,
+	.IsnOs {
 		@backdrop();
 	}
 
@@ -790,6 +798,10 @@
 
 	.react-directory-row td {
 		border-top: max(0.5px, 0.0625rem) solid @creamColor !important;
+	}
+	
+	.ioYCDf{
+		@disappear();
 	}
 
 
@@ -801,7 +813,8 @@
 		@boxShadowHover();
 	}
 
-	.dJnomT {
+	.dJnomT,
+	.fOlIdb.selected{
 		background-color: rgba(5, 5, 5, .18) !important;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 		backdrop-filter: blur(100px) saturate(110%);
@@ -813,7 +826,11 @@
 		@disappear();
 	}
 
-	.List__ListBox-sc-1x7olzq-0.eoXvfR.react-overview-code-button-action-list {
+	.List__ListBox-sc-1x7olzq-0.eoXvfR.react-overview-code-button-action-list,
+	.Box-sc-g0xbh4-0.hgepGv.Box-sc-g0xbh4-0.hgepGv.prc-Button-ButtonBase-c50BI.prc-Link-Link-85e08,
+	button[aria-label="Start conversation"],
+	button[aria-label="More actions"],
+	button[aria-label="Filter"] {
 		@backdrop();
 		border: 1px solid @creamColor !important;
 	}
