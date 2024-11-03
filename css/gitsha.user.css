@@ -1,14 +1,14 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.1.0
+@version        1.1.1
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
 @updateURL		https://github.com/senshastic/Gitsha/raw/refs/heads/main/css/gitsha.user.css
 @var select		gradType    "Gradient style" ["animated:Animated*", "flouss: Static", "nouss:None"]
 @var select		mosaicType    "Mosaic style" ["pink:Lollipop Pink", "citrus: Flaming Citrus", "berry:Electric Berry", "ocean:Cyber Ocean*", "forest:Electric Forest", "twilight:Neon Twilight", "drama:Dark Queen", "crimson:Crimson Blush", "neon:Neon Yellow", "nouss:None"]
-@var select		mosaicAnim    "Mosaic animation" ["wave:Wave*", "diagonal:Diagonal", "trippy: Trippy", "noanim:None"]
+@var select		mosaicAnim    "Mosaic animation" ["wave:Wave", "diagonal:Diagonal*", "trippy: Trippy", "arches: Arches", "balloon: Balloons", "ripple: Ripples", "noanim:None"]
 @var checkbox	grain "Grainy texture" 1
 @var color   	gradcolor1 "Gradient Color 1" rgb(8, 19, 54)
 @var color   	gradcolor2 "Gradient Color 2" rgb(26, 58, 102)
@@ -1621,25 +1621,43 @@ td[id^="contribution-day-component-"] {
 	
 /* Adjust animation wave effect */
 
-@base-delay: 0.05s;
 @max-columns: 52;
 @max-rows: 6;
 
 
 
 .applyDiagonal() when (@mosaicAnim = diagonal) {
-      	animation-delay: (@row * @max-columns * @base-delay) + (@column * @base-delay);
 		@base-delay: 0.12s;
+      	animation-delay: (@row * @base-delay) + (@column * @base-delay);
     }
 	
 .applyWave() when (@mosaicAnim = wave) {
-     	 animation-delay: (@column * @base-delay);
 		 @base-delay: 0.05s;
+     	 animation-delay: (@column * @base-delay);
    	}
 	
 .applyTrippy() when (@mosaicAnim = trippy) {
-       animation-delay: (@row * @max-columns * @base-delay) + (@column);
-	   @base-delay: 0.05s;
+		@base-delay: 0.18s;
+		@a: 2;
+		@b: 3;
+		animation-delay: mod(((@a * @row + @b * @column) * @base-delay), 3);
+    }
+	
+.applyArches() when (@mosaicAnim = arches) {
+		@base-delay: 0.05s;
+		animation-delay: mod(((@row * @column + @row + 3* @column - 1) * @base-delay), 3);
+    }
+
+	
+	.applyBalls() when (@mosaicAnim = balloon) {
+		@base-delay: 0.3s;
+		animation-delay: mod(((sin(@row)+cos(@column)+1) * @base-delay), 4);
+    }
+	
+	.applyRipple() when (@mosaicAnim = ripple) {
+		@base-delay: 0.3s;
+    	@distance-to-center: sqrt(pow(@row - @max-rows*0.5, 2) + pow(@column - @max-columns*0.5, 2));
+    	animation-delay: @distance-to-center * @base-delay;
     }
 
 	
@@ -1649,6 +1667,10 @@ td[id^="contribution-day-component-"] {
     .applyDiagonal();
 	.applyWave();
 	.applyTrippy();
+	.applyArches();
+	.applyBalls();
+	.applyRipple();
+	
   }
   .generate-delays(@row, @column + 1);
 }
@@ -1708,4 +1730,5 @@ background-color: var(--control-transparent-bgColor-hover) !important;
     color: var(--fgColor-default,var(--color-fg-default,#e6edf3));
     box-shadow: inset 0 0 0 max(1px,0.0625rem) var(--control-transparent-borderColor-active,var(--color-action-list-item-default-active-border,transparent));
 	
+
 */
