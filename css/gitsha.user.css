@@ -8,7 +8,7 @@
 @updateURL		https://github.com/senshastic/Gitsha/raw/refs/heads/main/css/gitsha.user.css
 @var select		gradType    "Gradient style" ["animated:Animated*", "flouss: Static", "nouss:None"]
 @var select		mosaicType    "Mosaic style" ["pink:Lollipop Pink", "citrus: Flaming Citrus", "berry:Electric Berry", "ocean:Cyber Ocean*", "forest:Electric Forest", "twilight:Neon Twilight", "drama:Dark Queen", "crimson:Crimson Blush", "neon:Neon Yellow", "nouss:None"]
-@var select		mosaicAnim    "Mosaic animation" ["wave:Wave", "diagonal:Diagonal*", "trippy: Trippy", "arches: Arches", "balloon: Balloons", "ripple: Ripples", "noanim:None"]
+@var select		mosaicAnim    "Mosaic animation" ["wave:Wave", "diagonal:Diagonal", "trippy: Trippy", "arches: Arches", "balloon: Balloons", "ripple: Ripples*", "noanim:None"]
 @var checkbox	grain "Grainy texture" 1
 @var color   	gradcolor1 "Gradient Color 1" rgb(8, 19, 54)
 @var color   	gradcolor2 "Gradient Color 2" rgb(26, 58, 102)
