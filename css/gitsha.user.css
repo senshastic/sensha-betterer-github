@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.1.4
+@version        1.1.5
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -1446,7 +1446,7 @@
         transform: translateY(0);
     }
     50% {
-        box-shadow: 0 0 2px rgba(60, 141, 214, .7), 0 0 5px rgb(13, 97, 203), 0 0 10px rgba(46, 167, 203, .58);
+        box-shadow: 0 0 2px rgba(149, 169, 186, .7), 0 0 5px rgb(13, 97, 203), 0 0 10px rgba(137, 189, 205, .58);
         transform: translateY(-1px);
     }
 }
