@@ -1,13 +1,13 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.1.2
+@version        1.1.3
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
 @updateURL		https://github.com/senshastic/Gitsha/raw/refs/heads/main/css/gitsha.user.css
 @var select		gradType    "Gradient style" ["animated:Animated*", "flouss: Static", "nouss:None"]
-@var select		mosaicType    "Mosaic style" ["pink:Lollipop Pink", "citrus: Flaming Citrus", "berry:Electric Berry", "ocean:Cyber Ocean*", "forest:Electric Forest", "twilight:Neon Twilight", "drama:Dark Queen", "crimson:Crimson Blush", "neon:Neon Yellow", "nouss:None"]
+@var select		mosaicType    "Mosaic style" ["pink:Lollipop Pink", "citrus: Flaming Citrus", "berry:Electric Berry", "ocean:Cyber Ocean*", "forest:Electric Forest", "twilight:Neon Twilight", "drama:Dark Queen", "xmas:Christmas", "neon:Neon Yellow", "nouss:None"]
 @var select		mosaicAnim    "Mosaic animation" ["wave:Wave", "diagonal:Diagonal", "trippy: Trippy", "arches: Arches", "balloon: Balloons", "ripple: Ripples*", "noanim:None"]
 @var checkbox	grain "Grainy texture" 1
 @var color   	gradcolor1 "Gradient Color 1" rgb(8, 19, 54)
@@ -588,13 +588,14 @@
 		--tooltip-bgColor: transparent !important;
 	}
 	
-	:root when (@mosaicType =crimson) {
+	:root when (@mosaicType =xmas) {
+--color-calendar-graph-day-bg: rgba(178, 24, 55, 0.1) !important; /* Almost transparent ruby red */
+--color-calendar-graph-day-L1-bg: #e05454 !important; /* Lighter ruby red */
+--color-calendar-graph-day-L2-bg: #9b0000 !important; /* Dark ruby red */
+--color-calendar-graph-day-L3-bg: #004d00 !important; /* Evergreen */
+--color-calendar-graph-day-L4-bg: #ffd700 !important; /* Gold */
 
---color-calendar-graph-day-bg: rgba(255, 102, 102, 0.1) !important; /* Almost transparent light red */
---color-calendar-graph-day-L1-bg: #c72c2c !important; /* Medium dark red */
---color-calendar-graph-day-L2-bg: #a12a2a !important; /* Rich red */
---color-calendar-graph-day-L3-bg: #8f2121 !important; /* Bold crimson */
---color-calendar-graph-day-L4-bg: #6f1414 !important; /* Dark crimson */
+
 
 		--bgColor-accent-emphasis: @creamColor !important;
 		--tooltip-bgColor: transparent !important;
@@ -1454,7 +1455,7 @@
         animation: glowWaveBlue 1.5s ease-in-out infinite;
     }
 	
-	@keyframes glowWaveCrimson {
+	@keyframes glowWaveXmas {
     0%, 100% {
         box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
         transform: translateY(0);
@@ -1465,8 +1466,8 @@
     }
 }
 
-.applyGlowWaveCrimson() when (@mosaicType = crimson) {
-        animation: glowWaveCrimson 1.5s ease-in-out infinite;
+.applyGlowWaveXmas() when (@mosaicType = xmas) {
+        animation: glowWaveXmas 1.5s ease-in-out infinite;
     }
 	
 @keyframes glowWaveGreen {
@@ -1601,7 +1602,7 @@
 		animation: glowWaveBlue 0s ease-in-out infinite !important;
 	 }
 
-	 .applyGlowWaveCrimson() when (@mosaicAnim = noanim) {
+	 .applyGlowWaveXmas() when (@mosaicAnim = noanim) {
 		animation: glowWaveBlue 0s ease-in-out infinite !important;
 	 }
 
@@ -1616,7 +1617,7 @@ td[id^="contribution-day-component-"] {
 	.applyGlowWaveCitrus();
 	.applyGlowWaveDrama();
 	.applyGlowWaveNeon();
-	.applyGlowWaveCrimson();
+	.applyGlowWaveXmas();
 }
 	
 /* Adjust animation wave effect */
