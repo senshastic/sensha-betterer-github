@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.1.5
+@version        1.1.6
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -913,6 +913,11 @@
 		margin-top: 10px;
 		border: none !important;
 	}
+	
+	.border-bottom.color-border-muted.py-3{
+		@backdrop();
+		border:none !important;
+	}
 
 	/*ANCHOR [STARS MENU] */
 	.ActionListWrap--inset.ActionListWrap {
@@ -1721,6 +1726,23 @@ p.color-fg-subtle.text-small.text-light::after {
 	background: @creamColor;
 }
 
+
+/* ANCHOR [FIX BUTTONS ONCE AND FOR ALL] */ 
+
+:where(.prc-Button-ButtonBase-c50BI):where([data-variant=default]){
+	@disappear();
+}
+
+
+:where(.prc-Button-ButtonBase-c50BI):where([data-variant=default]):hover{
+	@buttonsHover();
+}
+
+
+.NotificationsSubscriptionsMenu-module__watchCounter--nAbhU,
+.btn .Counter{
+	@gradientBackground();
+}
 
 }
 
