@@ -35,7 +35,7 @@ The mosaic also comes in plenty of color options with fancy names such as Cyber 
 
 
 
-### Installation 
+## Installation 
 
 Install the css using Stylus. You can get Stylus through the following links: 
 
@@ -48,7 +48,7 @@ Once you have Stylus, you can install it directly clicking here:
 
 There used to be JS userscripts but they are now deprecated because I think it's important to stay as close as possible as the base GitHub UI which is already pretty damn cool. 
 
-### Fonts & Styles
+## Fonts & Styles
 
 
 <p align="center">
@@ -69,7 +69,7 @@ It also uses the following font if installed on your computer:
 
 - CC Wild Words. 
 
-### Credits 
+## Credits 
 
 - [Fallen](https://github.com/FallenStar08) - Poggers, epic gamer and coder. 
 - Pelote - may you not get stuck in a tree for the 40th time, that'd be neat. 
