@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.1.7
+@version        1.1.9
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -786,7 +786,14 @@
 		@disappear();
 	}
 
+	/*ANCHOR [README] */
+	.markdown-body h2{
+		color: @creamColor !important;
+	}
+
 	/*ANCHOR [REPO PAGE] */
+
+
 	.Box-sc-g0xbh4-0.QkQOb.js-snippet-clipboard-copy-unpositioned,
 	.emuNsQ,
 	.kcCxPI,
