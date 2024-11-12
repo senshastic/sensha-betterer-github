@@ -71,7 +71,7 @@ It also uses the following font if installed on your computer:
 
 ### Credits 
 
-- [Fallen](https://github.com/FallenStar08) - Poggers.  
+- [Fallen](https://github.com/FallenStar08) - Poggers, epic gamer and coder. 
 - Pelote - may you not get stuck in a tree for the 40th time, that'd be neat. 
 - My mom, she doesn't get why I am wasting so much time but tbh that's okay. 
 
