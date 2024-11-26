@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.1.10
+@version        1.1.11
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -19,1762 +19,1802 @@
 
 
 
-	/*SECTION [SNESHLIB - Start] */
-	/*ANCHOR [VARIABLES]*/
-	@hap				: url('https://github.com/senshastic/sneshGPT/blob/main/assets/Hap.png?raw=true');
-	@borderRadius		: 12px;
-	@creamColor			: #d0b575;
-	@creamColorMuted	: #4f4733;
+    /*SECTION [SNESHLIB - Start] */
+    /*ANCHOR [VARIABLES]*/
+    @hap				: url('https://github.com/senshastic/sneshGPT/blob/main/assets/Hap.png?raw=true');
+    @borderRadius		: 12px;
+    @creamColor			: #d0b575;
+    @creamColorMuted	: #4f4733;
 
 
 
-	/*ANCHOR [DETACHED RULESETS] */
-	@gradientBackground: {
-		background: linear-gradient(109.6deg, @gradcolor1 0%, @gradcolor2 25%, @gradcolor3 50%, @gradcolor4 100%);
-	}
-
-	@gradientAnimation: {
-		0% {
-			background-position: 0% 0%;
-		}
-		50% {
-			background-position: 100% 100%;
-		}
-		100% {
-			background-position: 0% 0%;
-		}
-	}
-
-	@buttons: {
-		background-color: rgba(5, 5, 5, .18) !important;
-		border-radius: 12px !important;
-		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-	}
-
-	@buttonsHover: {
-		background-color: rgba(5, 5, 5, 0) !important;
-		border-radius: 12px;
-		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-		transform: translateY(-4px);
-	}
-
-	@transparentButtons: {
-		border-radius: 12px !important;
-		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-	}
-
-	@buttonsFlat: {
-		border-radius: 12px !important;
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-	}
-
-
-	@transparentButtonsHover: {
-		border-radius: 12px;
-		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
-		-webkit-backdrop-filter: blur(100px);
-		backdrop-filter: blur(100px) saturate(110%);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-		transform: translateY(-4px);
-	}
-
-
-	@buttonsHoverWhite: {
-		background-color: rgba(5, 5, 5, 0) !important;
-		border-radius: 12px;
-		box-shadow: 0 8px 15px rgba(255, 255, 255, .37) !important;
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transform: translateY(-4px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform box-shadow 0.3s ease-in-out;
-	}
-
-	@menuItemHover: {
-		border: 1px solid rgba(0, 204, 255, 0.6);
-		background-color: rgba(5, 5, 5, 0.35) !important;
-		box-shadow: 0 0 10px 2px rgba(0, 204, 255, 0.3);
-		transform: translateY(-2px);
-		transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-		border-radius: 12px;
-	}
-
-	@grainyTexture: {
-		content: "" !important;
-		position: absolute !important;
-		top: 0 !important;
-		left: 0 !important;
-		width: 100% !important;
-		height: 100% !important;
-		pointer-events: none !important;
-		z-index: 0 !important;
-		background: url("https://raw.githubusercontent.com/senshastic/sensha-betterer-todoist/refs/heads/main/assets/noise.svg") repeat !important;
-		opacity: 0.23 !important;
-	}
-
-	@backdrop: {
-		background-color: rgba(5, 5, 5, .18) !important;
-		border-radius: 12px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-		padding: 5px;
-	}
-
-	@disappear: {
-		background: transparent !important;
-		border: 0px;
-		box-shadow: none;
-	}
-
-	@transparent: {
-		background: transparent;
-	}
-
-	@noise: {
-		content: "" !important;
-		background: url("https://raw.githubusercontent.com/senshastic/sensha-betterer-todoist/refs/heads/main/assets/noise.svg") repeat !important;
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-size: cover;
-		position: fixed;
-		top: 0 !important;
-		left: 0 !important;
-		width: 100% !important;
-		height: 100% !important;
-		pointer-events: none !important;
-		z-index: -1 !important;
-		opacity: 0.23 !important;
-	}
-
-
-	@boxShadowHover: {
-		box-shadow: 0 0px 10px rgba(0, 204, 255, 0.6);
-		background-color: rgba(0, 81, 255, 0.1);
-	}
-
-	@textArea: {
-		border: 1.5px solid @creamColor !important;
-		background-color: transparent !important;
-	}
-
-	/* ANCHOR [ANIMATIONS] */
-	@hoverChannelSlide: {
-		margin-left: 10px !important;
-		transition: margin-left 0.2s ease;
-		background-color: transparent;
-	}
-
-	/* Snake */
-	@snakeTarget: {
-		position: relative;
-		padding: 16px;
-		border-radius: 18px;
-		background: rgba(0, 0, 0, 0.7);
-		z-index: 1;
-		overflow: hidden;
-	}
-
-
-	@snakeBefore: {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		border-radius: inherit;
-		padding: 3px;
-		background: linear-gradient(90deg, transparent 0%, transparent 40%, white 50%, transparent 60%, transparent 100%);
-		background-size: 200% 200%;
-		animation: smoothSnakeLine 6s linear infinite;
-		-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-		mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-		-webkit-mask-composite: xor;
-		mask-composite: exclude;
-		z-index: -1;
-	}
-
-	@keyframes smoothSnakeLine {
-		0% {
-			background-position: 0% 50%;
-		}
-		100% {
-			background-position: 200% 50%;
-		}
-	}
-
-	/*!SECTION [SNESHLIB - End]*/
-	/*ANCHOR [ROOT] */
-	:root {
-		--fgColor-accent: @creamColor !important;
-		--borderColor-default: @creamColor !important;
-		--borderColor-muted: @creamColorMuted !important;
-	}
-
-	.Button--secondary {
-		background: transparent;
-		border: none;
-		color: @creamColor;
-	}
-
-	.Button--secondary:hover {
-		@buttonsHover();
-		color: @creamColor;
-	}
-
-	.Button--danger {
-		background: transparent !important;
-		border: none;
-	}
-
-	.Button--danger:hover {
-		@transparentButtonsHover();
-		background-color: var(--button-danger-iconColor-rest) !important;
-	}
-
-
-	/*ANCHOR [Top bar] */
-	/* Replaces with hap */
-	#js-logo-nav {
-		display: block;
-		width: 150px;
-		height: 35px;
-		background-image: @hap;
-		background-size: contain;
-		background-repeat: no-repeat;
-		margin-left: 20px;
-	}
-
-	.pz-nav__logo {
-		display: none;
-		/* Hides the original SVG */
-	}
-
-	.AppHeader-button,
-	.AppHeader .AppHeader-globalBar .AppHeader-search input[type=search],
-	.AppHeader .AppHeader-globalBar .AppHeader-search .AppHeader-searchButton {
-		border: 1px solid @creamColorMuted !important;
-	}
-
-
-	/* modals */
-	/*ANCHOR [Gradient background options and grain] */
-	
-
-	
-
-	
-	body when (@gradType =flouss) {
-		@gradientBackground();
-	}
-
-
-	body when (@gradType =animated) {
-		@gradientBackground();
-		background-size: 400% 400%;
-		animation: gradientAnimation 20s ease infinite;
-	}
-
-
-	body when (@gradType =nouss) {
-		background-color: @gradcolor1 !important;
-	}
-
-	div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =flouss) {
-		@gradientBackground();
-	}
-
-
-	div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =animated) {
-		@gradientBackground();
-		background-size: 400% 400%;
-		animation: gradientAnimation 20s ease infinite;
-	}
-
-
-	div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =nouss) {
-		background-color: @gradcolor1 !important;
-	}
-
-
-	@keyframes gradientAnimation {
-		@gradientAnimation();
-	}
-
-
-	.AppHeader::before when (@grain =1) {
-		@noise();
-		z-index: 0 !important;
-	}
-
-	/* Dashboard */
-	.feed-background when (@gradType =flouss) {
-		@gradientBackground();
-	}
-
-
-	.feed-background when (@gradType =animated) {
-		@gradientBackground();
-		background-size: 400% 400%;
-		animation: gradientAnimation 20s ease infinite;
-	}
-
-
-	.feed-background when (@gradType =nouss) {
-		background-color: @gradcolor1 !important;
-	}
-
-	.select-menu-header,
-	.select-menu-divider,
-	.select-menu-filters {
-		background-color: transparent;
-	}
-
-
-
-	/*ANCHOR [Header] */
-	.AppHeader-logo::before {
-		content: "";
-		display: block;
-		width: 32px;
-		height: 32px;
-		background: @hap no-repeat center center;
-		background-size: contain;
-	}
-
-	/* Hide the existing SVG logo */
-	.AppHeader-logo svg {
-		display: none !important;
-	}
-
-
-	.AppHeader {
-		@gradientBackground();
-	}
-
-
-	.AppHeader-context-item:hover {
-		@buttonsHover();
-	}
-
-	/*ANCHOR [Transparenting shit] */
-	/*ANCHOR [Sidebar Styling] */
-	/*ANCHOR [USER PAGE] */
-	.Box,
-	.graph-before-activity-overview {
-		@backdrop();
-		border: none !important;
-	}
-
-	.Box:hover {
-		@boxShadowHover();
-	}
-
-	.btn,
-	.drIBIt {
-		@disappear();
-		border: none !important
-	}
-
-	.btn:hover,
-	.drIBIt:hover {
-		@buttonsHover();
-		border: none !important
-	}
-
-	.color-bg-default,
-	.bgColor-default {
-		@disappear();
-		border: none !important
-	}
-
-	.user-status-circle-badge {
-		@gradientBackground();
-		border: none !important;
-	}
-
-	.js-year-link {
-		@buttons();
-	}
-
-	.js-year-link:hover {
-		@buttonsHover();
-	}
-
-	.Box-body {
-		border: none !important;
-	}
-
-	/* Fix line */
-	.h6.pr-2.py-1.border-bottom.mb-3 {
-		padding-bottom: 19px !important;
-	}
-
-
-	body > div.logged-in.env-production.page-responsive.full-width > div.application-main > div > div > aside > div > div > loading-context > div > div.Details.js-repos-container.mt-5 > div > ul > li:hover {
-		@hoverChannelSlide();
-	}
-
-	/*ANCHOR [EDIT PROFILE] */
-	textarea[id="user_profile_bio"],
-	input[id="user_profile_name"],
-	input[aria-label="Company"],
-	input[aria-label="Location"],
-	select[id="user_profile_email"],
-	input[aria-label="Website"],
-	input[aria-label="Link to social profile"],
-	select[aria-label="Time zone"],
-	select[name="user[profile_pronouns]"],
-	input[id="dashboard-repos-filter-left"],
-	input[placeholder="Find a repository…"],
-	input[aria-label="Filter repositories"],
-	.jJiPKt,
-	.kMKOXm,
-	input[name="user_list[name]"],
-	textarea[name="user_list[description]"],
-	input[id="release-filter"],
-	input[name="repo_description"],
-	input[aria-label="Commit title"],
-	textarea[name="commit_message"]{
-		@textArea();
-	}
-	
-
-	/*ANCHOR [WRITE README] */
-	.eWVknf{
-		background-color: rgba(5, 5, 5, .18) !important;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-	}
-	
-	.ͼ5 .cm-content, .ͼ5 .cm-help-panel, .drag-and-drop, .ͼ8n .cm-content,
-	.Box-sc-g0xbh4-0.NWhVB{
-		@disappear();
-	}
-	.ͼ5, .ͼ8n {
-		background: #00000087;
-	}
-	
-	.TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.xffca.lmsUst {
-		background-color: rgba(5, 5, 5, .18) !important;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-		border: 1px solid @creamColor !important;
-	}
-	
-	.dQJPiZ{
-		background-color: rgba(5, 5, 5, .18) !important;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-	}
-	
-	.Skzpj .segmentedControl-content,
-	.kTeWMB .segmentedControl-content {
-		border: 1px solid @creamColor !important;
-	}
-
-	/*ANCHOR [MOSAIC] */
-	/* Targeting the mosaic element */
-	.graph-before-activity-overview {
-		@snakeTarget();
-	}
-
-	/* Adding the animated glowing gradient border using a pseudo-element  div.relative.max-w-\[70\%\].rounded-3xl::before, */
-	.graph-before-activity-overview::before {
-		@snakeBefore();
-	}
-
-	/*colors mosaic gradient */
-
-
-	:root when (@mosaicType =pink) {
-
-		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-		/* Almost transparent */
-		--color-calendar-graph-day-L1-bg: #ffd1e3 !important;
-		/* Softer blush pink */
-		--color-calendar-graph-day-L2-bg: #ff99c2 !important;
-		/* Slightly deeper soft pink */
-		--color-calendar-graph-day-L3-bg: #ff66b2 !important;
-		/* Medium pink */
-		--color-calendar-graph-day-L4-bg: #cc0052 !important;
-		/* Dark pink */
-		--bgColor-accent-emphasis: @creamColor !important;
-		--tooltip-bgColor: transparent !important;
-	}
-
-
-	:root when (@mosaicType =pink) {
-
-		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-		/* Almost transparent */
-		--color-calendar-graph-day-L1-bg: #ffd1e3 !important;
-		/* Softer blush pink */
-		--color-calendar-graph-day-L2-bg: #ff99c2 !important;
-		/* Slightly deeper soft pink */
-		--color-calendar-graph-day-L3-bg: #ff66b2 !important;
-		/* Medium pink */
-		--color-calendar-graph-day-L4-bg: #cc0052 !important;
-		/* Dark pink */
-		--bgColor-accent-emphasis: @creamColor !important;
-	}
-
-
-	:root when (@mosaicType =citrus) {
-
-		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-		/* Almost transparent */
-		--color-calendar-graph-day-L1-bg: #ffcc66 !important;
-		/* Light neon yellow */
-		--color-calendar-graph-day-L2-bg: #ff9900 !important;
-		/* Bright yellow-orange */
-		--color-calendar-graph-day-L3-bg: #cc5200 !important;
-		/* Bold orange */
-		--color-calendar-graph-day-L4-bg: #663300 !important;
-		/* Dark burnt orange */
-		--bgColor-accent-emphasis: @creamColor !important;
-		--tooltip-bgColor: transparent !important;
-	}
-
-
-	:root when (@mosaicType =berry) {
-
-		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-		/* Almost transparent */
-		--color-calendar-graph-day-L1-bg: #ff99cc !important;
-		/* Light neon lavender */
-		--color-calendar-graph-day-L2-bg: #ff33a6 !important;
-		/* Neon pink */
-		--color-calendar-graph-day-L3-bg: #80004d !important;
-		/* Rich berry */
-		--color-calendar-graph-day-L4-bg: #4d0033 !important;
-		/* Dark magenta */
-		--bgColor-accent-emphasis: @creamColor !important;
-		--tooltip-bgColor: transparent !important;
-	}
-
-
-	:root when (@mosaicType =ocean) {
-
-		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-		/* Almost transparent */
-		--color-calendar-graph-day-L1-bg: #80eaff !important;
-		/* Light neon aqua */
-		--color-calendar-graph-day-L2-bg: #00bfff !important;
-		/* Neon aqua */
-		--color-calendar-graph-day-L3-bg: #004d99 !important;
-		/* Deep blue */
-		--color-calendar-graph-day-L4-bg: #002b66 !important;
-		/* Dark navy */
-		--bgColor-accent-emphasis: @creamColor !important;
-		--tooltip-bgColor: transparent !important;
-	}
-	
-	:root when (@mosaicType =xmas) {
---color-calendar-graph-day-bg: rgba(178, 24, 55, 0.1) !important; /* Almost transparent ruby red */
---color-calendar-graph-day-L1-bg: #5a0410 !important; /* Lighter ruby red */
---color-calendar-graph-day-L2-bg: #9b0000 !important; /* Dark ruby red */
---color-calendar-graph-day-L3-bg: #004d00 !important; /* Evergreen */
---color-calendar-graph-day-L4-bg: #ffd700 !important; /* Gold */
-
-
-
-		--bgColor-accent-emphasis: @creamColor !important;
-		--tooltip-bgColor: transparent !important;
-	}
-
-
-	:root when (@mosaicType =forest) {
-
-		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-		/* Almost transparent */
-		--color-calendar-graph-day-L4-bg: #80ffbf !important;
-		/* Light neon green */
-		--color-calendar-graph-day-L3-bg: #00ff80 !important;
-		/* Fluorescent green */
-		--color-calendar-graph-day-L2-bg: #007f4f !important;
-		/* Dark neon green */
-		--color-calendar-graph-day-L1-bg: #004d26 !important;
-		/* Deep teal */
-		--bgColor-accent-emphasis: @creamColor !important;
-		--tooltip-bgColor: transparent !important;
-	}
-
-
-	:root when (@mosaicType =twilight) {
-
-		--color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-		/* Almost transparent */
-		--color-calendar-graph-day-L1-bg: #ff99e6 !important;
-		/* Light neon pink */
-		--color-calendar-graph-day-L2-bg: #ff33cc !important;
-		/* Neon pink */
-		--color-calendar-graph-day-L3-bg: #8a00e6 !important;
-		/* Neon violet */
-		--color-calendar-graph-day-L4-bg: #4a007d !important;
-		/* Deep purple */
-		--bgColor-accent-emphasis: @creamColor !important;
-		--tooltip-bgColor: transparent !important;
-	}
-
-	:root when (@mosaicType =drama) {
-
-		--color-calendar-graph-day-bg: rgba(10, 10, 20, 0.2) !important;
-		/* Subtle, dark base */
-		--color-calendar-graph-day-L1-bg: #1c1c30 !important;
-		/* Deep blue-gray */
-		--color-calendar-graph-day-L2-bg: #3a243b !important;
-		/* Smoky dark maroon */
-		--color-calendar-graph-day-L3-bg: #60253f !important;
-		/* Muted crimson */
-		--color-calendar-graph-day-L4-bg: #7a3a45 !important;
-		/* Soft, lighter maroon */
-		--bgColor-accent-emphasis: @creamColor !important;
-		--tooltip-bgColor: transparent !important;
-	}
-
-	:root when (@mosaicType =neon) {
-
-		--color-calendar-graph-day-bg: rgba(255, 255, 200, 0.1) !important;
-		/* Almost transparent pale yellow */
-		--color-calendar-graph-day-L1-bg: #a76e0a !important;
-		/* Dark amber-yellow */
-		--color-calendar-graph-day-L2-bg: #ffb300 !important;
-		/* Bold bright yellow */
-		--color-calendar-graph-day-L3-bg: #ffda00 !important;
-		/* Vivid lemon yellow */
-		--color-calendar-graph-day-L4-bg: #ffff00 !important;
-		/* Bright neon yellow */
-		--bgColor-accent-emphasis: @creamColor !important;
-		--tooltip-bgColor: transparent !important;
-	}
-
-	:root when (@mosaicType =nouss) {
-		--bgColor-accent-emphasis: @creamColor !important;
-		--tooltip-bgColor: transparent !important;
-	}
-
-
-
-
-
-
-	/*ANCHOR [DASHBOARD] */
-	
-	tool-tip{
-		@backdrop();
-	}
-	.p-3.mt-2.border.color-border-muted.rounded-1.color-shadow-medium.height-full.color-bg-overlay,
-	.feed-item-content.rounded-2,
-	.color-bg-subtle,
-	.bgColor-muted,
-	{
-		@backdrop();
-		border: none !important;
-	}
-
-	.feed-item-content.rounded-1 {
-		@disappear();
-	}
-
-	.py-3.border-bottom:hover,
-	.py-3.border-0:hover {
-		@boxShadowHover();
-		padding: 7px;
-	}
-
-
-	.py-3.border-bottom,
-	.py-3.border-0 {
-		padding: 7px;
-	}
-
-	/* Modal */
-	.SelectMenu-modal,
-	.gAwGiF,
-	.jclhSs,
-	button[aria-describedby=":R5b5ab:-loading-announcement"],
-	button[id=":rn:"],
-	button[id=":rq:"],
-	button[id=":R535ab:"],
-	button[aria-describedby=":R535ab:-loading-announcement"],
-	button[aria-label="Add file"]{
-		@backdrop();
-		border: 1px solid @creamColor !important;
-	}
-	
-	
-	
-
-	.gfgFTT {
-		border: 1.5px solid @creamColor !important;
-		background-color: transparent !important;
-	}
-
-	.topic-tag:hover {
-		@buttonsHover();
-	}
-
-	/* NOTE the big button selector is .prc-Button-ButtonBase-c50BI but too much imo */
-	
-	.jJOpJy,
-	button[aria-label="Close dialog"]{
-		@disappear();
-	}
-	
-	.jJOpJy:hover,
-	button[aria-label="Close dialog"]:hover{
-		@buttonsHover();
-	}
-	
-
-	.jqwEBk.selected,
-	.gJSxwI.selected,
-	.fQHyfn.selected {
-		background-color: @creamColorMuted !important;
-	}
-
-	button[aria-controls="branches"][aria-selected="false"].hover {
-		background-color: none !important;
-	}
-
-	.cBcJJc,
-	.gFTAHK {
-		@disappear();
-	}
-
-	.bOZZCe,
-	.jNzEbl{
-		@backdrop();
-		border: 1px solid @creamColor !important;
-	}
-	
-	.jNzEbl:hover{
-		@buttonsHover();
-	}
-
-	.SelectMenu-footer.px-2 {
-		@disappear();
-	}
-
-	.bOuPbH {
-		box-shadow: @creamColor 0px 0px 0px 2px !important;
-	}
-
-	.SelectMenu-item,
-	.SelectMenu-list,
-	.jxcXqM,
-	.dlnypB {
-		@disappear();
-	}
-
-	/*ANCHOR [README] */
-	.markdown-body h2{
-		color: @creamColor !important;
-	}
-
-	/*ANCHOR [REPO PAGE] */
-
-
-	.Box-sc-g0xbh4-0.QkQOb.js-snippet-clipboard-copy-unpositioned,
-	.emuNsQ,
-	.kcCxPI,
-	.IsnOs {
-		@backdrop();
-	}
-
-	.react-directory-row:hover {
-		@menuItemHover();
-	}
-
-	.react-directory-row td {
-		border-top: max(0.5px, 0.0625rem) solid @creamColor !important;
-	}
-	
-	.ioYCDf{
-		@disappear();
-	}
-
-
-	.kRIEXD {
-		border: 2px solid @creamColor !important;
-	}
-
-	.mb-2.p-3.border.rounded-2:hover {
-		@boxShadowHover();
-	}
-
-	.dJnomT,
-	.fOlIdb.selected{
-		background-color: rgba(5, 5, 5, .18) !important;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-	}
-
-	.kgetqy {
-		@disappear();
-	}
-
-	.List__ListBox-sc-1x7olzq-0.eoXvfR.react-overview-code-button-action-list,
-	.Box-sc-g0xbh4-0.hgepGv.Box-sc-g0xbh4-0.hgepGv.prc-Button-ButtonBase-c50BI.prc-Link-Link-85e08,
-	button[aria-label="Start conversation"],
-	button[aria-label="More actions"],
-	button[aria-label="Filter"] {
-		@backdrop();
-		border: 1px solid @creamColor !important;
-	}
-
-
-	/*ANCHOR [FILE PAGE] */
-	.gpHFJV {
-		background-color: rgba(5, 5, 5, .18) !important;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-	}
-
-
-	.cDbgyb,
-	.XlAvl,
-	.fnqFQe,
-	.jBaPmj,
-	.hfIjLs,
-	.dRyOTG {
-		@disappear();
-	}
-
-
-	.cDbgyb:hover,
-	.XlAvl:hover,
-	.fnqFQe:hover,
-	.jBaPmj:hover,
-	.hfIjLs:hover,
-	.dRyOTG:hover {
-		@buttonsHover();
-	}
-
-	.fXBJSr {
-		@disappear();
-	}
-
-	.Box-sc-g0xbh4-0.tOISc {
-		@disappear();
-	}
-
-	.jodZGf,
-	.cOgqet,
-	.bourBp {
-		background-color: rgba(5, 5, 5, .18) !important;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-	}
-
-	.segmentedControl-content {
-		@disappear();
-	}
-
-	.gUrqbU .segmentedControl-content,
-	.dyQa-dS .segmentedControl-content {
-		border: 1px solid @creamColor !important;
-	}
-
-	.eYPFoP {
-		background-color: rgba(5, 5, 5, .18) !important;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-		border: none !important;
-	}
-
-	/*ANCHOR [REPO LIST] */
-	.col-12.d-flex.flex-justify-between.width-full.py-4.border-bottom.color-border-muted:hover {
-		@boxShadowHover();
-	}
-
-	.col-12.d-flex.flex-justify-between.width-full.py-4.border-bottom.color-border-muted {
-		@backdrop();
-		margin-top: 10px;
-		border: none !important;
-	}
-	
-	.border-bottom.color-border-muted.py-3{
-		@backdrop();
-		border:none !important;
-	}
-
-	/*ANCHOR [STARS MENU] */
-	.ActionListWrap--inset.ActionListWrap {
-		@backdrop();
-	}
-
-	/*NOTE [THIS IS A BIG ONE NGL] */
-	.Overlay {
-		@disappear();
-	}
-
-	/*ANCHOR [NOTIFICATIONS PAGE ] */
-	.Box-header {
-		@disappear();
-	}
-
-	.notifications-list-item.notification-read,
-	.notifications-list-item.notification-archived {
-		@disappear();
-	}
-
-
-	.ActionListContent:hover {
-		@hoverChannelSlide();
-	}
-
-	/*ANCHOR [SEARCH BAR] */
-	/* When the search bar is clicked or focused */
-	.AppHeader-searchButton:focus,
-	.AppHeader-searchButton:active,
-	.AppHeader-searchButton:hover {
-		z-index: 1000;
-		position: fixed !important;
-		top: 20vh !important;
-		left: 20vw !important;
-		right: 20vw !important;
-		width: 60vw !important;
-
-		background-color: white;
-		border: 1px solid #ccc;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-	}
-
-	/* The search suggestions dropdown */
-	.search-suggestions {
-		position: fixed !important;
-		top: 20% !important;
-		left: 20vw !important;
-		right: 20vw !important;
-		width: 60vw !important;
-
-		z-index: 1000;
-		border-radius: 12px;
-		background-color: white;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-	}
-
-	/* Blur the background when the search bar is active */
-	body.search-active::after {
-		content: "";
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		background-color: rgba(0, 0, 0, 0.3);
-		backdrop-filter: blur(5px);
-		z-index: 999;
-	}
-
-	/* Optionally remove the fixed position and blur effect when search loses focus */
-	body:not(.search-active) .AppHeader-searchButton {
-		position: static !important;
-		left: auto !important;
-		right: auto !important;
-		top: auto !important;
-		z-index: 1;
-		box-shadow: none;
-		width: 100% !important;
-		/* Reset width */
-		transition: width 0.3s ease;
-		/* Smooth shrinking */
-	}
-
-
-	.search-suggestions {
-		@backdrop();
-	}
-
-	.QueryBuilder-StyledInput {
-		@backdrop();
-		border: none;
-	}
-
-	.QueryBuilder-focus {
-		outline: none;
-	}
-
-	.search-input.expanded > div > div.AppHeader-search-whenRegular {
-		display: none !important;
-	}
-	.search-suggestions {
-		border: 0.5px solid @creamColor !important;
-	}
-
-	/*ANCHOR [SETTINGS] */
-	dialog {
-		@backdrop();
-	}
-
-	.flash-banner,
-	.flash-full {
-		@backdrop();
-	}
-
-	/*ANCHOR [NOTIFICATIONS] */
-	.btn.selected,
-	.btn[aria-selected=true] {
-		@disappear();
-	}
-
-	.btn.selected:hover,
-	.btn[aria-selected=true]:hover {
-		@buttonsHover();
-	}
-
-	.ActionList-sectionDivider {
-		@backdrop();
-	}
-
-	.FormControl-input {
-		@disappear();
-	}
-
-	/*ANCHOR [PROJECTS] */
-	.border-top {
-		border: none!important;
-	}
-
-	/*ANCHOR [CODE FILE PAGE] */
-	.panel-content-narrow-styles {
-		@backdrop();
-	}
-	.hpHiUV{
-		@disappear();
-	}
-	
-	.dufIPq{
-		background-color: rgba(5, 5, 5, .18) !important;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-	}
-
-	.kexQoK,
-	.haQWCL,
-	.eEsVFK:disabled {
-		@disappear();
-	}
-
-	.Box-sc-g0xbh4-0.dKXtYX,
-	.fflxCk {
-		background-color: transparent !important;	
-	}
-
-	[aria-label="Previous reference"]:hover,
-	[aria-label="Next reference"]:hover {
-		@buttonsHover();
-	}
-
-	.Box-sc-g0xbh4-0.kTMYBM:hover {
-
-		background-color: var(--control-transparent-bgColor-hover) !important;
-	}
-
-	.PRIVATE_TreeView-item:hover {
-		@hoverChannelSlide();
-	}
-
-
-	.jAlLSY th {
-		@disappear();
-	}
-
-	.eWEbRA:hover {
-		@menuItemHover();
-	}
-
-	.TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.fgiTUz.klSCQM.TextInput-wrapper {
-		@textArea();
-	}
-
-	.eoIeZr {
-		@disappear();
-	}
-
-
-
-	/*ANCHOR [CREATE A REPO PAGE] */
-	.iBpOGA {
-		@backdrop();
-	}
-
-	.cujkRS {
-		@textArea();
-	}
-
-	/*ANCHOR [GITHUB DOCS] */
-	.fDlMNy,
-	.jXUMlK,
-	.dA-dVZO {
-		@backdrop();
-	}
-
-	.markdown-body table tr {
-		@backdrop();
-		border-top: none !important;
-	}
-
-	.MarkdownContent_markdownBody__v5MYy table thead td,
-	.MarkdownContent_markdownBody__v5MYy table thead th {
-		box-shadow: inset 0 -2px @creamColor;
-	}
-
-	.MarkdownContent_markdownBody__v5MYy table tbody td,
-	.MarkdownContent_markdownBody__v5MYy table tbody th {
-		box-shadow: inset 0 -1px @creamColorMuted;
-	}
-
-
-	table {
-		@backdrop();
-		border-color: @creamColor !important;
-	}
-
-	.TableHeader {
-		@disappear();
-	}
-
-
-	.hNkDDR,
-	.crArEc {
-		background-color: transparent !important
-	}
-
-	.cHTOlv:hover,
-	.cXuGuz:hover,
-	.biIjJG:hover {
-		@hoverChannelSlide();
-	}
-
-	.dYDZmW {
-		@textArea();
-	}
-
-
-	/*ANCHOR [COMMUNITY] */
-	.list-style-none.border.px-3.color-bg-overlay.rounded-2 {
-		@backdrop();
-	}
-
-	.select-menu-modal,
-	.timeline-comment {
-		@backdrop();
-	}
-	.select-menu-item {
-		@disappear();
-	}
-
-	.ActionList-item:hover {
-		@hoverChannelSlide();
-	}
-
-	body > div.logged-in.env-production.page-responsive.color-bg-inset > div.application-main > main > div > div.container-xl.p-responsive.clearfix > div.clearfix.container-xl > div > div.Layout-main > div > div.Layout-main > ul.list-style-none.border.px-3.mb-2.color-bg-overlay.rounded-2,
-	body > div.logged-in.env-production.page-responsive.color-bg-inset > div.application-main > main > div > div.container-xl.p-responsive.clearfix > div.clearfix.container-xl > div > div.Layout-main > div > div.Layout-main > ul:nth-child(5) {
-		@backdrop()
-	}
-
-
-	.Box-row:hover {
-		@boxShadowHover();
-	}
-
-	.bg-discussions-row-emoji-box,
-	.bg-discussions-row-emoji-box-small,
-	.review-thread-reply,
-	.CommentBox-header,
-	.discussion-timeline-actions,
-	.color-bg-inset,
-	.bgColor-inset {
-		@disappear();
-	}
-
-	.gh-header .gh-header-sticky.is-stuck + .gh-header-shadow {
-		@gradientBackground();
-	}
-
-	.tabnav-tab.selected,
-	.tabnav-tab[aria-current]:not([aria-current=false]),
-	.tabnav-tab[aria-selected=true] {
-		background-color: @creamColorMuted;
-	}
-
-
-	.review-thread-reply-button.form-control.js-discussions-previewable-comment-form.btn-link.btn-block.no-underline.color-fg-muted.text-left.text-normal.ml-0 {
-		@transparentButtons();
-		border: 0px solid @creamColor !important;
-		background: @creamColorMuted;
-		color: white !important;
-	}
-
-	.review-thread-reply-button.form-control.js-discussions-previewable-comment-form.btn-link.btn-block.no-underline.color-fg-muted.text-left.text-normal.ml-0:hover {
-		@buttonsHover();
-		color: white !important;
-	}
-
-
-	/*ANCHOR [COMMITS] */
-	.Panel-module__container--i4g9d {
-		@disappear();
-	}
-
-	button[aria-label="Go to previous month"],
-	button[aria-label="Go to next month"] {
-		@disappear();
-	}
-
-	button[aria-label="Go to previous month"]:hover,
-	button[aria-label="Go to next month"]:hover {
-		@buttonsHover();
-	}
-
-	.Day-module__day--ZcbvX:hover {
-		@buttonsHover();
-	}
-
-	.Day-module__day--ZcbvX.Day-module__selected--DfMaK {
-		background-color: @creamColor !important;
-	}
-
-	.Day-module__day--ZcbvX.Day-module__selected--DfMaK.Day-module__rangeMiddle--gfg7k {
-		background-color: @creamColorMuted !important;
-	}
-
-	.Panel-module__picker--gTDgA {
-		@backdrop();
-	}
-
-	.ListItem-module__listItem--kHali:hover {
-		@boxShadowHover();
-	}
-
-	.FilterInputWrapper-module__Box_1--vewob {
-		@disappear();
-	}
-
-	/*ANCHOR [COPILOT] */
-	.ivKSmi {
-		@backdrop();
-		border: 1px solid @creamColor !important;
-	}
-
-	.leXapx {
-		@textArea();
-	}
-
-	.ivKSmi,
-	.dgBfwJ {
-		@disappear();
-	}
-
-	.menu,
-	.kAsnol {
-		@backdrop();
-		border: 1px solid @creamColor !important;
-	}
-	.menu-item.selected,
-	.menu-item[aria-current]:not([aria-current=false]),
-	.menu-item[aria-selected=true] {
-		@disappear();
-	}
-	input[name="query"] {
-		@textArea();
-	}
-
-	/*ANCHOR [PULL REQUESTS] */
-	.subnav-item.selected,
-	.subnav-item[aria-selected=true],
-	.subnav-item[aria-current]:not([aria-current=false]) {
-		background-color: @creamColor !important;
-		border: 1px solid @creamColor !important;
-	}
-
-	.subnav-item:hover {
-		background-color: @creamColorMuted !important;
-	}
-
-
-	.subnav-item,
-	input[id="js-issues-search"] {
-		border: 1px solid @creamColor !important;
-	}
-	
-	.Box-row--focus-gray.navigation-focus,
-	.gh-header,
-	.timeline-comment-header {
-		background-color: transparent !important;
-	}
-
-	.SelectMenu-modal {
-		z-index: 1000;
-	}
-
-	.SelectMenu-divider {
-		@disappear();
-	}
-
-	.dropdown-menu {
-		@backdrop();
-	}
-
-	.dropdown-menu:after {
-		@disappear();
-	}
-	
-	.range-editor,
-	.branch-action-state-clean .branch-action-body::before{
-		background: transparent;
-	}
-	
-	.TimelineItem-break,
-	.branch-action-body .merge-message{
-		background: transparent;
-	}
-	
-	.notifications-list-item.notification-unread{
-		@disappear();
-	}
-	
-	.file-header,
-	.branch-action-body{
-		background-color: rgba(5, 5, 5, .18) !important;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-	}
-
-	/*ANCHOR [COMMIT DETAILS] */
-	.TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.gvtfsN.fCHmyD.TextInput-wrapper {
-		@textArea();
-	}
-
-
-	.hDaTHW {
-		@disappear();
-	}
-
-	.gClVUD,
-	.drELTT {
-		background-color: transparent;
-		border: 1px solid @creamColor !important;
-	}
-
-	.Diff-module__diffHeaderWrapper--rsdD4:before,
-	.Diff-module__diffHeaderWrapper--rsdD4 {
-		background-color: transparent;
-	}
-
-	.DiffFileHeader-module__diff-file-header--TjXyn,
-	.d-flex.flex-items-center.flex-justify-between.gap-2.pt-3.pt-lg-4.pb-2.position-sticky.top-0.color-bg-default {
-		background-color: rgba(5, 5, 5, .18) !important;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-		border: 1px solid @creamColor !important;
-	}
-
-	.dRfQdO {
-		@transparentButtons();
-		border: 0px solid @creamColor !important;
-		background: @creamColorMuted;
-		color: white !important;
-	}
-
-	.dRfQdO:hover {
-		@transparentButtonsHover();
-		background: @creamColor;
-		color: white !important;
-	}
-
-	/* ANCHOR JS Sidebar Styling */
-	.SidePanel,
-	.jBUQU {
-		opacity: 1;
-		position: fixed;
-		background-color: rgba(255, 255, 255, 0.1);
-		backdrop-filter: blur(25px) saturate(200%) contrast(90%);
-		-webkit-backdrop-filter: blur(25px) saturate(200%) contrast(90%);
-		color: white;
-		z-index: 1001;
-		overflow-y: auto;
-		border: 1px solid rgba(255, 255, 255, 0.2);
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	}
-
-	/* Optional: Sidebar Buttons Styling */
-	.SidePanel button,
-	.SidePanel a {
-		color: white;
-		opacity: 0.9;
-		transition: color 0.3s ease, opacity 0.3s ease;
-	}
-
-	.SidePanel button:hover,
-	.SidePanel a:hover {
-		color: rgba(255, 255, 255, 1);
-		opacity: 1;
-	}
-
-	.Overlay-closeButton.close-button:hover {
-		@buttonsHover();
-	}
-
-	.Overlay-closeButton:focus,
-	.Overlay-closeButton:hover {
-		background: transparent !important;
-	}
-
-	.Item__LiBox-sc-yeql7o-0.imEANS:hover {
-		@hoverChannelSlide();
-	}
-
-	/*ANCHOR [GITHUB SUPPORT] */
-	.Dialog__StyledDialog-sc-uaxjsn-1 {
-		@backdrop();
-	}
-	
-
-	/*ANCHOR [MOSAIC DRAMA] */
-
-@keyframes glowWaveBlue {
-    0%, 100% {
-        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
-        transform: translateY(0);
+    /*ANCHOR [DETACHED RULESETS] */
+    @gradientBackground: {
+        background: linear-gradient(109.6deg, @gradcolor1 0%, @gradcolor2 25%, @gradcolor3 50%, @gradcolor4 100%);
     }
-    50% {
-        box-shadow: 0 0 2px rgba(149, 169, 186, .7), 0 0 5px rgb(13, 97, 203), 0 0 10px rgba(137, 189, 205, .58);
-        transform: translateY(-1px);
-    }
-}
 
-.applyGlowWaveBlue() when (@mosaicType = ocean) {
+    @gradientAnimation: {
+        0% {
+            background-position: 0% 0%;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        100% {
+            background-position: 0% 0%;
+        }
+    }
+
+    @buttons: {
+        background-color: rgba(5, 5, 5, .18) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    @buttonsHover: {
+        background-color: rgba(5, 5, 5, 0) !important;
+        border-radius: 12px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        transform: translateY(-4px);
+    }
+
+    @transparentButtons: {
+        border-radius: 12px !important;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    @buttonsFlat: {
+        border-radius: 12px !important;
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+
+    @transparentButtonsHover: {
+        border-radius: 12px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
+        -webkit-backdrop-filter: blur(100px);
+        backdrop-filter: blur(100px) saturate(110%);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        transform: translateY(-4px);
+    }
+
+
+    @buttonsHoverWhite: {
+        background-color: rgba(5, 5, 5, 0) !important;
+        border-radius: 12px;
+        box-shadow: 0 8px 15px rgba(255, 255, 255, .37) !important;
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transform: translateY(-4px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform box-shadow 0.3s ease-in-out;
+    }
+
+    @menuItemHover: {
+        border: 1px solid rgba(0, 204, 255, 0.6);
+        background-color: rgba(5, 5, 5, 0.35) !important;
+        box-shadow: 0 0 10px 2px rgba(0, 204, 255, 0.3);
+        transform: translateY(-2px);
+        transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+        border-radius: 12px;
+    }
+
+    @grainyTexture: {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        pointer-events: none !important;
+        z-index: 0 !important;
+        background: url("https://raw.githubusercontent.com/senshastic/sensha-betterer-todoist/refs/heads/main/assets/noise.svg") repeat !important;
+        opacity: 0.23 !important;
+    }
+
+    @backdrop: {
+        background-color: rgba(5, 5, 5, .18) !important;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        padding: 5px;
+    }
+
+    @disappear: {
+        background: transparent !important;
+        border: 0px;
+        box-shadow: none;
+    }
+
+    @transparent: {
+        background: transparent;
+    }
+
+    @noise: {
+        content: "" !important;
+        background: url("https://raw.githubusercontent.com/senshastic/sensha-betterer-todoist/refs/heads/main/assets/noise.svg") repeat !important;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: fixed;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        pointer-events: none !important;
+        z-index: -1 !important;
+        opacity: 0.23 !important;
+    }
+
+
+    @boxShadowHover: {
+        box-shadow: 0 0px 10px rgba(0, 204, 255, 0.6);
+        background-color: rgba(0, 81, 255, 0.1);
+    }
+
+    @textArea: {
+        border: 1.5px solid @creamColor !important;
+        background-color: transparent !important;
+    }
+
+    @doubleThingy: {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(25px) saturate(200%) contrast(90%);
+        -webkit-backdrop-filter: blur(25px) saturate(200%) contrast(90%);
+        color: white;
+        z-index: 1000;
+        overflow-y: auto;
+        scrollbar-width: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+        border-radius: inherit;
+    }
+
+    /* ANCHOR [ANIMATIONS] */
+    @hoverChannelSlide: {
+        margin-left: 10px !important;
+        transition: margin-left 0.2s ease;
+        background-color: transparent;
+    }
+
+    /* Snake */
+    @snakeTarget: {
+        position: relative;
+        padding: 16px;
+        border-radius: 18px;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+        overflow: hidden;
+    }
+
+
+    @snakeBefore: {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: inherit;
+        padding: 3px;
+        background: linear-gradient(90deg, transparent 0%, transparent 40%, white 50%, transparent 60%, transparent 100%);
+        background-size: 200% 200%;
+        animation: smoothSnakeLine 6s linear infinite;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: -1;
+    }
+
+    @keyframes smoothSnakeLine {
+        0% {
+            background-position: 0% 50%;
+        }
+        100% {
+            background-position: 200% 50%;
+        }
+    }
+
+    /*!SECTION [SNESHLIB - End]*/
+    /*ANCHOR [ROOT] */
+    :root {
+        --fgColor-accent: @creamColor !important;
+        --borderColor-default: @creamColor !important;
+        --borderColor-muted: @creamColorMuted !important;
+    }
+
+    .Button--secondary {
+        background: transparent;
+        border: none;
+        color: @creamColor;
+    }
+
+    .Button--secondary:hover {
+        @buttonsHover();
+        color: @creamColor;
+    }
+
+    .Button--danger {
+        background: transparent !important;
+        border: none;
+    }
+
+    .Button--danger:hover {
+        @transparentButtonsHover();
+        background-color: var(--button-danger-iconColor-rest) !important;
+    }
+
+
+    /*ANCHOR [Top bar] */
+    /* Replaces with hap */
+    #js-logo-nav {
+        display: block;
+        width: 150px;
+        height: 35px;
+        background-image: @hap;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: 20px;
+    }
+
+    .pz-nav__logo {
+        display: none;
+        /* Hides the original SVG */
+    }
+
+    .AppHeader-button,
+    .AppHeader .AppHeader-globalBar .AppHeader-search input[type=search],
+    .AppHeader .AppHeader-globalBar .AppHeader-search .AppHeader-searchButton {
+        border: 1px solid @creamColorMuted !important;
+    }
+
+
+    /* modals */
+    /*ANCHOR [Gradient background options and grain] */
+    body when (@gradType =flouss) {
+        @gradientBackground();
+    }
+
+
+    body when (@gradType =animated) {
+        @gradientBackground();
+        background-size: 400% 400%;
+        animation: gradientAnimation 20s ease infinite;
+    }
+
+
+    body when (@gradType =nouss) {
+        background-color: @gradcolor1 !important;
+    }
+
+    div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =flouss) {
+        @gradientBackground();
+    }
+
+
+    div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =animated) {
+        @gradientBackground();
+        background-size: 400% 400%;
+        animation: gradientAnimation 20s ease infinite;
+    }
+
+
+    div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =nouss) {
+        background-color: @gradcolor1 !important;
+    }
+
+
+    @keyframes gradientAnimation {
+        @gradientAnimation();
+    }
+
+
+    .AppHeader::before when (@grain =1) {
+        @noise();
+        z-index: 0 !important;
+    }
+
+    /* Dashboard */
+    .feed-background when (@gradType =flouss) {
+        @gradientBackground();
+    }
+
+
+    .feed-background when (@gradType =animated) {
+        @gradientBackground();
+        background-size: 400% 400%;
+        animation: gradientAnimation 20s ease infinite;
+    }
+
+
+    .feed-background when (@gradType =nouss) {
+        background-color: @gradcolor1 !important;
+    }
+
+    .select-menu-header,
+    .select-menu-divider,
+    .select-menu-filters {
+        background-color: transparent;
+    }
+
+
+
+    /*ANCHOR [Header] */
+    .AppHeader-logo::before {
+        content: "";
+        display: block;
+        width: 32px;
+        height: 32px;
+        background: @hap no-repeat center center;
+        background-size: contain;
+    }
+
+    /* Hide the existing SVG logo */
+    .AppHeader-logo svg {
+        display: none !important;
+    }
+
+
+    .AppHeader {
+        @gradientBackground();
+    }
+
+
+    .AppHeader-context-item:hover {
+        @buttonsHover();
+    }
+
+    /*ANCHOR [Transparenting shit] */
+    /*ANCHOR [Sidebar Styling] */
+    /*ANCHOR [USER PAGE] */
+    .Box,
+    .graph-before-activity-overview {
+        @backdrop();
+        border: none !important;
+    }
+
+    .Box:hover {
+        @boxShadowHover();
+    }
+
+    .btn,
+    .drIBIt {
+        @disappear();
+        border: none !important
+    }
+
+    .btn:hover,
+    .drIBIt:hover {
+        @buttonsHover();
+        border: none !important
+    }
+
+    .color-bg-default,
+    .bgColor-default {
+        @disappear();
+        border: none !important
+    }
+
+    .user-status-circle-badge {
+        @gradientBackground();
+        border: none !important;
+    }
+
+    .js-year-link {
+        @buttons();
+    }
+
+    .js-year-link:hover {
+        @buttonsHover();
+    }
+
+    .Box-body {
+        border: none !important;
+    }
+
+    /* Fix line */
+    .h6.pr-2.py-1.border-bottom.mb-3 {
+        padding-bottom: 19px !important;
+    }
+
+
+    body > div.logged-in.env-production.page-responsive.full-width > div.application-main > div > div > aside > div > div > loading-context > div > div.Details.js-repos-container.mt-5 > div > ul > li:hover {
+        @hoverChannelSlide();
+    }
+
+    /*ANCHOR [EDIT PROFILE] */
+    textarea[id="user_profile_bio"],
+    input[id="user_profile_name"],
+    input[aria-label="Company"],
+    input[aria-label="Location"],
+    select[id="user_profile_email"],
+    input[aria-label="Website"],
+    input[aria-label="Link to social profile"],
+    select[aria-label="Time zone"],
+    select[name="user[profile_pronouns]"],
+    input[id="dashboard-repos-filter-left"],
+    input[placeholder="Find a repository…"],
+    input[aria-label="Filter repositories"],
+    .jJiPKt,
+    .kMKOXm,
+    input[name="user_list[name]"],
+    textarea[name="user_list[description]"],
+    input[id="release-filter"],
+    input[name="repo_description"],
+    input[aria-label="Commit title"],
+    textarea[name="commit_message"] {
+        @textArea();
+    }
+
+
+    /*ANCHOR [WRITE README] */
+    .eWVknf {
+        background-color: rgba(5, 5, 5, .18) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .ͼ5 .cm-content,
+    .ͼ5 .cm-help-panel,
+    .drag-and-drop,
+    .ͼ8n .cm-content,
+    .Box-sc-g0xbh4-0.NWhVB {
+        @disappear();
+    }
+    .ͼ5,
+    .ͼ8n {
+        background: #00000087;
+    }
+
+    .TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.xffca.lmsUst {
+        background-color: rgba(5, 5, 5, .18) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        border: 1px solid @creamColor !important;
+    }
+
+    .dQJPiZ {
+        background-color: rgba(5, 5, 5, .18) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .Skzpj .segmentedControl-content,
+    .kTeWMB .segmentedControl-content {
+        border: 1px solid @creamColor !important;
+    }
+
+    /*ANCHOR [MOSAIC] */
+    /* Targeting the mosaic element */
+    .graph-before-activity-overview {
+        @snakeTarget();
+    }
+
+    /* Adding the animated glowing gradient border using a pseudo-element  div.relative.max-w-\[70\%\].rounded-3xl::before, */
+    .graph-before-activity-overview::before {
+        @snakeBefore();
+    }
+
+    /*colors mosaic gradient */
+    :root when (@mosaicType =pink) {
+
+        --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+        /* Almost transparent */
+        --color-calendar-graph-day-L1-bg: #ffd1e3 !important;
+        /* Softer blush pink */
+        --color-calendar-graph-day-L2-bg: #ff99c2 !important;
+        /* Slightly deeper soft pink */
+        --color-calendar-graph-day-L3-bg: #ff66b2 !important;
+        /* Medium pink */
+        --color-calendar-graph-day-L4-bg: #cc0052 !important;
+        /* Dark pink */
+        --bgColor-accent-emphasis: @creamColor !important;
+        --tooltip-bgColor: transparent !important;
+    }
+
+
+    :root when (@mosaicType =pink) {
+
+        --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+        /* Almost transparent */
+        --color-calendar-graph-day-L1-bg: #ffd1e3 !important;
+        /* Softer blush pink */
+        --color-calendar-graph-day-L2-bg: #ff99c2 !important;
+        /* Slightly deeper soft pink */
+        --color-calendar-graph-day-L3-bg: #ff66b2 !important;
+        /* Medium pink */
+        --color-calendar-graph-day-L4-bg: #cc0052 !important;
+        /* Dark pink */
+        --bgColor-accent-emphasis: @creamColor !important;
+    }
+
+
+    :root when (@mosaicType =citrus) {
+
+        --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+        /* Almost transparent */
+        --color-calendar-graph-day-L1-bg: #ffcc66 !important;
+        /* Light neon yellow */
+        --color-calendar-graph-day-L2-bg: #ff9900 !important;
+        /* Bright yellow-orange */
+        --color-calendar-graph-day-L3-bg: #cc5200 !important;
+        /* Bold orange */
+        --color-calendar-graph-day-L4-bg: #663300 !important;
+        /* Dark burnt orange */
+        --bgColor-accent-emphasis: @creamColor !important;
+        --tooltip-bgColor: transparent !important;
+    }
+
+
+    :root when (@mosaicType =berry) {
+
+        --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+        /* Almost transparent */
+        --color-calendar-graph-day-L1-bg: #ff99cc !important;
+        /* Light neon lavender */
+        --color-calendar-graph-day-L2-bg: #ff33a6 !important;
+        /* Neon pink */
+        --color-calendar-graph-day-L3-bg: #80004d !important;
+        /* Rich berry */
+        --color-calendar-graph-day-L4-bg: #4d0033 !important;
+        /* Dark magenta */
+        --bgColor-accent-emphasis: @creamColor !important;
+        --tooltip-bgColor: transparent !important;
+    }
+
+
+    :root when (@mosaicType =ocean) {
+
+        --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+        /* Almost transparent */
+        --color-calendar-graph-day-L1-bg: #80eaff !important;
+        /* Light neon aqua */
+        --color-calendar-graph-day-L2-bg: #00bfff !important;
+        /* Neon aqua */
+        --color-calendar-graph-day-L3-bg: #004d99 !important;
+        /* Deep blue */
+        --color-calendar-graph-day-L4-bg: #002b66 !important;
+        /* Dark navy */
+        --bgColor-accent-emphasis: @creamColor !important;
+        --tooltip-bgColor: transparent !important;
+    }
+
+    :root when (@mosaicType =xmas) {
+        --color-calendar-graph-day-bg: rgba(178, 24, 55, 0.1) !important;
+        /* Almost transparent ruby red */
+        --color-calendar-graph-day-L1-bg: #5a0410 !important;
+        /* Lighter ruby red */
+        --color-calendar-graph-day-L2-bg: #9b0000 !important;
+        /* Dark ruby red */
+        --color-calendar-graph-day-L3-bg: #004d00 !important;
+        /* Evergreen */
+        --color-calendar-graph-day-L4-bg: #ffd700 !important;
+        /* Gold */
+        --bgColor-accent-emphasis: @creamColor !important;
+        --tooltip-bgColor: transparent !important;
+    }
+
+
+    :root when (@mosaicType =forest) {
+
+        --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+        /* Almost transparent */
+        --color-calendar-graph-day-L4-bg: #80ffbf !important;
+        /* Light neon green */
+        --color-calendar-graph-day-L3-bg: #00ff80 !important;
+        /* Fluorescent green */
+        --color-calendar-graph-day-L2-bg: #007f4f !important;
+        /* Dark neon green */
+        --color-calendar-graph-day-L1-bg: #004d26 !important;
+        /* Deep teal */
+        --bgColor-accent-emphasis: @creamColor !important;
+        --tooltip-bgColor: transparent !important;
+    }
+
+
+    :root when (@mosaicType =twilight) {
+
+        --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+        /* Almost transparent */
+        --color-calendar-graph-day-L1-bg: #ff99e6 !important;
+        /* Light neon pink */
+        --color-calendar-graph-day-L2-bg: #ff33cc !important;
+        /* Neon pink */
+        --color-calendar-graph-day-L3-bg: #8a00e6 !important;
+        /* Neon violet */
+        --color-calendar-graph-day-L4-bg: #4a007d !important;
+        /* Deep purple */
+        --bgColor-accent-emphasis: @creamColor !important;
+        --tooltip-bgColor: transparent !important;
+    }
+
+    :root when (@mosaicType =drama) {
+
+        --color-calendar-graph-day-bg: rgba(10, 10, 20, 0.2) !important;
+        /* Subtle, dark base */
+        --color-calendar-graph-day-L1-bg: #1c1c30 !important;
+        /* Deep blue-gray */
+        --color-calendar-graph-day-L2-bg: #3a243b !important;
+        /* Smoky dark maroon */
+        --color-calendar-graph-day-L3-bg: #60253f !important;
+        /* Muted crimson */
+        --color-calendar-graph-day-L4-bg: #7a3a45 !important;
+        /* Soft, lighter maroon */
+        --bgColor-accent-emphasis: @creamColor !important;
+        --tooltip-bgColor: transparent !important;
+    }
+
+    :root when (@mosaicType =neon) {
+
+        --color-calendar-graph-day-bg: rgba(255, 255, 200, 0.1) !important;
+        /* Almost transparent pale yellow */
+        --color-calendar-graph-day-L1-bg: #a76e0a !important;
+        /* Dark amber-yellow */
+        --color-calendar-graph-day-L2-bg: #ffb300 !important;
+        /* Bold bright yellow */
+        --color-calendar-graph-day-L3-bg: #ffda00 !important;
+        /* Vivid lemon yellow */
+        --color-calendar-graph-day-L4-bg: #ffff00 !important;
+        /* Bright neon yellow */
+        --bgColor-accent-emphasis: @creamColor !important;
+        --tooltip-bgColor: transparent !important;
+    }
+
+    :root when (@mosaicType =nouss) {
+        --bgColor-accent-emphasis: @creamColor !important;
+        --tooltip-bgColor: transparent !important;
+    }
+
+
+
+
+
+
+    /*ANCHOR [DASHBOARD] */
+    tool-tip {
+        @backdrop();
+    }
+    .p-3.mt-2.border.color-border-muted.rounded-1.color-shadow-medium.height-full.color-bg-overlay,
+    .feed-item-content.rounded-2,
+    .color-bg-subtle,
+    .bgColor-muted,
+    {
+        @backdrop();
+        border: none !important;
+    }
+
+    .feed-item-content.rounded-1 {
+        @disappear();
+    }
+
+    .py-3.border-bottom:hover,
+    .py-3.border-0:hover {
+        @boxShadowHover();
+        padding: 7px;
+    }
+
+
+    .py-3.border-bottom,
+    .py-3.border-0 {
+        padding: 7px;
+    }
+
+    /* Modal */
+    .SelectMenu-modal,
+    .gAwGiF,
+    .jclhSs,
+    button[aria-describedby=":R5b5ab:-loading-announcement"],
+    button[id=":rn:"],
+    button[id=":rq:"],
+    button[id=":R535ab:"],
+    button[aria-describedby=":R535ab:-loading-announcement"],
+    button[aria-label="Add file"] {
+        @backdrop();
+        border: 1px solid @creamColor !important;
+    }
+
+
+
+
+    .gfgFTT {
+        border: 1.5px solid @creamColor !important;
+        background-color: transparent !important;
+    }
+
+    .topic-tag:hover {
+        @buttonsHover();
+    }
+
+    /* NOTE the big button selector is .prc-Button-ButtonBase-c50BI but too much imo */
+    .jJOpJy,
+    button[aria-label="Close dialog"] {
+        @disappear();
+    }
+
+    .jJOpJy:hover,
+    button[aria-label="Close dialog"]:hover {
+        @buttonsHover();
+    }
+
+
+    .jqwEBk.selected,
+    .gJSxwI.selected,
+    .fQHyfn.selected {
+        background-color: @creamColorMuted !important;
+    }
+
+    button[aria-controls="branches"][aria-selected="false"].hover {
+        background-color: none !important;
+    }
+
+    .cBcJJc,
+    .gFTAHK {
+        @disappear();
+    }
+
+    .bOZZCe,
+    .jNzEbl {
+        @backdrop();
+        border: 1px solid @creamColor !important;
+    }
+
+    .jNzEbl:hover {
+        @buttonsHover();
+    }
+
+    .SelectMenu-footer.px-2 {
+        @disappear();
+    }
+
+    .bOuPbH {
+        box-shadow: @creamColor 0px 0px 0px 2px !important;
+    }
+
+    .SelectMenu-item,
+    .SelectMenu-list,
+    .jxcXqM,
+    .dlnypB {
+        @disappear();
+    }
+
+    /*ANCHOR [README] */
+    .markdown-body h2 {
+        color: @creamColor !important;
+    }
+
+    /*ANCHOR [REPO PAGE] */
+    .Box-sc-g0xbh4-0.QkQOb.js-snippet-clipboard-copy-unpositioned,
+    .emuNsQ,
+    .kcCxPI,
+    .IsnOs {
+        @backdrop();
+    }
+
+    .react-directory-row:hover {
+        @menuItemHover();
+    }
+
+    .react-directory-row td {
+        border-top: max(0.5px, 0.0625rem) solid @creamColor !important;
+    }
+
+    .ioYCDf {
+        @disappear();
+    }
+
+
+    .kRIEXD {
+        border: 2px solid @creamColor !important;
+    }
+
+    .mb-2.p-3.border.rounded-2:hover {
+        @boxShadowHover();
+    }
+
+    .dJnomT,
+    .fOlIdb.selected {
+        background-color: rgba(5, 5, 5, .18) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .kgetqy {
+        @disappear();
+    }
+
+    .List__ListBox-sc-1x7olzq-0.eoXvfR.react-overview-code-button-action-list,
+    .Box-sc-g0xbh4-0.hgepGv.Box-sc-g0xbh4-0.hgepGv.prc-Button-ButtonBase-c50BI.prc-Link-Link-85e08,
+    button[aria-label="Start conversation"],
+    button[aria-label="More actions"],
+    button[aria-label="Filter"] {
+        @backdrop();
+        border: 1px solid @creamColor !important;
+    }
+
+
+    /*ANCHOR [FILE PAGE] */
+    .gpHFJV {
+        background-color: rgba(5, 5, 5, .18) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+
+    .cDbgyb,
+    .XlAvl,
+    .fnqFQe,
+    .jBaPmj,
+    .hfIjLs,
+    .dRyOTG {
+        @disappear();
+    }
+
+
+    .cDbgyb:hover,
+    .XlAvl:hover,
+    .fnqFQe:hover,
+    .jBaPmj:hover,
+    .hfIjLs:hover,
+    .dRyOTG:hover {
+        @buttonsHover();
+    }
+
+    .fXBJSr {
+        @disappear();
+    }
+
+    .Box-sc-g0xbh4-0.tOISc {
+        @disappear();
+    }
+
+    .jodZGf,
+    .cOgqet,
+    .bourBp {
+        background-color: rgba(5, 5, 5, .18) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .segmentedControl-content {
+        @disappear();
+    }
+
+    .gUrqbU .segmentedControl-content,
+    .dyQa-dS .segmentedControl-content {
+        border: 1px solid @creamColor !important;
+    }
+
+    .eYPFoP {
+        background-color: rgba(5, 5, 5, .18) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        border: none !important;
+    }
+
+    /*ANCHOR [REPO LIST] */
+    .col-12.d-flex.flex-justify-between.width-full.py-4.border-bottom.color-border-muted:hover {
+        @boxShadowHover();
+    }
+
+    .col-12.d-flex.flex-justify-between.width-full.py-4.border-bottom.color-border-muted {
+        @backdrop();
+        margin-top: 10px;
+        border: none !important;
+    }
+
+    .border-bottom.color-border-muted.py-3 {
+        @backdrop();
+        border: none !important;
+    }
+
+    /*ANCHOR [STARS MENU] */
+    .ActionListWrap--inset.ActionListWrap {
+        @backdrop();
+    }
+
+    /*NOTE [THIS IS A BIG ONE NGL] */
+    .Overlay {
+        @disappear();
+    }
+
+    /*ANCHOR [NOTIFICATIONS PAGE ] */
+    .Box-header {
+        @disappear();
+    }
+
+    .notifications-list-item.notification-read,
+    .notifications-list-item.notification-archived {
+        @disappear();
+    }
+
+
+    .ActionListContent:hover {
+        @hoverChannelSlide();
+    }
+
+    /*ANCHOR [SEARCH BAR] */
+    /* When the search bar is clicked or focused */
+    .AppHeader-searchButton:focus,
+    .AppHeader-searchButton:active,
+    .AppHeader-searchButton:hover {
+        z-index: 1000;
+        position: fixed !important;
+        top: 20vh !important;
+        left: 20vw !important;
+        right: 20vw !important;
+        width: 60vw !important;
+
+        background-color: white;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* The search suggestions dropdown */
+    .search-suggestions {
+        position: fixed !important;
+        top: 20% !important;
+        left: 20vw !important;
+        right: 20vw !important;
+        width: 60vw !important;
+
+        z-index: 1000;
+        border-radius: 12px;
+        background-color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Blur the background when the search bar is active */
+    body.search-active::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(5px);
+        z-index: 999;
+    }
+
+    /* Optionally remove the fixed position and blur effect when search loses focus */
+    body:not(.search-active) .AppHeader-searchButton {
+        position: static !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        z-index: 1;
+        box-shadow: none;
+        width: 100% !important;
+        /* Reset width */
+        transition: width 0.3s ease;
+        /* Smooth shrinking */
+    }
+
+
+    .search-suggestions {
+        @backdrop();
+    }
+
+    .QueryBuilder-StyledInput {
+        @backdrop();
+        border: none;
+    }
+
+    .QueryBuilder-focus {
+        outline: none;
+    }
+
+    .search-input.expanded > div > div.AppHeader-search-whenRegular {
+        display: none !important;
+    }
+    .search-suggestions {
+        border: 0.5px solid @creamColor !important;
+    }
+
+    /*ANCHOR [SETTINGS] */
+    dialog {
+        @backdrop();
+    }
+
+    .flash-banner,
+    .flash-full {
+        @backdrop();
+    }
+
+    /*ANCHOR [NOTIFICATIONS] */
+    .btn.selected,
+    .btn[aria-selected=true] {
+        @disappear();
+    }
+
+    .btn.selected:hover,
+    .btn[aria-selected=true]:hover {
+        @buttonsHover();
+    }
+
+    .ActionList-sectionDivider {
+        @backdrop();
+    }
+
+    .FormControl-input {
+        @disappear();
+    }
+
+    /*ANCHOR [PROJECTS] */
+    .border-top {
+        border: none!important;
+    }
+
+    /*ANCHOR [CODE FILE PAGE] */
+    .panel-content-narrow-styles {
+        @backdrop();
+    }
+    .hpHiUV {
+        @disappear();
+    }
+
+    .dufIPq {
+        background-color: rgba(5, 5, 5, .18) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .kexQoK,
+    .haQWCL,
+    .eEsVFK:disabled {
+        @disappear();
+    }
+
+    .Box-sc-g0xbh4-0.dKXtYX,
+    .fflxCk {
+        background-color: transparent !important;
+    }
+
+    [aria-label="Previous reference"]:hover,
+    [aria-label="Next reference"]:hover {
+        @buttonsHover();
+    }
+
+    .Box-sc-g0xbh4-0.kTMYBM:hover {
+
+        background-color: var(--control-transparent-bgColor-hover) !important;
+    }
+
+    .PRIVATE_TreeView-item:hover {
+        @hoverChannelSlide();
+    }
+
+
+    .jAlLSY th {
+        @disappear();
+    }
+
+    .eWEbRA:hover {
+        @menuItemHover();
+    }
+
+    .TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.fgiTUz.klSCQM.TextInput-wrapper {
+        @textArea();
+    }
+
+    .eoIeZr {
+        @disappear();
+    }
+
+
+
+    /*ANCHOR [CREATE A REPO PAGE] */
+    .iBpOGA {
+        @backdrop();
+    }
+
+    .cujkRS {
+        @textArea();
+    }
+
+    /*ANCHOR [GITHUB DOCS] */
+    .fDlMNy,
+    .jXUMlK,
+    .dA-dVZO {
+        @backdrop();
+    }
+
+    .markdown-body table tr {
+        @backdrop();
+        border-top: none !important;
+    }
+
+    .MarkdownContent_markdownBody__v5MYy table thead td,
+    .MarkdownContent_markdownBody__v5MYy table thead th {
+        box-shadow: inset 0 -2px @creamColor;
+    }
+
+    .MarkdownContent_markdownBody__v5MYy table tbody td,
+    .MarkdownContent_markdownBody__v5MYy table tbody th {
+        box-shadow: inset 0 -1px @creamColorMuted;
+    }
+
+
+    table {
+        @backdrop();
+        border-color: @creamColor !important;
+    }
+
+    .TableHeader {
+        @disappear();
+    }
+
+
+    .hNkDDR,
+    .crArEc {
+        background-color: transparent !important
+    }
+
+    .cHTOlv:hover,
+    .cXuGuz:hover,
+    .biIjJG:hover {
+        @hoverChannelSlide();
+    }
+
+    .dYDZmW {
+        @textArea();
+    }
+
+
+    /*ANCHOR [COMMUNITY] */
+    .list-style-none.border.px-3.color-bg-overlay.rounded-2 {
+        @backdrop();
+    }
+
+    .select-menu-modal,
+    .timeline-comment {
+        @backdrop();
+    }
+    .select-menu-item {
+        @disappear();
+    }
+
+    .ActionList-item:hover {
+        @hoverChannelSlide();
+    }
+
+    body > div.logged-in.env-production.page-responsive.color-bg-inset > div.application-main > main > div > div.container-xl.p-responsive.clearfix > div.clearfix.container-xl > div > div.Layout-main > div > div.Layout-main > ul.list-style-none.border.px-3.mb-2.color-bg-overlay.rounded-2,
+    body > div.logged-in.env-production.page-responsive.color-bg-inset > div.application-main > main > div > div.container-xl.p-responsive.clearfix > div.clearfix.container-xl > div > div.Layout-main > div > div.Layout-main > ul:nth-child(5) {
+        @backdrop()
+    }
+
+
+    .Box-row:hover {
+        @boxShadowHover();
+    }
+
+    .bg-discussions-row-emoji-box,
+    .bg-discussions-row-emoji-box-small,
+    .review-thread-reply,
+    .CommentBox-header,
+    .discussion-timeline-actions,
+    .color-bg-inset,
+    .bgColor-inset {
+        @disappear();
+    }
+
+    .gh-header .gh-header-sticky.is-stuck + .gh-header-shadow {
+        @gradientBackground();
+    }
+
+    .tabnav-tab.selected,
+    .tabnav-tab[aria-current]:not([aria-current=false]),
+    .tabnav-tab[aria-selected=true] {
+        background-color: @creamColorMuted;
+    }
+
+
+    .review-thread-reply-button.form-control.js-discussions-previewable-comment-form.btn-link.btn-block.no-underline.color-fg-muted.text-left.text-normal.ml-0 {
+        @transparentButtons();
+        border: 0px solid @creamColor !important;
+        background: @creamColorMuted;
+        color: white !important;
+    }
+
+    .review-thread-reply-button.form-control.js-discussions-previewable-comment-form.btn-link.btn-block.no-underline.color-fg-muted.text-left.text-normal.ml-0:hover {
+        @buttonsHover();
+        color: white !important;
+    }
+
+
+    /*ANCHOR [COMMITS] */
+    .Panel-module__container--i4g9d {
+        @disappear();
+    }
+
+    button[aria-label="Go to previous month"],
+    button[aria-label="Go to next month"] {
+        @disappear();
+    }
+
+    button[aria-label="Go to previous month"]:hover,
+    button[aria-label="Go to next month"]:hover {
+        @buttonsHover();
+    }
+
+    .Day-module__day--ZcbvX:hover {
+        @buttonsHover();
+    }
+
+    .Day-module__day--ZcbvX.Day-module__selected--DfMaK {
+        background-color: @creamColor !important;
+    }
+
+    .Day-module__day--ZcbvX.Day-module__selected--DfMaK.Day-module__rangeMiddle--gfg7k {
+        background-color: @creamColorMuted !important;
+    }
+
+    .Panel-module__picker--gTDgA {
+        @backdrop();
+    }
+
+    .ListItem-module__listItem--kHali:hover {
+        @boxShadowHover();
+    }
+
+    .FilterInputWrapper-module__Box_1--vewob {
+        @disappear();
+    }
+
+    /*ANCHOR [COPILOT] */
+    .ivKSmi {
+        @backdrop();
+        border: 1px solid @creamColor !important;
+    }
+
+    .leXapx {
+        @textArea();
+    }
+
+    .ivKSmi,
+    .dgBfwJ {
+        @disappear();
+    }
+
+    .menu,
+    .kAsnol {
+        @backdrop();
+        border: 1px solid @creamColor !important;
+    }
+    .menu-item.selected,
+    .menu-item[aria-current]:not([aria-current=false]),
+    .menu-item[aria-selected=true] {
+        @disappear();
+    }
+    input[name="query"] {
+        @textArea();
+    }
+
+    /*ANCHOR [PULL REQUESTS] */
+    .subnav-item.selected,
+    .subnav-item[aria-selected=true],
+    .subnav-item[aria-current]:not([aria-current=false]) {
+        background-color: @creamColor !important;
+        border: 1px solid @creamColor !important;
+    }
+
+    .subnav-item:hover {
+        background-color: @creamColorMuted !important;
+    }
+
+
+    .subnav-item,
+    input[id="js-issues-search"] {
+        border: 1px solid @creamColor !important;
+    }
+
+    .Box-row--focus-gray.navigation-focus,
+    .gh-header,
+    .timeline-comment-header {
+        background-color: transparent !important;
+    }
+
+    .SelectMenu-modal {
+        z-index: 1000;
+    }
+
+    .SelectMenu-divider {
+        @disappear();
+    }
+
+    .dropdown-menu {
+        @backdrop();
+    }
+
+    .dropdown-menu:after {
+        @disappear();
+    }
+
+    .range-editor,
+    .branch-action-state-clean .branch-action-body::before {
+        background: transparent;
+    }
+
+    .TimelineItem-break,
+    .branch-action-body .merge-message {
+        background: transparent;
+    }
+
+    .notifications-list-item.notification-unread {
+        @disappear();
+    }
+
+    .file-header,
+    .branch-action-body {
+        background-color: rgba(5, 5, 5, .18) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    /*ANCHOR [COMMIT DETAILS] */
+    .TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.gvtfsN.fCHmyD.TextInput-wrapper {
+        @textArea();
+    }
+
+
+    .hDaTHW {
+        @disappear();
+    }
+
+    .gClVUD,
+    .drELTT {
+        background-color: transparent;
+        border: 1px solid @creamColor !important;
+    }
+
+    .Diff-module__diffHeaderWrapper--rsdD4:before,
+    .Diff-module__diffHeaderWrapper--rsdD4 {
+        background-color: transparent;
+    }
+
+    .DiffFileHeader-module__diff-file-header--TjXyn,
+    .d-flex.flex-items-center.flex-justify-between.gap-2.pt-3.pt-lg-4.pb-2.position-sticky.top-0.color-bg-default {
+        background-color: rgba(5, 5, 5, .18) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(100px) saturate(110%);
+        -webkit-backdrop-filter: blur(100px);
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        border: 1px solid @creamColor !important;
+    }
+
+    .dRfQdO {
+        @transparentButtons();
+        border: 0px solid @creamColor !important;
+        background: @creamColorMuted;
+        color: white !important;
+    }
+
+    .dRfQdO:hover {
+        @transparentButtonsHover();
+        background: @creamColor;
+        color: white !important;
+    }
+
+    /* ANCHOR JS Sidebar Styling */
+    .SidePanel,
+    .jBUQU {
+        opacity: 1;
+        position: fixed;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(25px) saturate(200%) contrast(90%);
+        -webkit-backdrop-filter: blur(25px) saturate(200%) contrast(90%);
+        color: white;
+        z-index: 1001;
+        overflow-y: auto;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Optional: Sidebar Buttons Styling */
+    .SidePanel button,
+    .SidePanel a {
+        color: white;
+        opacity: 0.9;
+        transition: color 0.3s ease, opacity 0.3s ease;
+    }
+
+    .SidePanel button:hover,
+    .SidePanel a:hover {
+        color: rgba(255, 255, 255, 1);
+        opacity: 1;
+    }
+
+    .Overlay-closeButton.close-button:hover {
+        @buttonsHover();
+    }
+
+    .Overlay-closeButton:focus,
+    .Overlay-closeButton:hover {
+        background: transparent !important;
+    }
+
+    .Item__LiBox-sc-yeql7o-0.imEANS:hover {
+        @hoverChannelSlide();
+    }
+
+    /*ANCHOR [GITHUB SUPPORT] */
+    .Dialog__StyledDialog-sc-uaxjsn-1 {
+        @backdrop();
+    }
+
+
+    /*ANCHOR [MOSAIC DRAMA] */
+    @keyframes glowWaveBlue {
+        0%,
+        100% {
+            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+            /* si tu veux add un truc plus smooth */
+            transform: translateY(0);
+        }
+        50% {
+            box-shadow: 0 0 2px rgba(149, 169, 186, .7), 0 0 5px rgb(13, 97, 203), 0 0 10px rgba(137, 189, 205, .58);
+            transform: translateY(-1px);
+        }
+    }
+
+    .applyGlowWaveBlue() when (@mosaicType =ocean) {
         animation: glowWaveBlue 1.5s ease-in-out infinite;
     }
-	
-	@keyframes glowWaveXmas {
-    0%, 100% {
-        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
-        transform: translateY(0);
-    }
-    50% {
-        box-shadow: 0 0 2px rgba(255, 255, 255, .7), 0 0 5px rgba(145, 9, 9, .83), 0 0 10px rgba(255, 255, 255, .58);
-        transform: translateY(-1px);
-    }
-}
 
-.applyGlowWaveXmas() when (@mosaicType = xmas) {
+    @keyframes glowWaveXmas {
+        0%,
+        100% {
+            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+            /* si tu veux add un truc plus smooth */
+            transform: translateY(0);
+        }
+        50% {
+            box-shadow: 0 0 2px rgba(255, 255, 255, .7), 0 0 5px rgba(145, 9, 9, .83), 0 0 10px rgba(255, 255, 255, .58);
+            transform: translateY(-1px);
+        }
+    }
+
+    .applyGlowWaveXmas() when (@mosaicType =xmas) {
         animation: glowWaveXmas 1.5s ease-in-out infinite;
     }
-	
-@keyframes glowWaveGreen {
-    0%, 100% {
-        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
-        transform: translateY(0);
-    }
-    50% {
-        box-shadow: 0 0 2px rgba(60, 214, 60, .7), 0 0 5px rgb(35, 203, 13), 0 0 10px rgba(64, 203, 46, .58);
-        transform: translateY(-1px);
-    }
-}
 
-.applyGlowWaveGreen() when (@mosaicType = forest) {
+    @keyframes glowWaveGreen {
+        0%,
+        100% {
+            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+            /* si tu veux add un truc plus smooth */
+            transform: translateY(0);
+        }
+        50% {
+            box-shadow: 0 0 2px rgba(60, 214, 60, .7), 0 0 5px rgb(35, 203, 13), 0 0 10px rgba(64, 203, 46, .58);
+            transform: translateY(-1px);
+        }
+    }
+
+    .applyGlowWaveGreen() when (@mosaicType =forest) {
         animation: glowWaveGreen 1.5s ease-in-out infinite;
     }
-	
-	
-	@keyframes glowWaveBerry {
-    0%, 100% {
-        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
-        transform: translateY(0);
-    }
-    50% {
-        box-shadow: 0 0 2px rgba(214, 60, 147, .7), 0 0 5px rgb(203, 13, 130), 0 0 10px rgba(203, 46, 174, .58);
-        transform: translateY(-1px);
-    }
-}
 
-.applyGlowWaveBerry() when (@mosaicType = berry) {
+
+    @keyframes glowWaveBerry {
+        0%,
+        100% {
+            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+            /* si tu veux add un truc plus smooth */
+            transform: translateY(0);
+        }
+        50% {
+            box-shadow: 0 0 2px rgba(214, 60, 147, .7), 0 0 5px rgb(203, 13, 130), 0 0 10px rgba(203, 46, 174, .58);
+            transform: translateY(-1px);
+        }
+    }
+
+    .applyGlowWaveBerry() when (@mosaicType =berry) {
         animation: glowWaveBerry 1.5s ease-in-out infinite;
     }
-	
-	
-		@keyframes glowWaveTwilight {
-    0%, 100% {
-        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
-        transform: translateY(0);
-    }
-    50% {
-        box-shadow: 0 0 2px rgba(168, 60, 214, .7), 0 0 5px rgb(81, 23, 190), 0 0 10px rgba(145, 46, 203, .58);
-        transform: translateY(-1px);
-    }
-}
 
-.applyGlowWaveTwilight() when (@mosaicType = twilight) {
+
+    @keyframes glowWaveTwilight {
+        0%,
+        100% {
+            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+            /* si tu veux add un truc plus smooth */
+            transform: translateY(0);
+        }
+        50% {
+            box-shadow: 0 0 2px rgba(168, 60, 214, .7), 0 0 5px rgb(81, 23, 190), 0 0 10px rgba(145, 46, 203, .58);
+            transform: translateY(-1px);
+        }
+    }
+
+    .applyGlowWaveTwilight() when (@mosaicType =twilight) {
         animation: glowWaveTwilight 1.5s ease-in-out infinite;
     }
-	
-	
-			@keyframes glowWaveCitrus{
-    0%, 100% {
-        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
-        transform: translateY(0);
-    }
-    50% {
-        box-shadow: 0 0 2px rgba(211, 214, 60, .49), 0 0 5px rgba(184, 175, 9, .56), 0 0 10px rgba(203, 143, 46, .58);
-        transform: translateY(-1px);
-    }
-}
 
-.applyGlowWaveCitrus() when (@mosaicType = citrus) {
+
+    @keyframes glowWaveCitrus {
+        0%,
+        100% {
+            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+            /* si tu veux add un truc plus smooth */
+            transform: translateY(0);
+        }
+        50% {
+            box-shadow: 0 0 2px rgba(211, 214, 60, .49), 0 0 5px rgba(184, 175, 9, .56), 0 0 10px rgba(203, 143, 46, .58);
+            transform: translateY(-1px);
+        }
+    }
+
+    .applyGlowWaveCitrus() when (@mosaicType =citrus) {
         animation: glowWaveCitrus 1.5s ease-in-out infinite;
     }
-	
-	@keyframes glowWavePink{
-    0%, 100% {
-        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
-        transform: translateY(0);
-    }
-    50% {
-        box-shadow: 0 0 2px rgba(214, 60, 178, .7), 0 0 5px rgba(181, 1, 103, .65), 0 0 10px rgba(203, 46, 193, .58);
-        transform: translateY(-1px);
-    }
-}
 
-.applyGlowWavePink() when (@mosaicType = pink) {
+    @keyframes glowWavePink {
+        0%,
+        100% {
+            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+            /* si tu veux add un truc plus smooth */
+            transform: translateY(0);
+        }
+        50% {
+            box-shadow: 0 0 2px rgba(214, 60, 178, .7), 0 0 5px rgba(181, 1, 103, .65), 0 0 10px rgba(203, 46, 193, .58);
+            transform: translateY(-1px);
+        }
+    }
+
+    .applyGlowWavePink() when (@mosaicType =pink) {
         animation: glowWavePink 1.5s ease-in-out infinite;
     }
 
-@keyframes glowWaveDrama{
-    0%, 100% {
-        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
-        transform: translateY(0);
+    @keyframes glowWaveDrama {
+        0%,
+        100% {
+            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+            /* si tu veux add un truc plus smooth */
+            transform: translateY(0);
+        }
+        50% {
+            box-shadow: 0 0 2px rgba(28, 0, 39, .7), 0 0 5px rgb(11, 0, 33), 0 0 10px rgba(18, 0, 29, .58);
+            transform: translateY(-1px);
+        }
     }
-    50% {
-        box-shadow: 0 0 2px rgba(28, 0, 39, .7), 0 0 5px rgb(11, 0, 33), 0 0 10px rgba(18, 0, 29, .58);
-        transform: translateY(-1px);
-    }
-}
 
-.applyGlowWaveDrama() when (@mosaicType = drama) {
+    .applyGlowWaveDrama() when (@mosaicType =drama) {
         animation: glowWaveDrama 1.5s ease-in-out infinite;
     }
-	
-	@keyframes glowWaveNeon{
-    0%, 100% {
-        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0); /* si tu veux add un truc plus smooth */
-        transform: translateY(0);
-    }
-    50% {
-        box-shadow: 0 0 2px rgba(255, 233, 0, .7), 0 0 5px rgba(255, 251, 0, .58), 0 0 10px rgba(255, 230, 6, .58);
-        transform: translateY(-1px);
-    }
-}
 
-.applyGlowWaveNeon() when (@mosaicType = neon) {
+    @keyframes glowWaveNeon {
+        0%,
+        100% {
+            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+            /* si tu veux add un truc plus smooth */
+            transform: translateY(0);
+        }
+        50% {
+            box-shadow: 0 0 2px rgba(255, 233, 0, .7), 0 0 5px rgba(255, 251, 0, .58), 0 0 10px rgba(255, 230, 6, .58);
+            transform: translateY(-1px);
+        }
+    }
+
+    .applyGlowWaveNeon() when (@mosaicType =neon) {
         animation: glowWaveNeon 1.5s ease-in-out infinite;
     }
 
 
-.applyGlowWaveBlue() when (@mosaicAnim = noanim) {
-       animation: glowWaveBlue 0s ease-in-out infinite !important;
+    .applyGlowWaveBlue() when (@mosaicAnim =noanim) {
+        animation: glowWaveBlue 0s ease-in-out infinite !important;
     }
 
-	.applyGlowWaveGreen() when (@mosaicAnim = noanim) {
-		animation: glowWaveBlue 0s ease-in-out infinite !important;
-	 }
-	 .applyGlowWaveBerry() when (@mosaicAnim = noanim) {
-		animation: glowWaveBlue 0s ease-in-out infinite !important;
-	 }
-	 .applyGlowWavePink() when (@mosaicAnim = noanim) {
-		animation: glowWaveBlue 0s ease-in-out infinite !important;
-	 }
-	 .applyGlowWaveCitrus() when (@mosaicAnim = noanim) {
-		animation: glowWaveBlue 0s ease-in-out infinite !important;
-	 }
-	 .applyGlowWaveDrama() when (@mosaicAnim = noanim) {
-		animation: glowWaveBlue 0s ease-in-out infinite !important;
-	 }
-	 .applyGlowWaveNeon() when (@mosaicAnim = noanim) {
-		animation: glowWaveBlue 0s ease-in-out infinite !important;
-	 }
-
-	 .applyGlowWaveXmas() when (@mosaicAnim = noanim) {
-		animation: glowWaveBlue 0s ease-in-out infinite !important;
-	 }
-
-
-
-td[id^="contribution-day-component-"] {
-    .applyGlowWaveBlue();
-	.applyGlowWaveGreen();
-	.applyGlowWaveBerry();
-	.applyGlowWaveTwilight();
-	.applyGlowWavePink();
-	.applyGlowWaveCitrus();
-	.applyGlowWaveDrama();
-	.applyGlowWaveNeon();
-	.applyGlowWaveXmas();
-}
-	
-/* Adjust animation wave effect */
-
-@max-columns: 52;
-@max-rows: 6;
-
-
-
-.applyDiagonal() when (@mosaicAnim = diagonal) {
-		@base-delay: 0.12s;
-      	animation-delay: (@row * @base-delay) + (@column * @base-delay);
+    .applyGlowWaveGreen() when (@mosaicAnim =noanim) {
+        animation: glowWaveBlue 0s ease-in-out infinite !important;
     }
-	
-.applyWave() when (@mosaicAnim = wave) {
-		 @base-delay: 0.05s;
-     	 animation-delay: (@column * @base-delay);
-   	}
-	
-.applyTrippy() when (@mosaicAnim = trippy) {
-		@base-delay: 0.18s;
-		@a: 2;
-		@b: 3;
-		animation-delay: mod(((@a * @row + @b * @column) * @base-delay), 3);
+    .applyGlowWaveBerry() when (@mosaicAnim =noanim) {
+        animation: glowWaveBlue 0s ease-in-out infinite !important;
     }
-	
-.applyArches() when (@mosaicAnim = arches) {
-		@base-delay: 0.05s;
-		animation-delay: mod(((@row * @column + @row + 3* @column - 1) * @base-delay), 3);
+    .applyGlowWavePink() when (@mosaicAnim =noanim) {
+        animation: glowWaveBlue 0s ease-in-out infinite !important;
+    }
+    .applyGlowWaveCitrus() when (@mosaicAnim =noanim) {
+        animation: glowWaveBlue 0s ease-in-out infinite !important;
+    }
+    .applyGlowWaveDrama() when (@mosaicAnim =noanim) {
+        animation: glowWaveBlue 0s ease-in-out infinite !important;
+    }
+    .applyGlowWaveNeon() when (@mosaicAnim =noanim) {
+        animation: glowWaveBlue 0s ease-in-out infinite !important;
     }
 
-	
-	.applyBalls() when (@mosaicAnim = balloon) {
-		@base-delay: 0.3s;
-		animation-delay: mod(((sin(@row)+cos(@column)+1) * @base-delay), 4);
-    }
-	
-	.applyRipple() when (@mosaicAnim = ripple) {
-		@base-delay: 0.3s;
-    	@distance-to-center: sqrt(pow(@row - @max-rows*0.5, 2) + pow(@column - @max-columns*0.5, 2));
-    	animation-delay: @distance-to-center * @base-delay;
+    .applyGlowWaveXmas() when (@mosaicAnim =noanim) {
+        animation: glowWaveBlue 0s ease-in-out infinite !important;
     }
 
-	
-	
-.generate-delays(@row, @column) when (@column <= @max-columns) {
-  td#contribution-day-component-@{row}-@{column} {
-    .applyDiagonal();
-	.applyWave();
-	.applyTrippy();
-	.applyArches();
-	.applyBalls();
-	.applyRipple();
-	
-  }
-  .generate-delays(@row, @column + 1);
-}
-
-.generate-rows(@row) when (@row <= @max-rows) {
-  .generate-delays(@row, 0);
-  .generate-rows(@row + 1);
-}
-.generate-rows(0);
-	  
-.dotcom{
-	@disappear();
-}
-
-/* ANCHOR [FOOTER] */ 
-
- /* Select the footer element */
-div.d-flex.flex-items-center.flex-shrink-0.mx-2 span {
-    visibility: hidden; /* Hide the original content */
-    position: relative;
-}
-
-div.d-flex.flex-items-center.flex-shrink-0.mx-2 span::after {
-    content: "@1984, SneshCorp";
-    visibility: visible;
-    position: absolute;
-    left: 0;
-}
-p.color-fg-subtle.text-small.text-light {
-    visibility: hidden;
-    position: relative;
-}
-
-p.color-fg-subtle.text-small.text-light::after {
-    content: "SneshCorp. @1984. All rights reserved (to FallenStar).";
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    font-size: 0.9em; 
-}
-
-.js-selected-navigation-item.selected.menu-item{
-	border-bottom: 1px solid @creamColor;
-}
-
-.community-checklist .progress{
-	background: @creamColor;
-}
 
 
-/* ANCHOR [FIX BUTTONS ONCE AND FOR ALL] */ 
+    td[id^="contribution-day-component-"] {
+        .applyGlowWaveBlue();
+        .applyGlowWaveGreen();
+        .applyGlowWaveBerry();
+        .applyGlowWaveTwilight();
+        .applyGlowWavePink();
+        .applyGlowWaveCitrus();
+        .applyGlowWaveDrama();
+        .applyGlowWaveNeon();
+        .applyGlowWaveXmas();
+    }
 
-:where(.prc-Button-ButtonBase-c50BI):where([data-variant=default]){
-	@disappear();
-}
-
-
-:where(.prc-Button-ButtonBase-c50BI):where([data-variant=default]):hover{
-	@buttonsHover();
-}
-
-
-.NotificationsSubscriptionsMenu-module__watchCounter--nAbhU,
-.btn .Counter{
-	@gradientBackground();
-}
+    /* Adjust animation wave effect */
+    @max-columns: 52;
+    @max-rows: 6;
 
 
 
-[aria-label="Previous reference"],
-.bFCONy:hover {
-     @disappear();
-    
-}
+    .applyDiagonal() when (@mosaicAnim =diagonal) {
+        @base-delay: 0.12s;
+        animation-delay: (@row * @base-delay) + (@column * @base-delay);
+    }
 
+    .applyWave() when (@mosaicAnim =wave) {
+        @base-delay: 0.05s;
+        animation-delay: (@column * @base-delay);
+    }
+
+    .applyTrippy() when (@mosaicAnim =trippy) {
+        @base-delay: 0.18s;
+        @a: 2;
+        @b: 3;
+        animation-delay: mod(((@a * @row + @b * @column) * @base-delay), 3);
+    }
+
+    .applyArches() when (@mosaicAnim =arches) {
+        @base-delay: 0.05s;
+        animation-delay: mod(((@row * @column + @row + 3* @column - 1) * @base-delay), 3);
+    }
+
+
+    .applyBalls() when (@mosaicAnim =balloon) {
+        @base-delay: 0.3s;
+        animation-delay: mod(((sin(@row)+cos(@column)+1) * @base-delay), 4);
+    }
+
+    .applyRipple() when (@mosaicAnim =ripple) {
+        @base-delay: 0.3s;
+        @distance-to-center: sqrt(pow(@row - @max-rows*0.5,
+        2) + pow(@column - @max-columns*0.5,
+        2));
+        animation-delay: @distance-to-center * @base-delay;
+    }
+
+
+
+    .generate-delays(@row,
+    @column) when (@column <=@max-columns) {
+        td#contribution-day-component-@{row}-@{column} {
+            .applyDiagonal();
+            .applyWave();
+            .applyTrippy();
+            .applyArches();
+            .applyBalls();
+            .applyRipple();
+        }
+        .generate-delays(@row,
+        @column + 1);
+    }
+
+    .generate-rows(@row) when (@row <=@max-rows) {
+        .generate-delays(@row,
+        0);
+        .generate-rows(@row + 1);
+    }
+    .generate-rows(0);
+
+    .dotcom {
+        @disappear();
+    }
+
+    /* ANCHOR [FOOTER] */
+    /* Select the footer element */
+    div.d-flex.flex-items-center.flex-shrink-0.mx-2 span {
+        visibility: hidden;
+        /* Hide the original content */
+        position: relative;
+    }
+
+    div.d-flex.flex-items-center.flex-shrink-0.mx-2 span::after {
+        content: "@1984, SneshCorp";
+        visibility: visible;
+        position: absolute;
+        left: 0;
+    }
+    p.color-fg-subtle.text-small.text-light {
+        visibility: hidden;
+        position: relative;
+    }
+
+    p.color-fg-subtle.text-small.text-light::after {
+        content: "SneshCorp. @1984. All rights reserved (to FallenStar).";
+        visibility: visible;
+        position: absolute;
+        left: 0;
+        font-size: 0.9em;
+    }
+
+    .js-selected-navigation-item.selected.menu-item {
+        border-bottom: 1px solid @creamColor;
+    }
+
+    .community-checklist .progress {
+        background: @creamColor;
+    }
+
+
+    /* ANCHOR [FIX BUTTONS ONCE AND FOR ALL] */
+    :where(.prc-Button-ButtonBase-c50BI):where([data-variant=default]) {
+        @disappear();
+    }
+
+
+    :where(.prc-Button-ButtonBase-c50BI):where([data-variant=default]):hover {
+        @buttonsHover();
+    }
+
+
+    .NotificationsSubscriptionsMenu-module__watchCounter--nAbhU,
+    .btn .Counter {
+        @gradientBackground();
+    }
+
+
+
+    [aria-label="Previous reference"],
+    .bFCONy:hover {
+        @disappear();
+    }
+
+    /* ANCHOR [TOOLTIPS] */
+    #input-check-5698 {
+        @backdrop();
+        border: 1px solid @creamColor;
+    }
+
+    .form-group.successed .success::before,
+    .form-group.successed .success::after {
+        background: transparent !important;
+    }
 }
 
 /* .feed-item-content.d-flex.flex-column.pt-2.pb-2.border.color-border-default.rounded-2.color-shadow-small.width-full.height-fit 
