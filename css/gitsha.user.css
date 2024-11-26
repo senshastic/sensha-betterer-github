@@ -459,8 +459,14 @@
     input[id="release-filter"],
     input[name="repo_description"],
     input[aria-label="Commit title"],
-    textarea[name="commit_message"] {
+    textarea[name="commit_message"],
+    .uXEwx,
+    .toHQP {
         @textArea();
+    }
+    
+    .DiffFind-module__defaultStyles--gxyWR{
+        @disappear();
     }
 
 
