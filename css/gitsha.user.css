@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.1.11
+@version        1.1.12
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -1820,6 +1820,12 @@
     .form-group.successed .success::before,
     .form-group.successed .success::after {
         background: transparent !important;
+    }
+
+    .Popover-message::before,
+div.Popover-message.Popover-message--large.Box.color-shadow-large.Popover-message--top-left::after{
+	    @backdrop();
+        border: none !important;
     }
 }
 
