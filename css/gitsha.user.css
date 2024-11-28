@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.2.2
+@version        1.2.3
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -2490,12 +2490,14 @@
         background: transparent !important;
     }
 
-    .Popover-message--bottom-left::before{
+    .Popover-message--bottom-left::before,
+    .Popover-message::before{
         @backdrop();
         border: none !important;
     }
     
-    .Popover-message--bottom-left::after{
+    .Popover-message--bottom-left::after,
+    .Popover-message:after{
         display: none !important;
     }
 }
