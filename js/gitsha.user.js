@@ -1,9 +1,13 @@
 // ==UserScript==
 // @name        Animations gitsha
-// @version     1.0.0
+// @version     1.0.1
 // @namespace   Violentmonkey Scripts
 // @description Runs animations
 // @match       https://github.com/*
+// @downloadURL https://github.com/senshastic/gitsha/raw/refs/heads/main/js/gitsha.user.js
+// @updateURL   https://github.com/senshastic/gitsha/raw/refs/heads/main/js/gitsha.user.js
+// @icon        https://github.com/senshastic/sensha-betterer-todoist/blob/main/assets/Hap.png?raw=true
+// @author      sensha
 // @grant       none
 // ==/UserScript==
 
