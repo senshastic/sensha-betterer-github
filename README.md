@@ -9,7 +9,7 @@ This is the fourth(?) in a - hopefully short - series of ""design"" projects.
 ## Visuals 
 
 <p align="center">
-    <img src="assets/gitsha_user_page.gif" alt="Gitsha User Page" />
+    <img src="assets/gitsha_user_page2.gif" alt="Gitsha User Page" />
 </p>
 
 
