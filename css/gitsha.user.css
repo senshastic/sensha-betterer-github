@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.2.4
+@version        1.2.5
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -131,6 +131,14 @@
         transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         padding: 5px;
     }
+
+    @backdropSimpler: {
+		background-color: rgba(5, 5, 5, .18) !important;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(100px) saturate(110%);
+		-webkit-backdrop-filter: blur(100px);
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	}
 
     @disappear: {
         background: transparent !important;
