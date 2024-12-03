@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.2.6
+@version        1.2.7
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -1914,9 +1914,11 @@
         @disappear();
     }
 
-    .gh-header .gh-header-sticky.is-stuck + .gh-header-shadow {
+    .gh-header .gh-header-sticky.is-stuck + .gh-header-shadow:not([data-original-top="auto"]) {
         @gradientBackground();
     }
+    
+    
 
     .tabnav-tab.selected,
     .tabnav-tab[aria-current]:not([aria-current=false]),
@@ -2510,6 +2512,10 @@
     .Popover-message:after,
     .timeline-comment--caret::after{
         display: none !important;
+    }
+    
+    .gh-header .gh-header-sticky.is-stuck+.gh-header-shadow{
+        @backdropSimpler();
     }
 }
 
