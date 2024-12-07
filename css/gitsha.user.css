@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.2.8
+@version        1.2.9
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -1002,7 +1002,11 @@
         @noise();
         z-index: 0 !important;
     }
-
+    
+    .gisthead::before when (@grain =1) {
+        @noise();
+        z-index: 0 !important;
+    }
     /* Dashboard */
 
 
@@ -1062,7 +1066,13 @@
     .AppHeader {
         @gradientBackground();
     }
-
+    
+    .gisthead{
+         @gradientBackground();
+    }
+       .Header{
+        @backdrop();
+       }
 
     .AppHeader-context-item:hover {
         @buttonsHover();
@@ -1153,7 +1163,9 @@
     textarea[name="commit_message"],
     .uXEwx,
     .toHQP,
-    .bclhiL {
+    .bclhiL,
+    .input-contrast,
+    .form-control, .form-select {
         @textArea();
     }
 
@@ -2532,6 +2544,11 @@
     
     .gh-header .gh-header-sticky.is-stuck+.gh-header-shadow{
         @backdropSimpler();
+    }
+    
+    
+    .ajax-pagination-form .ajax-pagination-btn{
+        @backdrop();
     }
 }
 
