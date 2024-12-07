@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.2.7
+@version        1.2.8
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -1004,6 +1004,21 @@
     }
 
     /* Dashboard */
+
+
+    .copilotPreview {
+        @textArea();
+    }
+    
+    .copilotPreview__footer .copilotPreview__suggestionButton:hover {
+        @buttonsHover();
+    }
+    
+    .copilotPreview__footer .copilotPreview__suggestionButton {
+        @backdrop();
+    } 
+
+    
     .feed-background when (@gradType =flouss) {
         @gradientBackground();
     }
@@ -1137,7 +1152,8 @@
     input[aria-label="Commit title"],
     textarea[name="commit_message"],
     .uXEwx,
-    .toHQP {
+    .toHQP,
+    .bclhiL {
         @textArea();
     }
 
