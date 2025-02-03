@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.2.9
+@version        1.2.10
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -1008,12 +1008,10 @@
         z-index: 0 !important;
     }
     /* Dashboard */
-
-
+    
     .TimelineItem-badge{
         @backdrop();
     }
-
 
     .copilotPreview {
         @textArea();
@@ -2150,7 +2148,8 @@
 
     /* ANCHOR JS Sidebar Styling */
     .SidePanel,
-    .jBUQU {
+    .jBUQU,
+    .prc-Dialog-Dialog-luvDS {
         opacity: 1;
         position: fixed;
         background-color: rgba(255, 255, 255, 0.1);
@@ -2186,7 +2185,8 @@
         background: transparent !important;
     }
 
-    .Item__LiBox-sc-yeql7o-0.imEANS:hover {
+    .Item__LiBox-sc-yeql7o-0.imEANS:hover,
+    .Item__LiBox-sc-yeql7o-0:hover {
         @hoverChannelSlide();
     }
 
@@ -2552,7 +2552,9 @@
     }
     
     
-    .ajax-pagination-form .ajax-pagination-btn{
+    .ajax-pagination-form .ajax-pagination-btn,
+    .fXBJSr,
+    :where(.prc-Button-ButtonBase-c50BI):where([data-variant=invisible]):disabled {
         @backdrop();
     }
 }

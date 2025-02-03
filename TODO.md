@@ -1,1 +1,1 @@
-- Fix barre de droite + commit message (no blur). 
+- commit message (no blur). 
