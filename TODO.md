@@ -1,2 +1,1 @@
-- Change repo visibility thingies to investigate. 
-- Petites oreilles
+- Fix barre de droite + commit message (no blur). 
