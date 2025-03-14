@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.2.12
+@version        1.2.13
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -1145,7 +1145,7 @@ div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =nouss
 }
 
 .Box:hover {
-    @boxShadowHover();
+   @elevated();
 }
 
 .btn,
@@ -1179,7 +1179,8 @@ div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =nouss
     @buttonsHover();
 }
 
-.Box-body {
+.Box-body, 
+.AppHeader .AppHeader-globalBar .AppHeader-search .AppHeader-searchButton {
     border: none !important;
 }
 
@@ -1698,7 +1699,7 @@ button[aria-label="Filter"] {
 
 /*ANCHOR [REPO LIST] */
 .col-12.d-flex.flex-justify-between.width-full.py-4.border-bottom.color-border-muted:hover {
-    @boxShadowHover();
+    @elevated();
 }
 
 .col-12.d-flex.flex-justify-between.width-full.py-4.border-bottom.color-border-muted {
@@ -2065,7 +2066,7 @@ button[aria-label="Go to next month"]:hover {
 }
 
 .ListItem-module__listItem--kHali:hover {
-    @boxShadowHover();
+   @elevated();
 }
 
 .FilterInputWrapper-module__Box_1--vewob {
