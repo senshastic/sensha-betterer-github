@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.2.11
+@version        1.2.12
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -20,2554 +20,2637 @@
 
 
     /*SECTION [SNESHLIB - Start] */
-    /*ANCHOR [VARIABLES]*/
-    @hap				: url('https://github.com/senshastic/sneshGPT/blob/main/assets/Hap.png?raw=true');
-    @borderRadius		: 12px;
-    @creamColor			: #d0b575;
-    @creamColorMuted	: #4f4733;
+/*ANCHOR [VARIABLES]*/
+@hap				: url('https://github.com/senshastic/sneshGPT/blob/main/assets/Hap.png?raw=true');
+@borderRadius		: 12px;
+@creamColor			: #d0b575;
+@creamColorMuted	: #4f4733;
 
 
 
-    /*ANCHOR [DETACHED RULESETS] */
-    @gradientBackground: {
-        background: linear-gradient(109.6deg, @gradcolor1 0%, @gradcolor2 25%, @gradcolor3 50%, @gradcolor4 100%);
-    }
+/*ANCHOR [DETACHED RULESETS] */
+@gradientBackground: {
+background: linear-gradient(109.6deg, @gradcolor1 0%, @gradcolor2 25%, @gradcolor3 50%, @gradcolor4 100%);
+}
 
-    @gradientAnimation: {
-        0% {
-            background-position: 0% 0%;
-        }
-        50% {
-            background-position: 100% 100%;
-        }
-        100% {
-            background-position: 0% 0%;
-        }
-    }
+@gradientAnimation: {
+0% {
+    background-position: 0% 0%;
+}
+50% {
+    background-position: 100% 100%;
+}
+100% {
+    background-position: 0% 0%;
+}
+}
 
-    @buttons: {
-        background-color: rgba(5, 5, 5, .18) !important;
-        border-radius: 12px !important;
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
+@buttons: {
+background-color: rgba(5, 5, 5, .18) !important;
+border-radius: 12px !important;
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
+backdrop-filter: blur(100px) saturate(110%);
+-webkit-backdrop-filter: blur(100px);
+transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
-    @buttonsHover: {
-        background-color: rgba(5, 5, 5, 0) !important;
-        border-radius: 12px;
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        transform: translateY(-4px);
-    }
+@buttonsHover: {
+background-color: rgba(5, 5, 5, 0) !important;
+border-radius: 12px;
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
+backdrop-filter: blur(100px) saturate(110%);
+-webkit-backdrop-filter: blur(100px);
+transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+transform: translateY(-4px);
+}
 
-    @transparentButtons: {
-        border-radius: 12px !important;
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
+@transparentButtons: {
+border-radius: 12px !important;
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
+backdrop-filter: blur(100px) saturate(110%);
+-webkit-backdrop-filter: blur(100px);
+transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
-    @buttonsFlat: {
-        border-radius: 12px !important;
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-
-    @transparentButtonsHover: {
-        border-radius: 12px;
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
-        -webkit-backdrop-filter: blur(100px);
-        backdrop-filter: blur(100px) saturate(110%);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        transform: translateY(-4px);
-    }
+@buttonsFlat: {
+border-radius: 12px !important;
+backdrop-filter: blur(100px) saturate(110%);
+-webkit-backdrop-filter: blur(100px);
+transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
 
-    @buttonsHoverWhite: {
-        background-color: rgba(5, 5, 5, 0) !important;
-        border-radius: 12px;
-        box-shadow: 0 8px 15px rgba(255, 255, 255, .37) !important;
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transform: translateY(-4px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform box-shadow 0.3s ease-in-out;
-    }
-
-    @menuItemHover: {
-        border: 1px solid rgba(0, 204, 255, 0.6);
-        background-color: rgba(5, 5, 5, 0.35) !important;
-        box-shadow: 0 0 10px 2px rgba(0, 204, 255, 0.3);
-        transform: translateY(-2px);
-        transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-        border-radius: 12px;
-    }
-
-    @grainyTexture: {
-        content: "" !important;
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        pointer-events: none !important;
-        z-index: 0 !important;
-        background: url("https://raw.githubusercontent.com/senshastic/sensha-betterer-todoist/refs/heads/main/assets/noise.svg") repeat !important;
-        opacity: 0.23 !important;
-    }
-
-    @backdrop: {
-        background-color: rgba(5, 5, 5, .18) !important;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        padding: 5px;
-    }
-
-    @backdropSimpler: {
-		background-color: rgba(5, 5, 5, .18) !important;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(100px) saturate(110%);
-		-webkit-backdrop-filter: blur(100px);
-		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-	}
-
-    @disappear: {
-        background: transparent !important;
-        border: 0px;
-        box-shadow: none;
-    }
-
-    @transparent: {
-        background: transparent;
-    }
-
-    @noise: {
-        content: "" !important;
-        background: url("https://raw.githubusercontent.com/senshastic/sensha-betterer-todoist/refs/heads/main/assets/noise.svg") repeat !important;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: fixed;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        pointer-events: none !important;
-        z-index: -1 !important;
-        opacity: 0.23 !important;
-    }
+@transparentButtonsHover: {
+border-radius: 12px;
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.37);
+-webkit-backdrop-filter: blur(100px);
+backdrop-filter: blur(100px) saturate(110%);
+transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+transform: translateY(-4px);
+}
 
 
-    @boxShadowHover: {
-        box-shadow: 0 0px 10px rgba(0, 204, 255, 0.6);
-        background-color: rgba(0, 81, 255, 0.1);
-    }
+@buttonsHoverWhite: {
+background-color: rgba(5, 5, 5, 0) !important;
+border-radius: 12px;
+box-shadow: 0 8px 15px rgba(255, 255, 255, .37) !important;
+backdrop-filter: blur(100px) saturate(110%);
+-webkit-backdrop-filter: blur(100px);
+transform: translateY(-4px);
+transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform box-shadow 0.3s ease-in-out;
+}
 
-    @textArea: {
-        border: 1.5px solid @creamColor !important;
-        background-color: transparent !important;
-    }
+@menuItemHover: {
+border: 1px solid rgba(0, 204, 255, 0.6);
+background-color: rgba(5, 5, 5, 0.35) !important;
+box-shadow: 0 0 10px 2px rgba(0, 204, 255, 0.3);
+transform: translateY(-2px);
+transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+border-radius: 12px;
+}
 
-    @doubleThingy: {
-        background-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(25px) saturate(200%) contrast(90%);
-        -webkit-backdrop-filter: blur(25px) saturate(200%) contrast(90%);
-        color: white;
-        z-index: 1000;
-        overflow-y: auto;
-        scrollbar-width: none;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-        transform: translateX(0);
-        opacity: 1;
-        pointer-events: auto;
-        border-radius: inherit;
-    }
+@grainyTexture: {
+content: "" !important;
+position: absolute !important;
+top: 0 !important;
+left: 0 !important;
+width: 100% !important;
+height: 100% !important;
+pointer-events: none !important;
+z-index: 0 !important;
+background: url("https://raw.githubusercontent.com/senshastic/sensha-betterer-todoist/refs/heads/main/assets/noise.svg") repeat !important;
+opacity: 0.23 !important;
+}
 
-    /* ANCHOR [ANIMATIONS] */
-    @hoverChannelSlide: {
-        margin-left: 10px !important;
-        transition: margin-left 0.2s ease;
-        background-color: transparent;
-    }
+@backdrop: {
+background-color: rgba(5, 5, 5, .18) !important;
+border-radius: 12px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(100px) saturate(110%);
+-webkit-backdrop-filter: blur(100px);
+transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+padding: 5px;
+}
 
-    /* Snake */
-    @snakeTarget: {
-        position: relative;
-        padding: 16px;
-        border-radius: 18px;
-        background: rgba(0, 0, 0, 0.7);
-        z-index: 1;
-        overflow: hidden;
-    }
+@backdropSimpler: {
+background-color: rgba(5, 5, 5, .18) !important;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(100px) saturate(110%);
+-webkit-backdrop-filter: blur(100px);
+transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
+@disappear: {
+background: transparent !important;
+border: 0px;
+box-shadow: none;
+}
 
-    @snakeBefore: {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: inherit;
-        padding: 3px;
-        background: linear-gradient(90deg, transparent 0%, transparent 40%, white 50%, transparent 60%, transparent 100%);
-        background-size: 200% 200%;
-        animation: smoothSnakeLine 6s linear infinite;
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        z-index: -1;
-    }
+@transparent: {
+background: transparent;
+}
 
-    @snakeFastBefore: {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        padding: 3px;
-        background: conic-gradient(from var(--start-angle) at 50% 50%, var(--radial-gradient-gold));
-        animation: smoothSnakeSpin 4s linear infinite;
-        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        pointer-events: none;
-        z-index: -1;
-    }
-
-    @keyframes smoothSnakeLine {
-        0% {
-            background-position: 0% 50%;
-        }
-        100% {
-            background-position: 200% 50%;
-        }
-    }
-
-    @keyframes smoothSnakeSpin {
-        0.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 0.0deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        0.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 1.8deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        1.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 3.6deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        1.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 5.4deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        2.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 7.2deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        2.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 9.0deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        3.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 10.8deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        3.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 12.6deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        4.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 14.4deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        4.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 16.2deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        5.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 18.0deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        5.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 19.8deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        6.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 21.6deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        6.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 23.400000000000002deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        7.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 25.2deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        7.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 27.0deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        8.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 28.8deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        8.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 30.6deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        9.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 32.4deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        9.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 34.2deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        10.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 36.0deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        10.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 37.800000000000004deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        11.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 39.6deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        11.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 41.4deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        12.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 43.2deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        12.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 45.0deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        13.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 46.800000000000004deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        13.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 48.6deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        14.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 50.4deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        14.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 52.2deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        15.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 54.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        15.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 55.800000000000004deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        16.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 57.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        16.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 59.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        17.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 61.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        17.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 63.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        18.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 64.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        18.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 66.60000000000001deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        19.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 68.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        19.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 70.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        20.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 72.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        20.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 73.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        21.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 75.60000000000001deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        21.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 77.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        22.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 79.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        22.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 81.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        23.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 82.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        23.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 84.60000000000001deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        24.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 86.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        24.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 88.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        25.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 90.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        25.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 91.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        26.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 93.60000000000001deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        26.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 95.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        27.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 97.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        27.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 99.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        28.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 100.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        28.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 102.60000000000001deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        29.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 104.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        29.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 106.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        30.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 108.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        30.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 109.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        31.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 111.60000000000001deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        31.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 113.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        32.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 115.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        32.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 117.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        33.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 118.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        33.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 120.60000000000001deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        34.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 122.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        34.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 124.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        35.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 126.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        35.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 127.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        36.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 129.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        36.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 131.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        37.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 133.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        37.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 135.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        38.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 136.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        38.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 138.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        39.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 140.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        39.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 142.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        40.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 144.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        40.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 145.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        41.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 147.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        41.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 149.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        42.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 151.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        42.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 153.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        43.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 154.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        43.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 156.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        44.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 158.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        44.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 160.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        45.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 162.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        45.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 163.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        46.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 165.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        46.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 167.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        47.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 169.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        47.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 171.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        48.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 172.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        48.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 174.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        49.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 176.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        49.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 178.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        50.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 180.0deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        50.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 181.8deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        51.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 183.6deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        51.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 185.4deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        52.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 187.20000000000002deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        52.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 189.0deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        53.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 190.8deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        53.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 192.6deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        54.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 194.4deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        54.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 196.20000000000002deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        55.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 198.0deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        55.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 199.8deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        56.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 201.6deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        56.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 203.4deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        57.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 205.20000000000002deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        57.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 207.0deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        58.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 208.8deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        58.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 210.6deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        59.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 212.4deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        59.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 214.20000000000002deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        60.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 216.0deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        60.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 217.8deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        61.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 219.6deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        61.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 221.4deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        62.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 223.20000000000002deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        62.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 225.0deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        63.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 226.8deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        63.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 228.6deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        64.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 230.4deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        64.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 232.20000000000002deg) at 50% 50%, var(--radial-gradient-gold));
-        }
-        65.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 234.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        65.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 235.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        66.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 237.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        66.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 239.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        67.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 241.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        67.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 243.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        68.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 244.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        68.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 246.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        69.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 248.4deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        69.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 250.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        70.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 252.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        70.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 253.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        71.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 255.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        71.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 257.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        72.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 259.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        72.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 261.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        73.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 262.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        73.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 264.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        74.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 266.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        74.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 268.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        75.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 270.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        75.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 271.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        76.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 273.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        76.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 275.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        77.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 277.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        77.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 279.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        78.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 280.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        78.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 282.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        79.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 284.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        79.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 286.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        80.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 288.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        80.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 289.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        81.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 291.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        81.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 293.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        82.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 295.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        82.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 297.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        83.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 298.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        83.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 300.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        84.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 302.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        84.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 304.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        85.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 306.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        85.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 307.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        86.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 309.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        86.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 311.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        87.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 313.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        87.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 315.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        88.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 316.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        88.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 318.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        89.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 320.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        89.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 322.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        90.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 324.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        90.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 325.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        91.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 327.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        91.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 329.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        92.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 331.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        92.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 333.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        93.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 334.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        93.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 336.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        94.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 338.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        94.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 340.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        95.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 342.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        95.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 343.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        96.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 345.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        96.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 347.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        97.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 349.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        97.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 351.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        98.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 352.8deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        98.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 354.6deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        99.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 356.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        99.5% {
-            background: conic-gradient(from calc(var(--start-angle) + 358.2deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-        100.0% {
-            background: conic-gradient(from calc(var(--start-angle) + 360.0deg) at 50% 50%, var(--radial-gradient-blue));
-        }
-    }
-
-    @animateBouncyDown: {
-        background-color: rgba(0, 14, 58, 0) !important;
-        border-radius: 12px;
-        box-shadow: 0 0px 10px rgba(255, 255, 255, 0.781);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        animation: animateDownBouncy 1.5s linear;
-    }
-
-    @keyframes animateDownBouncy {
-        0% {
-          transform: translateY(-20px);
-          opacity: 0;
-          filter: blur(4px);
-        }
-        30% {
-          transform: translateY(10px);
-          opacity: 0.7;
-          filter: blur(2px);
-        }
-        50% {
-          transform: translateY(-5px);
-          opacity: 1;
-          filter: blur(0);
-        }
-        80% {
-          transform: translateY(0);
-          opacity: 1;
-          filter: blur(0);
-        }
-        100% {
-          transform: translateY(0);
-          opacity: 1;
-          filter: blur(0);
-        }
-      }
-
-    /*!SECTION [SNESHLIB - End]*/
-    /*ANCHOR [ROOT] */
-    :root {
-        --fgColor-accent: @creamColor !important;
-        --borderColor-default: @creamColor !important;
-        --borderColor-muted: @creamColorMuted !important;
-
-        --start-angle: 0deg;
-        --radial-gradient-gold: transparent 25deg, var(--color-calendar-graph-day-L1-bg) 43.4deg, transparent 60deg, transparent 100deg, transparent 310deg, transparent 408.4deg;
-        --radial-gradient-blue: transparent 25deg, var(--color-calendar-graph-day-L4-bg) 43.4deg, transparent 60deg, transparent 100deg, transparent 310deg, transparent 408.4deg;
-    }
-
-    .Button--secondary {
-        background: transparent;
-        border: none;
-        color: @creamColor;
-    }
-
-    .Button--secondary:hover {
-        @buttonsHover();
-        color: @creamColor;
-    }
-
-    .Button--danger {
-        background: transparent !important;
-        border: none;
-    }
-
-    .Button--danger:hover {
-        @transparentButtonsHover();
-        background-color: var(--button-danger-iconColor-rest) !important;
-    }
+@noise: {
+content: "" !important;
+background: url("https://raw.githubusercontent.com/senshastic/sensha-betterer-todoist/refs/heads/main/assets/noise.svg") repeat !important;
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-size: cover;
+position: fixed;
+top: 0 !important;
+left: 0 !important;
+width: 100% !important;
+height: 100% !important;
+pointer-events: none !important;
+z-index: -1 !important;
+opacity: 0.23 !important;
+}
 
 
-    /*ANCHOR [Top bar] */
-    /* Replaces with hap */
-    #js-logo-nav {
-        display: block;
-        width: 150px;
-        height: 35px;
-        background-image: @hap;
-        background-size: contain;
-        background-repeat: no-repeat;
-        margin-left: 20px;
-    }
+@boxShadowHover: {
+box-shadow: 0 0px 10px rgba(0, 204, 255, 0.6);
+background-color: rgba(0, 81, 255, 0.1);
+}
 
-    .pz-nav__logo {
-        display: none;
-        /* Hides the original SVG */
-    }
+@textArea: {
+border: 1.5px solid @creamColor !important;
+background-color: transparent !important;
+}
 
-    .AppHeader-button,
-    .AppHeader .AppHeader-globalBar .AppHeader-search input[type=search],
-    .AppHeader .AppHeader-globalBar .AppHeader-search .AppHeader-searchButton {
-        border: 1px solid @creamColorMuted !important;
-    }
+@doubleThingy: {
+background-color: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(25px) saturate(200%) contrast(90%);
+-webkit-backdrop-filter: blur(25px) saturate(200%) contrast(90%);
+color: white;
+z-index: 1000;
+overflow-y: auto;
+scrollbar-width: none;
+border: 1px solid rgba(255, 255, 255, 0.2);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+transform: translateX(0);
+opacity: 1;
+pointer-events: auto;
+border-radius: inherit;
+}
 
+/* ANCHOR [ANIMATIONS] */
+@hoverChannelSlide: {
+margin-left: 10px !important;
+transition: margin-left 0.2s ease;
+background-color: transparent;
+}
 
-    /* modals */
-    /*ANCHOR [Gradient background options and grain] */
-    body when (@gradType =flouss) {
-        @gradientBackground();
-    }
-
-
-    body when (@gradType =animated) {
-        @gradientBackground();
-        background-size: 400% 400%;
-        animation: gradientAnimation 20s ease infinite;
-    }
-
-
-    body when (@gradType =nouss) {
-        background-color: @gradcolor1 !important;
-    }
-
-    div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =flouss) {
-        @gradientBackground();
-    }
+/* Snake */
+@snakeTarget: {
+position: relative;
+padding: 16px;
+border-radius: 18px;
+background: rgba(0, 0, 0, 0.7);
+z-index: 1;
+overflow: hidden;
+}
 
 
-    div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =animated) {
-        @gradientBackground();
-        background-size: 400% 400%;
-        animation: gradientAnimation 20s ease infinite;
-    }
+@snakeBefore: {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+border-radius: inherit;
+padding: 3px;
+background: linear-gradient(90deg, transparent 0%, transparent 40%, white 50%, transparent 60%, transparent 100%);
+background-size: 200% 200%;
+animation: smoothSnakeLine 6s linear infinite;
+-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+z-index: -1;
+}
+
+@snakeFastBefore: {
+content: '';
+position: absolute;
+inset: 0;
+border-radius: inherit;
+padding: 3px;
+background: conic-gradient(from var(--start-angle) at 50% 50%, var(--radial-gradient-gold));
+animation: smoothSnakeSpin 4s linear infinite;
+mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+pointer-events: none;
+z-index: -1;
+}
+
+@keyframes smoothSnakeLine {
+0% {
+    background-position: 0% 50%;
+}
+100% {
+    background-position: 200% 50%;
+}
+}
+
+@keyframes smoothSnakeSpin {
+0.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 0.0deg) at 50% 50%, var(--radial-gradient-gold));
+}
+0.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 1.8deg) at 50% 50%, var(--radial-gradient-gold));
+}
+1.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 3.6deg) at 50% 50%, var(--radial-gradient-gold));
+}
+1.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 5.4deg) at 50% 50%, var(--radial-gradient-gold));
+}
+2.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 7.2deg) at 50% 50%, var(--radial-gradient-gold));
+}
+2.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 9.0deg) at 50% 50%, var(--radial-gradient-gold));
+}
+3.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 10.8deg) at 50% 50%, var(--radial-gradient-gold));
+}
+3.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 12.6deg) at 50% 50%, var(--radial-gradient-gold));
+}
+4.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 14.4deg) at 50% 50%, var(--radial-gradient-gold));
+}
+4.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 16.2deg) at 50% 50%, var(--radial-gradient-gold));
+}
+5.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 18.0deg) at 50% 50%, var(--radial-gradient-gold));
+}
+5.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 19.8deg) at 50% 50%, var(--radial-gradient-gold));
+}
+6.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 21.6deg) at 50% 50%, var(--radial-gradient-gold));
+}
+6.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 23.400000000000002deg) at 50% 50%, var(--radial-gradient-gold));
+}
+7.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 25.2deg) at 50% 50%, var(--radial-gradient-gold));
+}
+7.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 27.0deg) at 50% 50%, var(--radial-gradient-gold));
+}
+8.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 28.8deg) at 50% 50%, var(--radial-gradient-gold));
+}
+8.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 30.6deg) at 50% 50%, var(--radial-gradient-gold));
+}
+9.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 32.4deg) at 50% 50%, var(--radial-gradient-gold));
+}
+9.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 34.2deg) at 50% 50%, var(--radial-gradient-gold));
+}
+10.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 36.0deg) at 50% 50%, var(--radial-gradient-gold));
+}
+10.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 37.800000000000004deg) at 50% 50%, var(--radial-gradient-gold));
+}
+11.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 39.6deg) at 50% 50%, var(--radial-gradient-gold));
+}
+11.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 41.4deg) at 50% 50%, var(--radial-gradient-gold));
+}
+12.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 43.2deg) at 50% 50%, var(--radial-gradient-gold));
+}
+12.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 45.0deg) at 50% 50%, var(--radial-gradient-gold));
+}
+13.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 46.800000000000004deg) at 50% 50%, var(--radial-gradient-gold));
+}
+13.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 48.6deg) at 50% 50%, var(--radial-gradient-gold));
+}
+14.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 50.4deg) at 50% 50%, var(--radial-gradient-gold));
+}
+14.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 52.2deg) at 50% 50%, var(--radial-gradient-gold));
+}
+15.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 54.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+15.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 55.800000000000004deg) at 50% 50%, var(--radial-gradient-blue));
+}
+16.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 57.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+16.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 59.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+17.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 61.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+17.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 63.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+18.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 64.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+18.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 66.60000000000001deg) at 50% 50%, var(--radial-gradient-blue));
+}
+19.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 68.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+19.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 70.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+20.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 72.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+20.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 73.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+21.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 75.60000000000001deg) at 50% 50%, var(--radial-gradient-blue));
+}
+21.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 77.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+22.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 79.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+22.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 81.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+23.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 82.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+23.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 84.60000000000001deg) at 50% 50%, var(--radial-gradient-blue));
+}
+24.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 86.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+24.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 88.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+25.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 90.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+25.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 91.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+26.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 93.60000000000001deg) at 50% 50%, var(--radial-gradient-blue));
+}
+26.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 95.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+27.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 97.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+27.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 99.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+28.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 100.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+28.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 102.60000000000001deg) at 50% 50%, var(--radial-gradient-blue));
+}
+29.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 104.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+29.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 106.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+30.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 108.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+30.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 109.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+31.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 111.60000000000001deg) at 50% 50%, var(--radial-gradient-blue));
+}
+31.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 113.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+32.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 115.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+32.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 117.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+33.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 118.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+33.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 120.60000000000001deg) at 50% 50%, var(--radial-gradient-blue));
+}
+34.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 122.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+34.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 124.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+35.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 126.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+35.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 127.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+36.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 129.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+36.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 131.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+37.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 133.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
+}
+37.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 135.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+38.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 136.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+38.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 138.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+39.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 140.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+39.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 142.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
+}
+40.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 144.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+40.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 145.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+41.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 147.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+41.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 149.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+42.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 151.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
+}
+42.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 153.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+43.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 154.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+43.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 156.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+44.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 158.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+44.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 160.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
+}
+45.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 162.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+45.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 163.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+46.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 165.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+46.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 167.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+47.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 169.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
+}
+47.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 171.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+48.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 172.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+48.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 174.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+49.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 176.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+49.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 178.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
+}
+50.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 180.0deg) at 50% 50%, var(--radial-gradient-gold));
+}
+50.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 181.8deg) at 50% 50%, var(--radial-gradient-gold));
+}
+51.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 183.6deg) at 50% 50%, var(--radial-gradient-gold));
+}
+51.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 185.4deg) at 50% 50%, var(--radial-gradient-gold));
+}
+52.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 187.20000000000002deg) at 50% 50%, var(--radial-gradient-gold));
+}
+52.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 189.0deg) at 50% 50%, var(--radial-gradient-gold));
+}
+53.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 190.8deg) at 50% 50%, var(--radial-gradient-gold));
+}
+53.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 192.6deg) at 50% 50%, var(--radial-gradient-gold));
+}
+54.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 194.4deg) at 50% 50%, var(--radial-gradient-gold));
+}
+54.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 196.20000000000002deg) at 50% 50%, var(--radial-gradient-gold));
+}
+55.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 198.0deg) at 50% 50%, var(--radial-gradient-gold));
+}
+55.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 199.8deg) at 50% 50%, var(--radial-gradient-gold));
+}
+56.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 201.6deg) at 50% 50%, var(--radial-gradient-gold));
+}
+56.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 203.4deg) at 50% 50%, var(--radial-gradient-gold));
+}
+57.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 205.20000000000002deg) at 50% 50%, var(--radial-gradient-gold));
+}
+57.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 207.0deg) at 50% 50%, var(--radial-gradient-gold));
+}
+58.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 208.8deg) at 50% 50%, var(--radial-gradient-gold));
+}
+58.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 210.6deg) at 50% 50%, var(--radial-gradient-gold));
+}
+59.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 212.4deg) at 50% 50%, var(--radial-gradient-gold));
+}
+59.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 214.20000000000002deg) at 50% 50%, var(--radial-gradient-gold));
+}
+60.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 216.0deg) at 50% 50%, var(--radial-gradient-gold));
+}
+60.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 217.8deg) at 50% 50%, var(--radial-gradient-gold));
+}
+61.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 219.6deg) at 50% 50%, var(--radial-gradient-gold));
+}
+61.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 221.4deg) at 50% 50%, var(--radial-gradient-gold));
+}
+62.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 223.20000000000002deg) at 50% 50%, var(--radial-gradient-gold));
+}
+62.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 225.0deg) at 50% 50%, var(--radial-gradient-gold));
+}
+63.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 226.8deg) at 50% 50%, var(--radial-gradient-gold));
+}
+63.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 228.6deg) at 50% 50%, var(--radial-gradient-gold));
+}
+64.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 230.4deg) at 50% 50%, var(--radial-gradient-gold));
+}
+64.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 232.20000000000002deg) at 50% 50%, var(--radial-gradient-gold));
+}
+65.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 234.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+65.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 235.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+66.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 237.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+66.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 239.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+67.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 241.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
+}
+67.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 243.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+68.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 244.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+68.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 246.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+69.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 248.4deg) at 50% 50%, var(--radial-gradient-blue));
+}
+69.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 250.20000000000002deg) at 50% 50%, var(--radial-gradient-blue));
+}
+70.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 252.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+70.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 253.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+71.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 255.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+71.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 257.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
+}
+72.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 259.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+72.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 261.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+73.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 262.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+73.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 264.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+74.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 266.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
+}
+74.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 268.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+75.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 270.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+75.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 271.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+76.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 273.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+76.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 275.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
+}
+77.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 277.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+77.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 279.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+78.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 280.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+78.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 282.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+79.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 284.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
+}
+79.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 286.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+80.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 288.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+80.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 289.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+81.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 291.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+81.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 293.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
+}
+82.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 295.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+82.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 297.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+83.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 298.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+83.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 300.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+84.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 302.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
+}
+84.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 304.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+85.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 306.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+85.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 307.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+86.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 309.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+86.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 311.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
+}
+87.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 313.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+87.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 315.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+88.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 316.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+88.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 318.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+89.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 320.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
+}
+89.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 322.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+90.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 324.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+90.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 325.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+91.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 327.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+91.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 329.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
+}
+92.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 331.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+92.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 333.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+93.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 334.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+93.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 336.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+94.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 338.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
+}
+94.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 340.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+95.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 342.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+95.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 343.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+96.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 345.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+96.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 347.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
+}
+97.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 349.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+97.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 351.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+98.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 352.8deg) at 50% 50%, var(--radial-gradient-blue));
+}
+98.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 354.6deg) at 50% 50%, var(--radial-gradient-blue));
+}
+99.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 356.40000000000003deg) at 50% 50%, var(--radial-gradient-blue));
+}
+99.5% {
+    background: conic-gradient(from calc(var(--start-angle) + 358.2deg) at 50% 50%, var(--radial-gradient-blue));
+}
+100.0% {
+    background: conic-gradient(from calc(var(--start-angle) + 360.0deg) at 50% 50%, var(--radial-gradient-blue));
+}
+}
+
+@animateBouncyDown: {
+background-color: rgba(0, 14, 58, 0) !important;
+border-radius: 12px;
+box-shadow: 0 0px 10px rgba(255, 255, 255, 0.781);
+backdrop-filter: blur(100px) saturate(110%);
+-webkit-backdrop-filter: blur(100px);
+transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+animation: animateDownBouncy 1.5s linear;
+}
+
+@keyframes animateDownBouncy {
+0% {
+  transform: translateY(-20px);
+  opacity: 0;
+  filter: blur(4px);
+}
+30% {
+  transform: translateY(10px);
+  opacity: 0.7;
+  filter: blur(2px);
+}
+50% {
+  transform: translateY(-5px);
+  opacity: 1;
+  filter: blur(0);
+}
+80% {
+  transform: translateY(0);
+  opacity: 1;
+  filter: blur(0);
+}
+100% {
+  transform: translateY(0);
+  opacity: 1;
+  filter: blur(0);
+}
+}
+
+@newBackdrop:{
+backdrop-filter: blur(150px) !important; 
+box-shadow: inset 0px 2px 0px 0px #00000020, inset 0px 2px 8px 0px #00000040 !important;
+background: linear-gradient(120deg,
+rgba(50, 45, 55, 0.82) 0%,
+rgba(60, 55, 65, 0.82) 25%,
+rgba(70, 62, 72, 0.82) 50%,
+rgba(80, 70, 80, 0.82) 75%),
+linear-gradient(60deg,
+rgba(85, 65, 75, 0.1) 0%,
+rgba(75, 65, 80, 0.1) 50%,
+rgba(65, 60, 75, 0.1) 100%),
+radial-gradient(circle at 25% 25%, 
+rgba(110, 100, 115, 0.08) 0%, 
+rgba(80, 70, 85, 0.08) 50%, 
+rgba(60, 50, 65, 0.08) 100%),
+repeating-linear-gradient(45deg, 
+rgba(70, 60, 70, 0.02) 0px, 
+rgba(70, 60, 70, 0.02) 1px, 
+transparent 1px, 
+transparent 8px),
+repeating-linear-gradient(135deg, 
+rgba(70, 60, 70, 0.02) 0px, 
+rgba(70, 60, 70, 0.02) 1px, 
+transparent 1px, 
+transparent 8px),
+repeating-radial-gradient(circle at 50% 50%,
+rgba(80, 70, 80, 0.01) 0px,
+rgba(80, 70, 80, 0.01) 1px,
+transparent 1px,
+transparent 10px) !important;
+background-attachment: fixed, fixed, fixed, fixed, fixed, fixed !important;
+background-size: cover, cover, cover, 10px 10px, 10px 10px, 20px 20px !important;
+}
+
+@deep:{
+background-color: rgba(5, 5, 5, .18) !important;
+backdrop-filter: blur(150px) !important; 
+box-shadow: inset 0px 2px 0px 0px #00000020, inset 0px 2px 8px 0px #00000040 !important;
+}
+
+@elevated:{
+      box-shadow: 0px 2px 0px 0px #FFFFFF0f, 
+          0px 2px 8px 0px #00000040,
+          inset 0px 8px 8px 0px #FFFFFF07 !important;
+outline: 1px solid #ffffff10 !important;
+outline-offset: -1px !important;
+background-color: transparent !important;
+}
+
+/*!SECTION [SNESHLIB - End]*/
+/*ANCHOR [ROOT] */
+:root {
+    --fgColor-accent: @creamColor !important;
+    --borderColor-default: @creamColor !important;
+    --borderColor-muted: @creamColorMuted !important;
+
+    --start-angle: 0deg;
+    --radial-gradient-gold: transparent 25deg, var(--color-calendar-graph-day-L1-bg) 43.4deg, transparent 60deg, transparent 100deg, transparent 310deg, transparent 408.4deg;
+    --radial-gradient-blue: transparent 25deg, var(--color-calendar-graph-day-L4-bg) 43.4deg, transparent 60deg, transparent 100deg, transparent 310deg, transparent 408.4deg;
+}
+
+.Button--secondary {
+    background: transparent;
+    border: none;
+    color: @creamColor;
+}
+
+.Button--secondary:hover {
+    @buttonsHover();
+    color: @creamColor;
+}
+
+.Button--danger {
+    background: transparent !important;
+    border: none;
+}
+
+.Button--danger:hover {
+    @transparentButtonsHover();
+    background-color: var(--button-danger-iconColor-rest) !important;
+}
 
 
-    div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =nouss) {
-        background-color: @gradcolor1 !important;
-    }
+/*ANCHOR [Top bar] */
+/* Replaces with hap */
+#js-logo-nav {
+    display: block;
+    width: 150px;
+    height: 35px;
+    background-image: @hap;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+}
+
+.pz-nav__logo {
+    display: none;
+    /* Hides the original SVG */
+}
+
+.AppHeader-button,
+.AppHeader .AppHeader-globalBar .AppHeader-search input[type=search],
+.AppHeader .AppHeader-globalBar .AppHeader-search .AppHeader-searchButton {
+    border: 1px solid @creamColorMuted !important;
+}
 
 
-    @keyframes gradientAnimation {
-        @gradientAnimation();
-    }
+/* modals */
+/*ANCHOR [Gradient background options and grain] */
+body when (@gradType =flouss) {
+    @gradientBackground();
+}
 
 
-    .AppHeader::before when (@grain =1) {
-        @noise();
-        z-index: 0 !important;
-    }
-    
-    .gisthead::before when (@grain =1) {
-        @noise();
-        z-index: 0 !important;
-    }
-    /* Dashboard */
-    
-    .TimelineItem-badge{
-        @backdrop();
-    }
+body when (@gradType =animated) {
+    @gradientBackground();
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s ease infinite;
+}
 
-    .copilotPreview {
-        @textArea();
-    }
-    
-    .copilotPreview__footer .copilotPreview__suggestionButton:hover {
-        @buttonsHover();
-    }
-    
-    .copilotPreview__footer .copilotPreview__suggestionButton {
-        @backdrop();
+
+body when (@gradType =nouss) {
+    background-color: @gradcolor1 !important;
+}
+
+div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =flouss) {
+    @gradientBackground();
+}
+
+
+div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =animated) {
+    @gradientBackground();
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s ease infinite;
+}
+
+
+div[itemscope][itemtype="http://schema.org/Organization"] when (@gradType =nouss) {
+    background-color: @gradcolor1 !important;
+}
+
+
+@keyframes gradientAnimation {
+    @gradientAnimation();
+}
+
+
+.AppHeader::before when (@grain =1) {
+    @noise();
+    z-index: 0 !important;
+}
+
+.gisthead::before when (@grain =1) {
+    @noise();
+    z-index: 0 !important;
+}
+/* Dashboard */
+
+.TimelineItem-badge{
+    @backdrop();
+}
+
+.copilotPreview {
+    @textArea();
+}
+
+.copilotPreview__footer .copilotPreview__suggestionButton:hover {
+    @buttonsHover();
+}
+
+.copilotPreview__footer .copilotPreview__suggestionButton {
+    @backdrop();
+} 
+
+
+.feed-background when (@gradType =flouss) {
+    @gradientBackground();
+}
+
+
+.feed-background when (@gradType =animated) {
+    @gradientBackground();
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s ease infinite;
+}
+
+
+.feed-background when (@gradType =nouss) {
+    background-color: @gradcolor1 !important;
+}
+
+.select-menu-header,
+.select-menu-divider,
+.select-menu-filters {
+    background-color: transparent;
+}
+
+
+
+/*ANCHOR [Header] */
+.AppHeader-logo::before {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: @hap no-repeat center center;
+    background-size: contain;
+}
+
+/* Hide the existing SVG logo */
+.AppHeader-logo svg {
+    display: none !important;
+}
+
+
+.AppHeader {
+    @gradientBackground();
+}
+
+.gisthead{
+     @gradientBackground();
+}
+   .Header{
+    @backdrop();
+   }
+
+.AppHeader-context-item:hover {
+    @buttonsHover();
+}
+
+/*ANCHOR [Transparenting shit] */
+/*ANCHOR [Sidebar Styling] */
+/*ANCHOR [USER PAGE] */
+.Box,
+.graph-before-activity-overview {
+    @backdrop();
+    border: none !important;
+}
+
+.avatar:hover{
+    @animateBouncyDown();
+}
+
+.Box:hover {
+    @boxShadowHover();
+}
+
+.btn,
+.drIBIt {
+    @disappear();
+    border: none !important
+}
+
+.btn:hover,
+.drIBIt:hover {
+    @buttonsHover();
+    border: none !important
+}
+
+.color-bg-default,
+.bgColor-default {
+    @disappear();
+    border: none !important
+}
+
+.user-status-circle-badge {
+    @gradientBackground();
+    border: none !important;
+}
+
+.js-year-link {
+    @buttons();
+}
+
+.js-year-link:hover {
+    @buttonsHover();
+}
+
+.Box-body {
+    border: none !important;
+}
+
+/* Fix line */
+.h6.pr-2.py-1.border-bottom.mb-3 {
+    padding-bottom: 19px !important;
+}
+
+
+body > div.logged-in.env-production.page-responsive.full-width > div.application-main > div > div > aside > div > div > loading-context > div > div.Details.js-repos-container.mt-5 > div > ul > li:hover {
+    @hoverChannelSlide();
+}
+
+/*ANCHOR [EDIT PROFILE] */
+textarea[id="user_profile_bio"],
+input[id="user_profile_name"],
+input[aria-label="Company"],
+input[aria-label="Location"],
+select[id="user_profile_email"],
+input[aria-label="Website"],
+input[aria-label="Link to social profile"],
+select[aria-label="Time zone"],
+select[name="user[profile_pronouns]"],
+input[id="dashboard-repos-filter-left"],
+input[placeholder="Find a repository…"],
+input[aria-label="Filter repositories"],
+.jJiPKt,
+.kMKOXm,
+input[name="user_list[name]"],
+textarea[name="user_list[description]"],
+input[id="release-filter"],
+input[name="repo_description"],
+input[aria-label="Commit title"],
+textarea[name="commit_message"],
+.uXEwx,
+.toHQP,
+.bclhiL,
+.input-contrast,
+.form-control, .form-select, 
+input:not([aria-label="Go to file"]), 
+textarea {
+    @deep();
+    border: none !important;
+}
+
+@layer primer-react {
+.prc-components-TextInputBaseWrapper-ueK9q {
+
+ @deep();
+    border: none !important;
     } 
-
-    
-    .feed-background when (@gradType =flouss) {
-        @gradientBackground();
-    }
-
-
-    .feed-background when (@gradType =animated) {
-        @gradientBackground();
-        background-size: 400% 400%;
-        animation: gradientAnimation 20s ease infinite;
-    }
-
-
-    .feed-background when (@gradType =nouss) {
-        background-color: @gradcolor1 !important;
-    }
-
-    .select-menu-header,
-    .select-menu-divider,
-    .select-menu-filters {
-        background-color: transparent;
-    }
-
-
-
-    /*ANCHOR [Header] */
-    .AppHeader-logo::before {
-        content: "";
-        display: block;
-        width: 32px;
-        height: 32px;
-        background: @hap no-repeat center center;
-        background-size: contain;
-    }
-
-    /* Hide the existing SVG logo */
-    .AppHeader-logo svg {
-        display: none !important;
-    }
-
-
-    .AppHeader {
-        @gradientBackground();
-    }
-    
-    .gisthead{
-         @gradientBackground();
-    }
-       .Header{
-        @backdrop();
-       }
-
-    .AppHeader-context-item:hover {
-        @buttonsHover();
-    }
-
-    /*ANCHOR [Transparenting shit] */
-    /*ANCHOR [Sidebar Styling] */
-    /*ANCHOR [USER PAGE] */
-    .Box,
-    .graph-before-activity-overview {
-        @backdrop();
-        border: none !important;
-    }
-
-    .avatar:hover{
-        @animateBouncyDown();
-    }
-
-    .Box:hover {
-        @boxShadowHover();
-    }
-
-    .btn,
-    .drIBIt {
-        @disappear();
-        border: none !important
-    }
-
-    .btn:hover,
-    .drIBIt:hover {
-        @buttonsHover();
-        border: none !important
-    }
-
-    .color-bg-default,
-    .bgColor-default {
-        @disappear();
-        border: none !important
-    }
-
-    .user-status-circle-badge {
-        @gradientBackground();
-        border: none !important;
-    }
-
-    .js-year-link {
-        @buttons();
-    }
-
-    .js-year-link:hover {
-        @buttonsHover();
-    }
-
-    .Box-body {
-        border: none !important;
-    }
-
-    /* Fix line */
-    .h6.pr-2.py-1.border-bottom.mb-3 {
-        padding-bottom: 19px !important;
-    }
-
-
-    body > div.logged-in.env-production.page-responsive.full-width > div.application-main > div > div > aside > div > div > loading-context > div > div.Details.js-repos-container.mt-5 > div > ul > li:hover {
-        @hoverChannelSlide();
-    }
-
-    /*ANCHOR [EDIT PROFILE] */
-    textarea[id="user_profile_bio"],
-    input[id="user_profile_name"],
-    input[aria-label="Company"],
-    input[aria-label="Location"],
-    select[id="user_profile_email"],
-    input[aria-label="Website"],
-    input[aria-label="Link to social profile"],
-    select[aria-label="Time zone"],
-    select[name="user[profile_pronouns]"],
-    input[id="dashboard-repos-filter-left"],
-    input[placeholder="Find a repository…"],
-    input[aria-label="Filter repositories"],
-    .jJiPKt,
-    .kMKOXm,
-    input[name="user_list[name]"],
-    textarea[name="user_list[description]"],
-    input[id="release-filter"],
-    input[name="repo_description"],
-    input[aria-label="Commit title"],
-    textarea[name="commit_message"],
-    .uXEwx,
-    .toHQP,
-    .bclhiL,
-    .input-contrast,
-    .form-control, .form-select {
-        @textArea();
-    }
-
-    .DiffFind-module__defaultStyles--gxyWR {
-        @disappear();
-    }
-
-
-    /*ANCHOR [WRITE README] */
-    .eWVknf {
-        background-color: rgba(5, 5, 5, .18) !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-    .ͼ5 .cm-content,
-    .ͼ5 .cm-help-panel,
-    .drag-and-drop,
-    .ͼ8n .cm-content,
-    .Box-sc-g0xbh4-0.NWhVB {
-        @disappear();
-    }
-    .ͼ5,
-    .ͼ8n {
-        background: #00000087;
-    }
-
-    .TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.xffca.lmsUst {
-        background-color: rgba(5, 5, 5, .18) !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        border: 1px solid @creamColor !important;
-    }
-
-    .dQJPiZ {
-        background-color: rgba(5, 5, 5, .18) !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-    .Skzpj .segmentedControl-content,
-    .kTeWMB .segmentedControl-content {
-        border: 1px solid @creamColor !important;
-    }
-
-    /*ANCHOR [MOSAIC] */
-    /* Targeting the mosaic element */
-    .graph-before-activity-overview {
-        @snakeTarget();
-    }
-
-    /* Adding the animated glowing gradient border using a pseudo-element  div.relative.max-w-\[70\%\].rounded-3xl::before, */
-    .graph-before-activity-overview::before {
-        @snakeFastBefore();
-    }
-
-    /*colors mosaic gradient */
-    :root when (@mosaicType =pink) {
-
-        --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-        /* Almost transparent */
-        --color-calendar-graph-day-L1-bg: #ffd1e3 !important;
-        /* Softer blush pink */
-        --color-calendar-graph-day-L2-bg: #ff99c2 !important;
-        /* Slightly deeper soft pink */
-        --color-calendar-graph-day-L3-bg: #ff66b2 !important;
-        /* Medium pink */
-        --color-calendar-graph-day-L4-bg: #cc0052 !important;
-        /* Dark pink */
-        --bgColor-accent-emphasis: @creamColor !important;
-        --tooltip-bgColor: transparent !important;
-    }
-
-
-    :root when (@mosaicType =pink) {
-
-        --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-        /* Almost transparent */
-        --color-calendar-graph-day-L1-bg: #ffd1e3 !important;
-        /* Softer blush pink */
-        --color-calendar-graph-day-L2-bg: #ff99c2 !important;
-        /* Slightly deeper soft pink */
-        --color-calendar-graph-day-L3-bg: #ff66b2 !important;
-        /* Medium pink */
-        --color-calendar-graph-day-L4-bg: #cc0052 !important;
-        /* Dark pink */
-        --bgColor-accent-emphasis: @creamColor !important;
-    }
-
-
-    :root when (@mosaicType =citrus) {
-
-        --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-        /* Almost transparent */
-        --color-calendar-graph-day-L1-bg: #ffcc66 !important;
-        /* Light neon yellow */
-        --color-calendar-graph-day-L2-bg: #ff9900 !important;
-        /* Bright yellow-orange */
-        --color-calendar-graph-day-L3-bg: #cc5200 !important;
-        /* Bold orange */
-        --color-calendar-graph-day-L4-bg: #663300 !important;
-        /* Dark burnt orange */
-        --bgColor-accent-emphasis: @creamColor !important;
-        --tooltip-bgColor: transparent !important;
-    }
-
-
-    :root when (@mosaicType =berry) {
-
-        --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-        /* Almost transparent */
-        --color-calendar-graph-day-L1-bg: #ff99cc !important;
-        /* Light neon lavender */
-        --color-calendar-graph-day-L2-bg: #ff33a6 !important;
-        /* Neon pink */
-        --color-calendar-graph-day-L3-bg: #80004d !important;
-        /* Rich berry */
-        --color-calendar-graph-day-L4-bg: #4d0033 !important;
-        /* Dark magenta */
-        --bgColor-accent-emphasis: @creamColor !important;
-        --tooltip-bgColor: transparent !important;
-    }
-
-
-    :root when (@mosaicType =ocean) {
-
-        --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-        /* Almost transparent */
-        --color-calendar-graph-day-L1-bg: #80eaff !important;
-        /* Light neon aqua */
-        --color-calendar-graph-day-L2-bg: #00bfff !important;
-        /* Neon aqua */
-        --color-calendar-graph-day-L3-bg: #004d99 !important;
-        /* Deep blue */
-        --color-calendar-graph-day-L4-bg: #002b66 !important;
-        /* Dark navy */
-        --bgColor-accent-emphasis: @creamColor !important;
-        --tooltip-bgColor: transparent !important;
-    }
-
-    :root when (@mosaicType =xmas) {
-        --color-calendar-graph-day-bg: rgba(178, 24, 55, 0.1) !important;
-        /* Almost transparent ruby red */
-        --color-calendar-graph-day-L1-bg: #5a0410 !important;
-        /* Lighter ruby red */
-        --color-calendar-graph-day-L2-bg: #9b0000 !important;
-        /* Dark ruby red */
-        --color-calendar-graph-day-L3-bg: #004d00 !important;
-        /* Evergreen */
-        --color-calendar-graph-day-L4-bg: #ffd700 !important;
-        /* Gold */
-        --bgColor-accent-emphasis: @creamColor !important;
-        --tooltip-bgColor: transparent !important;
-    }
-
-
-    :root when (@mosaicType =forest) {
-
-        --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-        /* Almost transparent */
-        --color-calendar-graph-day-L4-bg: #80ffbf !important;
-        /* Light neon green */
-        --color-calendar-graph-day-L3-bg: #00ff80 !important;
-        /* Fluorescent green */
-        --color-calendar-graph-day-L2-bg: #007f4f !important;
-        /* Dark neon green */
-        --color-calendar-graph-day-L1-bg: #004d26 !important;
-        /* Deep teal */
-        --bgColor-accent-emphasis: @creamColor !important;
-        --tooltip-bgColor: transparent !important;
-    }
-
-
-    :root when (@mosaicType =twilight) {
-
-        --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
-        /* Almost transparent */
-        --color-calendar-graph-day-L1-bg: #ff99e6 !important;
-        /* Light neon pink */
-        --color-calendar-graph-day-L2-bg: #ff33cc !important;
-        /* Neon pink */
-        --color-calendar-graph-day-L3-bg: #8a00e6 !important;
-        /* Neon violet */
-        --color-calendar-graph-day-L4-bg: #4a007d !important;
-        /* Deep purple */
-        --bgColor-accent-emphasis: @creamColor !important;
-        --tooltip-bgColor: transparent !important;
-    }
-
-    :root when (@mosaicType =drama) {
-
-        --color-calendar-graph-day-bg: rgba(10, 10, 20, 0.2) !important;
-        /* Subtle, dark base */
-        --color-calendar-graph-day-L1-bg: #1c1c30 !important;
-        /* Deep blue-gray */
-        --color-calendar-graph-day-L2-bg: #3a243b !important;
-        /* Smoky dark maroon */
-        --color-calendar-graph-day-L3-bg: #60253f !important;
-        /* Muted crimson */
-        --color-calendar-graph-day-L4-bg: #7a3a45 !important;
-        /* Soft, lighter maroon */
-        --bgColor-accent-emphasis: @creamColor !important;
-        --tooltip-bgColor: transparent !important;
-    }
-
-    :root when (@mosaicType =neon) {
-
-        --color-calendar-graph-day-bg: rgba(255, 255, 200, 0.1) !important;
-        /* Almost transparent pale yellow */
-        --color-calendar-graph-day-L1-bg: #a76e0a !important;
-        /* Dark amber-yellow */
-        --color-calendar-graph-day-L2-bg: #ffb300 !important;
-        /* Bold bright yellow */
-        --color-calendar-graph-day-L3-bg: #ffda00 !important;
-        /* Vivid lemon yellow */
-        --color-calendar-graph-day-L4-bg: #ffff00 !important;
-        /* Bright neon yellow */
-        --bgColor-accent-emphasis: @creamColor !important;
-        --tooltip-bgColor: transparent !important;
-    }
-
-    :root when (@mosaicType =nouss) {
-        --bgColor-accent-emphasis: @creamColor !important;
-        --tooltip-bgColor: transparent !important;
-    }
-
-
-
-
-
-
-    /*ANCHOR [DASHBOARD] */
-    tool-tip {
-        @backdrop();
-    }
-    .p-3.mt-2.border.color-border-muted.rounded-1.color-shadow-medium.height-full.color-bg-overlay,
-    .feed-item-content.rounded-2,
-    .color-bg-subtle,
-    .bgColor-muted,
-    {
-        @backdrop();
-        border: none !important;
-    }
-
-    .feed-item-content.rounded-1 {
-        @disappear();
-    }
-
-    .py-3.border-bottom:hover,
-    .py-3.border-0:hover {
-        @boxShadowHover();
-        padding: 7px;
-    }
-
-
-    .py-3.border-bottom,
-    .py-3.border-0 {
-        padding: 7px;
-    }
-
-    /* Modal */
-    .SelectMenu-modal,
-    .gAwGiF,
-    .jclhSs,
-    button[aria-describedby=":R5b5ab:-loading-announcement"],
-    button[id=":rn:"],
-    button[id=":rq:"],
-    button[id=":R535ab:"],
-    button[aria-describedby=":R535ab:-loading-announcement"],
-    button[aria-label="Add file"] {
-        @backdrop();
-        border: 1px solid @creamColor !important;
-    }
-
-
-
-
-    .gfgFTT {
-        border: 1.5px solid @creamColor !important;
-        background-color: transparent !important;
-    }
-
-    .topic-tag:hover {
-        @buttonsHover();
-    }
-
-    /* NOTE the big button selector is .prc-Button-ButtonBase-c50BI but too much imo */
-    .jJOpJy,
-    button[aria-label="Close dialog"] {
-        @disappear();
-    }
-
-    .jJOpJy:hover,
-    button[aria-label="Close dialog"]:hover {
-        @buttonsHover();
-    }
-
-
-    .jqwEBk.selected,
-    .gJSxwI.selected,
-    .fQHyfn.selected {
-        background-color: @creamColorMuted !important;
-    }
-
-    button[aria-controls="branches"][aria-selected="false"].hover {
-        background-color: none !important;
-    }
-
-    .cBcJJc,
-    .gFTAHK {
-        @disappear();
-    }
-
-    .bOZZCe,
-    .jNzEbl {
-        @backdrop();
-        border: 1px solid @creamColor !important;
-    }
-
-    .jNzEbl:hover {
-        @buttonsHover();
-    }
-
-    .SelectMenu-footer.px-2 {
-        @disappear();
-    }
-
-    .bOuPbH {
-        box-shadow: @creamColor 0px 0px 0px 2px !important;
-    }
-
-    .SelectMenu-item,
-    .SelectMenu-list,
-    .jxcXqM,
-    .dlnypB {
-        @disappear();
-    }
-
-    /*ANCHOR [README] */
-    .markdown-body h2 {
-        color: @creamColor !important;
-    }
-
-    /*ANCHOR [REPO PAGE] */
-    .Box-sc-g0xbh4-0.QkQOb.js-snippet-clipboard-copy-unpositioned,
-    .emuNsQ,
-    .kcCxPI,
-    .IsnOs {
-        @backdrop();
-    }
-
-    .react-directory-row:hover {
-        background-color: rgba(5, 5, 5, .18) !important;
-         backdrop-filter: blur(150px) !important; 
-  box-shadow: inset 0px 2px 0px 0px #00000020, inset 0px 2px 8px 0px #00000040 !important;
-    }
-
-    .react-directory-row td {
-        border-top: max(0.5px, 0.0625rem) solid @creamColor !important;
-    }
-
-    .ioYCDf {
-        @disappear();
-    }
-
-
-    .kRIEXD {
-        border: 2px solid @creamColor !important;
-    }
-
-    .mb-2.p-3.border.rounded-2:hover {
-        @boxShadowHover();
-    }
-
-    .dJnomT,
-    .fOlIdb.selected {
-        background-color: rgba(5, 5, 5, .18) !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-    .kgetqy {
-        @disappear();
-    }
-
-    .List__ListBox-sc-1x7olzq-0.eoXvfR.react-overview-code-button-action-list,
-    .Box-sc-g0xbh4-0.hgepGv.Box-sc-g0xbh4-0.hgepGv.prc-Button-ButtonBase-c50BI.prc-Link-Link-85e08,
-    button[aria-label="Start conversation"],
-    button[aria-label="More actions"],
-    button[aria-label="Filter"] {
-        @backdrop();
-        border: 1px solid @creamColor !important;
-    }
-
-
-    /*ANCHOR [FILE PAGE] */
-    .gpHFJV {
-        background-color: rgba(5, 5, 5, .18) !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-
-    .cDbgyb,
-    .XlAvl,
-    .fnqFQe,
-    .jBaPmj,
-    .hfIjLs,
-    .dRyOTG {
-        @disappear();
-    }
-
-
-    .cDbgyb:hover,
-    .XlAvl:hover,
-    .fnqFQe:hover,
-    .jBaPmj:hover,
-    .hfIjLs:hover,
-    .dRyOTG:hover {
-        @buttonsHover();
-    }
-
-    .fXBJSr {
-        @disappear();
-    }
-
-    .Box-sc-g0xbh4-0.tOISc {
-        @disappear();
-    }
-
-    .jodZGf,
-    .cOgqet,
-    .bourBp {
-        background-color: rgba(5, 5, 5, .18) !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-    .segmentedControl-content {
-        @disappear();
-    }
-
-    .gUrqbU .segmentedControl-content,
-    .dyQa-dS .segmentedControl-content {
-        border: 1px solid @creamColor !important;
-    }
-
-    .eYPFoP {
-        background-color: rgba(5, 5, 5, .18) !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        border: none !important;
-    }
-
-    /*ANCHOR [REPO LIST] */
-    .col-12.d-flex.flex-justify-between.width-full.py-4.border-bottom.color-border-muted:hover {
-        @boxShadowHover();
-    }
-
-    .col-12.d-flex.flex-justify-between.width-full.py-4.border-bottom.color-border-muted {
-        @backdrop();
-        margin-top: 10px;
-        border: none !important;
-    }
-
-    .border-bottom.color-border-muted.py-3 {
-        @backdrop();
-        border: none !important;
-    }
-
-    /*ANCHOR [STARS MENU] */
-    .ActionListWrap--inset.ActionListWrap {
-        @backdrop();
-    }
-
-    /*NOTE [THIS IS A BIG ONE NGL] */
-    .Overlay {
-        @disappear();
-    }
-
-    /*ANCHOR [NOTIFICATIONS PAGE ] */
-    .Box-header {
-        @disappear();
-    }
-
-    .notifications-list-item.notification-read,
-    .notifications-list-item.notification-archived {
-        @disappear();
-    }
-
-
-    .ActionListContent:hover {
-        background-color: rgba(5, 5, 5, .63) !important;
-        backdrop-filter: blur(150px) !important; 
-  box-shadow: inset 0px 2px 0px 0px #00000020, inset 0px 2px 8px 0px #00000040 !important;
-    }
-
-    /*ANCHOR [SEARCH BAR] */
-    /* When the search bar is clicked or focused */
-    .AppHeader-searchButton:focus,
-    .AppHeader-searchButton:active,
-    .AppHeader-searchButton:hover {
-        z-index: 1000;
-        position: fixed !important;
-        top: 20vh !important;
-        left: 20vw !important;
-        right: 20vw !important;
-        width: 60vw !important;
-
-        background-color: white;
-        border: 1px solid #ccc;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    /* The search suggestions dropdown */
-    .search-suggestions {
-        position: fixed !important;
-        top: 20% !important;
-        left: 20vw !important;
-        right: 20vw !important;
-        width: 60vw !important;
-
-        z-index: 1000;
-        border-radius: 12px;
-        background-color: white;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Blur the background when the search bar is active */
-    body.search-active::after {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(5px);
-        z-index: 999;
-    }
-
-    /* Optionally remove the fixed position and blur effect when search loses focus */
-    body:not(.search-active) .AppHeader-searchButton {
-        position: static !important;
-        left: auto !important;
-        right: auto !important;
-        top: auto !important;
-        z-index: 1;
-        box-shadow: none;
-        width: 100% !important;
-        /* Reset width */
-        transition: width 0.3s ease;
-        /* Smooth shrinking */
-    }
-
-
-    .search-suggestions {
-        @backdrop();
-    }
-
-    .QueryBuilder-StyledInput {
-        @backdrop();
-        border: none;
-    }
-
-    .QueryBuilder-focus {
-        outline: none;
-    }
-
-    .search-input.expanded > div > div.AppHeader-search-whenRegular {
-        display: none !important;
-    }
-    .search-suggestions {
-        border: 0.5px solid @creamColor !important;
-    }
-
-    /*ANCHOR [SETTINGS] */
-    dialog {
-        @backdrop();
-    }
-
-    .flash-banner,
-    .flash-full {
-        @backdrop();
-    }
-
-    /*ANCHOR [NOTIFICATIONS] */
-    .btn.selected,
-    .btn[aria-selected=true] {
-        @disappear();
-    }
-
-    .btn.selected:hover,
-    .btn[aria-selected=true]:hover {
-        @buttonsHover();
-    }
-
-    .ActionList-sectionDivider {
-        @backdrop();
-    }
-
-    .FormControl-input {
-        @disappear();
-    }
-
-    /*ANCHOR [PROJECTS] */
-    .border-top {
-        border: none!important;
-    }
-
-    /*ANCHOR [CODE FILE PAGE] */
-    .panel-content-narrow-styles {
-        @backdrop();
-    }
-    .hpHiUV {
-        @disappear();
-    }
-
-    .dufIPq {
-        background-color: rgba(5, 5, 5, .18) !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-    .kexQoK,
-    .haQWCL,
-    .eEsVFK:disabled {
-        @disappear();
-    }
-
-    .Box-sc-g0xbh4-0.dKXtYX,
-    .fflxCk {
-        background-color: transparent !important;
-    }
-
-    [aria-label="Previous reference"]:hover,
-    [aria-label="Next reference"]:hover {
-        @buttonsHover();
-    }
-
-    .Box-sc-g0xbh4-0.kTMYBM:hover {
-
-        background-color: var(--control-transparent-bgColor-hover) !important;
-    }
-
-    .PRIVATE_TreeView-item:hover {
-        @hoverChannelSlide();
-    }
-
-
-    .jAlLSY th {
-        @disappear();
-    }
-
-    .eWEbRA:hover {
-        @menuItemHover();
-    }
-
-    .TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.fgiTUz.klSCQM.TextInput-wrapper {
-        @textArea();
-    }
-
-    .eoIeZr {
-        @disappear();
-    }
-
-
-
-    /*ANCHOR [CREATE A REPO PAGE] */
-    .iBpOGA {
-        @backdrop();
-    }
-
-    .cujkRS {
-        @textArea();
-    }
-
-    /*ANCHOR [GITHUB DOCS] */
-    .fDlMNy,
-    .jXUMlK,
-    .dA-dVZO {
-        @backdrop();
-    }
-
-    .markdown-body table tr {
-        @backdrop();
-        border-top: none !important;
-    }
-
-    .MarkdownContent_markdownBody__v5MYy table thead td,
-    .MarkdownContent_markdownBody__v5MYy table thead th {
-        box-shadow: inset 0 -2px @creamColor;
-    }
-
-    .MarkdownContent_markdownBody__v5MYy table tbody td,
-    .MarkdownContent_markdownBody__v5MYy table tbody th {
-        box-shadow: inset 0 -1px @creamColorMuted;
-    }
-
-
-    table {
-        @backdrop();
-        border-color: @creamColor !important;
-    }
-
-    .TableHeader {
-        @disappear();
-    }
-
-
-    .hNkDDR,
-    .crArEc {
-        background-color: transparent !important
-    }
-
-    .cHTOlv:hover,
-    .cXuGuz:hover,
-    .biIjJG:hover {
-        @hoverChannelSlide();
-    }
-
-    .dYDZmW {
-        @textArea();
-    }
-
-
-    /*ANCHOR [COMMUNITY] */
-    .list-style-none.border.px-3.color-bg-overlay.rounded-2 {
-        @backdrop();
-    }
-
-    .select-menu-modal,
-    .timeline-comment {
-        @backdrop();
-    }
-    .select-menu-item {
-        @disappear();
-    }
-
-    .ActionList-item:hover {
-        @hoverChannelSlide();
-    }
-
-    body > div.logged-in.env-production.page-responsive.color-bg-inset > div.application-main > main > div > div.container-xl.p-responsive.clearfix > div.clearfix.container-xl > div > div.Layout-main > div > div.Layout-main > ul.list-style-none.border.px-3.mb-2.color-bg-overlay.rounded-2,
-    body > div.logged-in.env-production.page-responsive.color-bg-inset > div.application-main > main > div > div.container-xl.p-responsive.clearfix > div.clearfix.container-xl > div > div.Layout-main > div > div.Layout-main > ul:nth-child(5) {
-        @backdrop()
-    }
-
-
-    .Box-row:hover {
-        @boxShadowHover();
-    }
-
-    .bg-discussions-row-emoji-box,
-    .bg-discussions-row-emoji-box-small,
-    .review-thread-reply,
-    .CommentBox-header,
-    .discussion-timeline-actions,
-    .color-bg-inset,
-    .bgColor-inset {
-        @disappear();
-    }
-
-    .gh-header .gh-header-sticky.is-stuck + .gh-header-shadow:not([data-original-top="auto"]) {
-        @gradientBackground();
-    }
-    
-    
-
-    .tabnav-tab.selected,
-    .tabnav-tab[aria-current]:not([aria-current=false]),
-    .tabnav-tab[aria-selected=true] {
-        background-color: @creamColorMuted;
-    }
-
-
-    .review-thread-reply-button.form-control.js-discussions-previewable-comment-form.btn-link.btn-block.no-underline.color-fg-muted.text-left.text-normal.ml-0 {
-        @transparentButtons();
-        border: 0px solid @creamColor !important;
-        background: @creamColorMuted;
-        color: white !important;
-    }
-
-    .review-thread-reply-button.form-control.js-discussions-previewable-comment-form.btn-link.btn-block.no-underline.color-fg-muted.text-left.text-normal.ml-0:hover {
-        @buttonsHover();
-        color: white !important;
-    }
-
-
-    /*ANCHOR [COMMITS] */
-    .Panel-module__container--i4g9d {
-        @disappear();
-    }
-
-    button[aria-label="Go to previous month"],
-    button[aria-label="Go to next month"] {
-        @disappear();
-    }
-
-    button[aria-label="Go to previous month"]:hover,
-    button[aria-label="Go to next month"]:hover {
-        @buttonsHover();
-    }
-
-    .Day-module__day--ZcbvX:hover {
-        @buttonsHover();
-    }
-
-    .Day-module__day--ZcbvX.Day-module__selected--DfMaK {
-        background-color: @creamColor !important;
-    }
-
-    .Day-module__day--ZcbvX.Day-module__selected--DfMaK.Day-module__rangeMiddle--gfg7k {
-        background-color: @creamColorMuted !important;
-    }
-
-    .Panel-module__picker--gTDgA {
-        @backdrop();
-    }
-
-    .ListItem-module__listItem--kHali:hover {
-        @boxShadowHover();
-    }
-
-    .FilterInputWrapper-module__Box_1--vewob {
-        @disappear();
-    }
-
-    /*ANCHOR [COPILOT] */
-    .ivKSmi {
-        @backdrop();
-        border: 1px solid @creamColor !important;
-    }
-
-    .leXapx {
-        @textArea();
-    }
-
-    .ivKSmi,
-    .dgBfwJ {
-        @disappear();
-    }
-
-    .menu,
-    .kAsnol {
-        @backdrop();
-        border: 1px solid @creamColor !important;
-    }
-    .menu-item.selected,
-    .menu-item[aria-current]:not([aria-current=false]),
-    .menu-item[aria-selected=true] {
-        @disappear();
-    }
-    input[name="query"] {
-        @textArea();
-    }
-
-    /*ANCHOR [PULL REQUESTS] */
-    .subnav-item.selected,
-    .subnav-item[aria-selected=true],
-    .subnav-item[aria-current]:not([aria-current=false]) {
-        background-color: @creamColor !important;
-        border: 1px solid @creamColor !important;
-    }
-
-    .subnav-item:hover {
-        background-color: @creamColorMuted !important;
-    }
-
-
-    .subnav-item,
-    input[id="js-issues-search"] {
-        border: 1px solid @creamColor !important;
-    }
-
-    .Box-row--focus-gray.navigation-focus,
-    .gh-header,
-    .timeline-comment-header {
-        background-color: transparent !important;
-    }
-
-    .SelectMenu-modal {
-        z-index: 1000;
-    }
-
-    .SelectMenu-divider {
-        @disappear();
+} 
+.DiffFind-module__defaultStyles--gxyWR {
+    @disappear();
+}
+
+
+/*ANCHOR [WRITE README] */
+.eWVknf {
+    background-color: rgba(5, 5, 5, .18) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(100px) saturate(110%);
+    -webkit-backdrop-filter: blur(100px);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.ͼ5 .cm-content,
+.ͼ5 .cm-help-panel,
+.drag-and-drop,
+.ͼ8n .cm-content,
+.Box-sc-g0xbh4-0.NWhVB {
+    @disappear();
+}
+.ͼ5,
+.ͼ8n {
+    background: #00000087;
+}
+
+.TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.xffca.lmsUst {
+    background-color: rgba(5, 5, 5, .18) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(100px) saturate(110%);
+    -webkit-backdrop-filter: blur(100px);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid @creamColor !important;
+}
+
+.dQJPiZ {
+    background-color: rgba(5, 5, 5, .18) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(100px) saturate(110%);
+    -webkit-backdrop-filter: blur(100px);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.Skzpj .segmentedControl-content,
+.kTeWMB .segmentedControl-content {
+    border: 1px solid @creamColor !important;
+}
+
+/*ANCHOR [MOSAIC] */
+/* Targeting the mosaic element */
+.graph-before-activity-overview {
+    @snakeTarget();
+}
+
+/* Adding the animated glowing gradient border using a pseudo-element  div.relative.max-w-\[70\%\].rounded-3xl::before, */
+.graph-before-activity-overview::before {
+    @snakeFastBefore();
+}
+
+/*colors mosaic gradient */
+:root when (@mosaicType =pink) {
+
+    --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+    /* Almost transparent */
+    --color-calendar-graph-day-L1-bg: #ffd1e3 !important;
+    /* Softer blush pink */
+    --color-calendar-graph-day-L2-bg: #ff99c2 !important;
+    /* Slightly deeper soft pink */
+    --color-calendar-graph-day-L3-bg: #ff66b2 !important;
+    /* Medium pink */
+    --color-calendar-graph-day-L4-bg: #cc0052 !important;
+    /* Dark pink */
+    --bgColor-accent-emphasis: @creamColor !important;
+    --tooltip-bgColor: transparent !important;
+}
+
+
+:root when (@mosaicType =pink) {
+
+    --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+    /* Almost transparent */
+    --color-calendar-graph-day-L1-bg: #ffd1e3 !important;
+    /* Softer blush pink */
+    --color-calendar-graph-day-L2-bg: #ff99c2 !important;
+    /* Slightly deeper soft pink */
+    --color-calendar-graph-day-L3-bg: #ff66b2 !important;
+    /* Medium pink */
+    --color-calendar-graph-day-L4-bg: #cc0052 !important;
+    /* Dark pink */
+    --bgColor-accent-emphasis: @creamColor !important;
+}
+
+
+:root when (@mosaicType =citrus) {
+
+    --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+    /* Almost transparent */
+    --color-calendar-graph-day-L1-bg: #ffcc66 !important;
+    /* Light neon yellow */
+    --color-calendar-graph-day-L2-bg: #ff9900 !important;
+    /* Bright yellow-orange */
+    --color-calendar-graph-day-L3-bg: #cc5200 !important;
+    /* Bold orange */
+    --color-calendar-graph-day-L4-bg: #663300 !important;
+    /* Dark burnt orange */
+    --bgColor-accent-emphasis: @creamColor !important;
+    --tooltip-bgColor: transparent !important;
+}
+
+
+:root when (@mosaicType =berry) {
+
+    --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+    /* Almost transparent */
+    --color-calendar-graph-day-L1-bg: #ff99cc !important;
+    /* Light neon lavender */
+    --color-calendar-graph-day-L2-bg: #ff33a6 !important;
+    /* Neon pink */
+    --color-calendar-graph-day-L3-bg: #80004d !important;
+    /* Rich berry */
+    --color-calendar-graph-day-L4-bg: #4d0033 !important;
+    /* Dark magenta */
+    --bgColor-accent-emphasis: @creamColor !important;
+    --tooltip-bgColor: transparent !important;
+}
+
+
+:root when (@mosaicType =ocean) {
+
+    --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+    /* Almost transparent */
+    --color-calendar-graph-day-L1-bg: #80eaff !important;
+    /* Light neon aqua */
+    --color-calendar-graph-day-L2-bg: #00bfff !important;
+    /* Neon aqua */
+    --color-calendar-graph-day-L3-bg: #004d99 !important;
+    /* Deep blue */
+    --color-calendar-graph-day-L4-bg: #002b66 !important;
+    /* Dark navy */
+    --bgColor-accent-emphasis: @creamColor !important;
+    --tooltip-bgColor: transparent !important;
+}
+
+:root when (@mosaicType =xmas) {
+    --color-calendar-graph-day-bg: rgba(178, 24, 55, 0.1) !important;
+    /* Almost transparent ruby red */
+    --color-calendar-graph-day-L1-bg: #5a0410 !important;
+    /* Lighter ruby red */
+    --color-calendar-graph-day-L2-bg: #9b0000 !important;
+    /* Dark ruby red */
+    --color-calendar-graph-day-L3-bg: #004d00 !important;
+    /* Evergreen */
+    --color-calendar-graph-day-L4-bg: #ffd700 !important;
+    /* Gold */
+    --bgColor-accent-emphasis: @creamColor !important;
+    --tooltip-bgColor: transparent !important;
+}
+
+
+:root when (@mosaicType =forest) {
+
+    --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+    /* Almost transparent */
+    --color-calendar-graph-day-L4-bg: #80ffbf !important;
+    /* Light neon green */
+    --color-calendar-graph-day-L3-bg: #00ff80 !important;
+    /* Fluorescent green */
+    --color-calendar-graph-day-L2-bg: #007f4f !important;
+    /* Dark neon green */
+    --color-calendar-graph-day-L1-bg: #004d26 !important;
+    /* Deep teal */
+    --bgColor-accent-emphasis: @creamColor !important;
+    --tooltip-bgColor: transparent !important;
+}
+
+
+:root when (@mosaicType =twilight) {
+
+    --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
+    /* Almost transparent */
+    --color-calendar-graph-day-L1-bg: #ff99e6 !important;
+    /* Light neon pink */
+    --color-calendar-graph-day-L2-bg: #ff33cc !important;
+    /* Neon pink */
+    --color-calendar-graph-day-L3-bg: #8a00e6 !important;
+    /* Neon violet */
+    --color-calendar-graph-day-L4-bg: #4a007d !important;
+    /* Deep purple */
+    --bgColor-accent-emphasis: @creamColor !important;
+    --tooltip-bgColor: transparent !important;
+}
+
+:root when (@mosaicType =drama) {
+
+    --color-calendar-graph-day-bg: rgba(10, 10, 20, 0.2) !important;
+    /* Subtle, dark base */
+    --color-calendar-graph-day-L1-bg: #1c1c30 !important;
+    /* Deep blue-gray */
+    --color-calendar-graph-day-L2-bg: #3a243b !important;
+    /* Smoky dark maroon */
+    --color-calendar-graph-day-L3-bg: #60253f !important;
+    /* Muted crimson */
+    --color-calendar-graph-day-L4-bg: #7a3a45 !important;
+    /* Soft, lighter maroon */
+    --bgColor-accent-emphasis: @creamColor !important;
+    --tooltip-bgColor: transparent !important;
+}
+
+:root when (@mosaicType =neon) {
+
+    --color-calendar-graph-day-bg: rgba(255, 255, 200, 0.1) !important;
+    /* Almost transparent pale yellow */
+    --color-calendar-graph-day-L1-bg: #a76e0a !important;
+    /* Dark amber-yellow */
+    --color-calendar-graph-day-L2-bg: #ffb300 !important;
+    /* Bold bright yellow */
+    --color-calendar-graph-day-L3-bg: #ffda00 !important;
+    /* Vivid lemon yellow */
+    --color-calendar-graph-day-L4-bg: #ffff00 !important;
+    /* Bright neon yellow */
+    --bgColor-accent-emphasis: @creamColor !important;
+    --tooltip-bgColor: transparent !important;
+}
+
+:root when (@mosaicType =nouss) {
+    --bgColor-accent-emphasis: @creamColor !important;
+    --tooltip-bgColor: transparent !important;
+}
+
+
+
+
+
+
+/*ANCHOR [DASHBOARD] */
+tool-tip {
+    @backdrop();
+}
+.p-3.mt-2.border.color-border-muted.rounded-1.color-shadow-medium.height-full.color-bg-overlay,
+.feed-item-content.rounded-2,
+.color-bg-subtle,
+.bgColor-muted,
+{
+    @backdrop();
+    border: none !important;
+}
+
+.feed-item-content.rounded-1 {
+    @disappear();
+}
+
+.py-3.border-bottom:hover,
+.py-3.border-0:hover {
+    @boxShadowHover();
+    padding: 7px;
+}
+
+
+.py-3.border-bottom,
+.py-3.border-0 {
+    padding: 7px;
+}
+
+/* Modal */
+.gAwGiF,
+.jclhSs,
+button[aria-describedby=":R5b5ab:-loading-announcement"],
+button[id=":rn:"],
+button[id=":rq:"],
+button[id=":R535ab:"],
+button[aria-describedby=":R535ab:-loading-announcement"],
+button[aria-label="Add file"] {
+    @backdrop();
+    border: 1px solid @creamColor !important;
+}
+
+
+
+
+.gfgFTT {
+    border: 1.5px solid @creamColor !important;
+    background-color: transparent !important;
+}
+
+.topic-tag:hover {
+    @buttonsHover();
+}
+
+/* NOTE the big button selector is .prc-Button-ButtonBase-c50BI but too much imo */
+.jJOpJy,
+button[aria-label="Close dialog"] {
+    @disappear();
+}
+
+.jJOpJy:hover,
+button[aria-label="Close dialog"]:hover {
+    @buttonsHover();
+}
+
+
+.jqwEBk.selected,
+.gJSxwI.selected,
+.fQHyfn.selected {
+    background-color: @creamColorMuted !important;
+}
+
+button[aria-controls="branches"][aria-selected="false"].hover {
+    background-color: none !important;
+}
+
+.cBcJJc,
+.gFTAHK {
+    @disappear();
+}
+
+.bOZZCe,
+.jNzEbl {
+    @backdrop();
+    border: 1px solid @creamColor !important;
+}
+
+.jNzEbl:hover {
+    @buttonsHover();
+}
+
+.SelectMenu-footer.px-2 {
+    @disappear();
+}
+
+.bOuPbH {
+    box-shadow: @creamColor 0px 0px 0px 2px !important;
+}
+
+.SelectMenu-item,
+.SelectMenu-list,
+.jxcXqM,
+.dlnypB {
+    @disappear();
+}
+
+/*ANCHOR [README] */
+.markdown-body h2 {
+    color: @creamColor !important;
+}
+
+/*ANCHOR [REPO PAGE] */
+.Box-sc-g0xbh4-0.QkQOb.js-snippet-clipboard-copy-unpositioned,
+.emuNsQ,
+.kcCxPI,
+.IsnOs {
+    @backdrop();
+}
+
+.react-directory-row:hover {
+    background-color: rgba(5, 5, 5, .18) !important;
+     backdrop-filter: blur(150px) !important; 
+box-shadow: inset 0px 2px 0px 0px #00000020, inset 0px 2px 8px 0px #00000040 !important;
+}
+
+.react-directory-row td {
+    border-top: max(0.5px, 0.0625rem) solid @creamColor !important;
+}
+
+.ioYCDf {
+    @disappear();
+}
+
+
+.kRIEXD {
+    border: 2px solid @creamColor !important;
+}
+
+.mb-2.p-3.border.rounded-2:hover {
+    @boxShadowHover();
+}
+
+.dJnomT,
+.fOlIdb.selected {
+    background-color: rgba(5, 5, 5, .18) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(100px) saturate(110%);
+    -webkit-backdrop-filter: blur(100px);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.kgetqy {
+    @disappear();
+}
+
+.List__ListBox-sc-1x7olzq-0.eoXvfR.react-overview-code-button-action-list,
+.Box-sc-g0xbh4-0.hgepGv.Box-sc-g0xbh4-0.hgepGv.prc-Button-ButtonBase-c50BI.prc-Link-Link-85e08,
+button[aria-label="Start conversation"],
+button[aria-label="More actions"],
+button[aria-label="Filter"] {
+    @backdrop();
+    border: 1px solid @creamColor !important;
+}
+
+
+/*ANCHOR [FILE PAGE] */
+.gpHFJV {
+    background-color: rgba(5, 5, 5, .18) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(100px) saturate(110%);
+    -webkit-backdrop-filter: blur(100px);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+.cDbgyb,
+.XlAvl,
+.fnqFQe,
+.jBaPmj,
+.hfIjLs,
+.dRyOTG {
+    @disappear();
+}
+
+
+.cDbgyb:hover,
+.XlAvl:hover,
+.fnqFQe:hover,
+.jBaPmj:hover,
+.hfIjLs:hover,
+.dRyOTG:hover {
+    @buttonsHover();
+}
+
+.fXBJSr {
+    @disappear();
+}
+
+.Box-sc-g0xbh4-0.tOISc {
+    @disappear();
+}
+
+.jodZGf,
+.cOgqet,
+.bourBp {
+    background-color: rgba(5, 5, 5, .18) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(100px) saturate(110%);
+    -webkit-backdrop-filter: blur(100px);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.segmentedControl-content {
+    @disappear();
+}
+
+.gUrqbU .segmentedControl-content,
+.dyQa-dS .segmentedControl-content {
+    border: 1px solid @creamColor !important;
+}
+
+.eYPFoP {
+    background-color: rgba(5, 5, 5, .18) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(100px) saturate(110%);
+    -webkit-backdrop-filter: blur(100px);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: none !important;
+}
+
+/*ANCHOR [REPO LIST] */
+.col-12.d-flex.flex-justify-between.width-full.py-4.border-bottom.color-border-muted:hover {
+    @boxShadowHover();
+}
+
+.col-12.d-flex.flex-justify-between.width-full.py-4.border-bottom.color-border-muted {
+    @backdrop();
+    margin-top: 10px;
+    border: none !important;
+}
+
+.border-bottom.color-border-muted.py-3 {
+    @backdrop();
+    border: none !important;
+}
+
+/*ANCHOR [STARS MENU] */
+.ActionListWrap--inset.ActionListWrap {
+    @backdrop();
+}
+
+/*NOTE [THIS IS A BIG ONE NGL] */
+.Overlay {
+    @disappear();
+}
+
+/*ANCHOR [NOTIFICATIONS PAGE ] */
+.Box-header {
+    @disappear();
+}
+
+.notifications-list-item.notification-read,
+.notifications-list-item.notification-archived {
+    @disappear();
+}
+
+
+.ActionListContent:hover {
+    background-color: rgba(5, 5, 5, .63) !important;
+    backdrop-filter: blur(150px) !important; 
+box-shadow: inset 0px 2px 0px 0px #00000020, inset 0px 2px 8px 0px #00000040 !important;
+}
+
+/*ANCHOR [SEARCH BAR] */
+/* When the search bar is clicked or focused */
+.AppHeader-searchButton:focus,
+.AppHeader-searchButton:active,
+.AppHeader-searchButton:hover {
+    z-index: 1000;
+    position: fixed !important;
+    top: 20vh !important;
+    left: 20vw !important;
+    right: 20vw !important;
+    width: 60vw !important;
+
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* The search suggestions dropdown */
+.search-suggestions {
+    position: fixed !important;
+    top: 20% !important;
+    left: 20vw !important;
+    right: 20vw !important;
+    width: 60vw !important;
+
+    z-index: 1000;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Blur the background when the search bar is active */
+body.search-active::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+}
+
+/* Optionally remove the fixed position and blur effect when search loses focus */
+body:not(.search-active) .AppHeader-searchButton {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    z-index: 1;
+    box-shadow: none;
+    width: 100% !important;
+    /* Reset width */
+    transition: width 0.3s ease;
+    /* Smooth shrinking */
+}
+
+
+.search-suggestions {
+    @backdrop();
+}
+
+.QueryBuilder-StyledInput {
+    @backdrop();
+    border: none;
+}
+
+.QueryBuilder-focus {
+    outline: none;
+}
+
+.search-input.expanded > div > div.AppHeader-search-whenRegular {
+    display: none !important;
+}
+.search-suggestions {
+    border: 0.5px solid @creamColor !important;
+}
+
+/*ANCHOR [SETTINGS] */
+dialog {
+    @backdrop();
+}
+
+.flash-banner,
+.flash-full {
+    @backdrop();
+}
+
+/*ANCHOR [NOTIFICATIONS] */
+.btn.selected,
+.btn[aria-selected=true] {
+    @disappear();
+}
+
+.btn.selected:hover,
+.btn[aria-selected=true]:hover {
+    @buttonsHover();
+}
+
+.ActionList-sectionDivider {
+    @backdrop();
+}
+
+.FormControl-input {
+    @disappear();
+}
+
+/*ANCHOR [PROJECTS] */
+.border-top {
+    border: none!important;
+}
+
+/*ANCHOR [CODE FILE PAGE] */
+.panel-content-narrow-styles {
+    @backdrop();
+}
+.hpHiUV {
+    @disappear();
+}
+
+.dufIPq {
+    background-color: rgba(5, 5, 5, .18) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(100px) saturate(110%);
+    -webkit-backdrop-filter: blur(100px);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.kexQoK,
+.haQWCL,
+.eEsVFK:disabled {
+    @disappear();
+}
+
+.Box-sc-g0xbh4-0.dKXtYX,
+.fflxCk {
+    background-color: transparent !important;
+}
+
+[aria-label="Previous reference"]:hover,
+[aria-label="Next reference"]:hover {
+    @buttonsHover();
+}
+
+.Box-sc-g0xbh4-0.kTMYBM:hover {
+
+    background-color: var(--control-transparent-bgColor-hover) !important;
+}
+
+.PRIVATE_TreeView-item:hover {
+    @hoverChannelSlide();
+}
+
+
+.jAlLSY th {
+    @disappear();
+}
+
+.eWEbRA:hover {
+    @menuItemHover();
+}
+
+.TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.fgiTUz.klSCQM.TextInput-wrapper {
+    @textArea();
+}
+
+.eoIeZr {
+    @disappear();
+}
+
+
+
+/*ANCHOR [CREATE A REPO PAGE] */
+.iBpOGA {
+    @backdrop();
+}
+
+.cujkRS {
+    @textArea();
+}
+
+/*ANCHOR [GITHUB DOCS] */
+.fDlMNy,
+.jXUMlK,
+.dA-dVZO {
+    @backdrop();
+}
+
+.markdown-body table tr {
+    @backdrop();
+    border-top: none !important;
+}
+
+.MarkdownContent_markdownBody__v5MYy table thead td,
+.MarkdownContent_markdownBody__v5MYy table thead th {
+    box-shadow: inset 0 -2px @creamColor;
+}
+
+.MarkdownContent_markdownBody__v5MYy table tbody td,
+.MarkdownContent_markdownBody__v5MYy table tbody th {
+    box-shadow: inset 0 -1px @creamColorMuted;
+}
+
+
+table {
+    @backdrop();
+    border-color: @creamColor !important;
+}
+
+.TableHeader {
+    @disappear();
+}
+
+
+.hNkDDR,
+.crArEc {
+    background-color: transparent !important
+}
+
+.cHTOlv:hover,
+.cXuGuz:hover,
+.biIjJG:hover {
+    @hoverChannelSlide();
+}
+
+.dYDZmW {
+    @textArea();
+}
+
+
+/*ANCHOR [COMMUNITY] */
+.list-style-none.border.px-3.color-bg-overlay.rounded-2 {
+    @backdrop();
+}
+
+.select-menu-modal,
+.timeline-comment {
+    @backdrop();
+}
+.select-menu-item {
+    @disappear();
+}
+
+.ActionList-item:hover {
+    @hoverChannelSlide();
+}
+
+body > div.logged-in.env-production.page-responsive.color-bg-inset > div.application-main > main > div > div.container-xl.p-responsive.clearfix > div.clearfix.container-xl > div > div.Layout-main > div > div.Layout-main > ul.list-style-none.border.px-3.mb-2.color-bg-overlay.rounded-2,
+body > div.logged-in.env-production.page-responsive.color-bg-inset > div.application-main > main > div > div.container-xl.p-responsive.clearfix > div.clearfix.container-xl > div > div.Layout-main > div > div.Layout-main > ul:nth-child(5) {
+    @backdrop()
+}
+
+
+.Box-row:hover {
+    @boxShadowHover();
+}
+
+.bg-discussions-row-emoji-box,
+.bg-discussions-row-emoji-box-small,
+.review-thread-reply,
+.CommentBox-header,
+.discussion-timeline-actions,
+.color-bg-inset,
+.bgColor-inset {
+    @disappear();
+}
+
+.gh-header .gh-header-sticky.is-stuck + .gh-header-shadow:not([data-original-top="auto"]) {
+    @gradientBackground();
+}
+
+
+
+.tabnav-tab.selected,
+.tabnav-tab[aria-current]:not([aria-current=false]),
+.tabnav-tab[aria-selected=true] {
+    background-color: @creamColorMuted;
+}
+
+
+.review-thread-reply-button.form-control.js-discussions-previewable-comment-form.btn-link.btn-block.no-underline.color-fg-muted.text-left.text-normal.ml-0 {
+    @transparentButtons();
+    border: 0px solid @creamColor !important;
+    background: @creamColorMuted;
+    color: white !important;
+}
+
+.review-thread-reply-button.form-control.js-discussions-previewable-comment-form.btn-link.btn-block.no-underline.color-fg-muted.text-left.text-normal.ml-0:hover {
+    @buttonsHover();
+    color: white !important;
+}
+
+
+/*ANCHOR [COMMITS] */
+.Panel-module__container--i4g9d {
+    @disappear();
+}
+
+button[aria-label="Go to previous month"],
+button[aria-label="Go to next month"] {
+    @disappear();
+}
+
+button[aria-label="Go to previous month"]:hover,
+button[aria-label="Go to next month"]:hover {
+    @buttonsHover();
+}
+
+.Day-module__day--ZcbvX:hover {
+    @buttonsHover();
+}
+
+.Day-module__day--ZcbvX.Day-module__selected--DfMaK {
+    background-color: @creamColor !important;
+}
+
+.Day-module__day--ZcbvX.Day-module__selected--DfMaK.Day-module__rangeMiddle--gfg7k {
+    background-color: @creamColorMuted !important;
+}
+
+.Panel-module__picker--gTDgA {
+    @backdrop();
+}
+
+.ListItem-module__listItem--kHali:hover {
+    @boxShadowHover();
+}
+
+.FilterInputWrapper-module__Box_1--vewob {
+    @disappear();
+}
+
+/*ANCHOR [COPILOT] */
+.ivKSmi {
+    @backdrop();
+    border: 1px solid @creamColor !important;
+}
+
+.leXapx {
+    @textArea();
+}
+
+.ivKSmi,
+.dgBfwJ {
+    @disappear();
+}
+
+.menu,
+.kAsnol {
+    @backdrop();
+    border: 1px solid @creamColor !important;
+}
+.menu-item.selected,
+.menu-item[aria-current]:not([aria-current=false]),
+.menu-item[aria-selected=true] {
+    @disappear();
+}
+input[name="query"] {
+    @textArea();
+}
+
+/*ANCHOR [PULL REQUESTS] */
+.subnav-item.selected,
+.subnav-item[aria-selected=true],
+.subnav-item[aria-current]:not([aria-current=false]) {
+    background-color: @creamColor !important;
+    border: 1px solid @creamColor !important;
+}
+
+.subnav-item:hover {
+    background-color: @creamColorMuted !important;
+}
+
+
+.subnav-item,
+input[id="js-issues-search"] {
+    border: 1px solid @creamColor !important;
+}
+
+.Box-row--focus-gray.navigation-focus,
+.gh-header,
+.timeline-comment-header {
+    background-color: transparent !important;
+}
+
+.SelectMenu-modal {
+    z-index: 1000;
+}
+
+.SelectMenu-divider {
+    @disappear();
+}
+
+.dropdown-menu {
+    @backdrop();
+}
+
+.dropdown-menu:after {
+    @disappear();
+}
+
+.range-editor,
+.branch-action-state-clean .branch-action-body::before {
+    background: transparent;
+}
+
+.TimelineItem-break,
+.branch-action-body .merge-message {
+    background: transparent;
+}
+
+.notifications-list-item.notification-unread {
+    @disappear();
+}
+
+.file-header,
+.branch-action-body {
+    background-color: rgba(5, 5, 5, .18) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(100px) saturate(110%);
+    -webkit-backdrop-filter: blur(100px);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/*ANCHOR [COMMIT DETAILS] */
+.TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.gvtfsN.fCHmyD.TextInput-wrapper {
+    @textArea();
+}
+
+
+.hDaTHW {
+    @disappear();
+}
+
+.gClVUD,
+.drELTT {
+    background-color: transparent;
+    border: 1px solid @creamColor !important;
+}
+
+.Diff-module__diffHeaderWrapper--rsdD4:before,
+.Diff-module__diffHeaderWrapper--rsdD4 {
+    background-color: transparent;
+}
+
+.DiffFileHeader-module__diff-file-header--TjXyn,
+.d-flex.flex-items-center.flex-justify-between.gap-2.pt-3.pt-lg-4.pb-2.position-sticky.top-0.color-bg-default {
+    background-color: rgba(5, 5, 5, .18) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(100px) saturate(110%);
+    -webkit-backdrop-filter: blur(100px);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid @creamColor !important;
+}
+
+.dRfQdO {
+    @transparentButtons();
+    border: 0px solid @creamColor !important;
+    background: @creamColorMuted;
+    color: white !important;
+}
+
+.dRfQdO:hover {
+    @transparentButtonsHover();
+    background: @creamColor;
+    color: white !important;
+}
+
+/* ANCHOR JS Sidebar Styling */
+.SidePanel,
+.jBUQU,
+.prc-Dialog-Dialog-luvDS {
+    opacity: 1;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px) saturate(200%) contrast(90%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%) contrast(90%);
+    color: white;
+    z-index: 1001;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Sidebar Buttons Styling */
+.SidePanel button,
+.SidePanel a {
+    color: white;
+    opacity: 0.9;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.SidePanel button:hover,
+.SidePanel a:hover {
+    color: rgba(255, 255, 255, 1);
+    opacity: 1;
+}
+
+.Overlay-closeButton.close-button:hover {
+    @buttonsHover();
+}
+
+.Overlay-closeButton:focus,
+.Overlay-closeButton:hover {
+    background: transparent !important;
+}
+
+.Item__LiBox-sc-yeql7o-0.imEANS:hover,
+.Item__LiBox-sc-yeql7o-0:hover {
+    @hoverChannelSlide();
+}
+
+/*ANCHOR [GITHUB SUPPORT] */
+.Dialog__StyledDialog-sc-uaxjsn-1 {
+    @backdrop();
+}
+
+
+/*ANCHOR [MOSAIC DRAMA] */
+@keyframes glowWaveBlue {
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+        /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(149, 169, 186, .7), 0 0 5px rgb(13, 97, 203), 0 0 10px rgba(137, 189, 205, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWaveBlue() when (@mosaicType =ocean) {
+    animation: glowWaveBlue 1.5s ease-in-out infinite;
+}
+
+@keyframes glowWaveXmas {
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+        /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(255, 255, 255, .7), 0 0 5px rgba(145, 9, 9, .83), 0 0 10px rgba(255, 255, 255, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWaveXmas() when (@mosaicType =xmas) {
+    animation: glowWaveXmas 1.5s ease-in-out infinite;
+}
+
+@keyframes glowWaveGreen {
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+        /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(60, 214, 60, .7), 0 0 5px rgb(35, 203, 13), 0 0 10px rgba(64, 203, 46, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWaveGreen() when (@mosaicType =forest) {
+    animation: glowWaveGreen 1.5s ease-in-out infinite;
+}
+
+
+@keyframes glowWaveBerry {
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+        /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(214, 60, 147, .7), 0 0 5px rgb(203, 13, 130), 0 0 10px rgba(203, 46, 174, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWaveBerry() when (@mosaicType =berry) {
+    animation: glowWaveBerry 1.5s ease-in-out infinite;
+}
+
+
+@keyframes glowWaveTwilight {
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+        /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(168, 60, 214, .7), 0 0 5px rgb(81, 23, 190), 0 0 10px rgba(145, 46, 203, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWaveTwilight() when (@mosaicType =twilight) {
+    animation: glowWaveTwilight 1.5s ease-in-out infinite;
+}
+
+
+@keyframes glowWaveCitrus {
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+        /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(211, 214, 60, .49), 0 0 5px rgba(184, 175, 9, .56), 0 0 10px rgba(203, 143, 46, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWaveCitrus() when (@mosaicType =citrus) {
+    animation: glowWaveCitrus 1.5s ease-in-out infinite;
+}
+
+@keyframes glowWavePink {
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+        /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(214, 60, 178, .7), 0 0 5px rgba(181, 1, 103, .65), 0 0 10px rgba(203, 46, 193, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWavePink() when (@mosaicType =pink) {
+    animation: glowWavePink 1.5s ease-in-out infinite;
+}
+
+@keyframes glowWaveDrama {
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+        /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(28, 0, 39, .7), 0 0 5px rgb(11, 0, 33), 0 0 10px rgba(18, 0, 29, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWaveDrama() when (@mosaicType =drama) {
+    animation: glowWaveDrama 1.5s ease-in-out infinite;
+}
+
+@keyframes glowWaveNeon {
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
+        /* si tu veux add un truc plus smooth */
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(255, 233, 0, .7), 0 0 5px rgba(255, 251, 0, .58), 0 0 10px rgba(255, 230, 6, .58);
+        transform: translateY(-1px);
+    }
+}
+
+.applyGlowWaveNeon() when (@mosaicType =neon) {
+    animation: glowWaveNeon 1.5s ease-in-out infinite;
+}
+
+
+.applyGlowWaveBlue() when (@mosaicAnim =noanim) {
+    animation: glowWaveBlue 0s ease-in-out infinite !important;
+}
+
+.applyGlowWaveGreen() when (@mosaicAnim =noanim) {
+    animation: glowWaveBlue 0s ease-in-out infinite !important;
+}
+.applyGlowWaveBerry() when (@mosaicAnim =noanim) {
+    animation: glowWaveBlue 0s ease-in-out infinite !important;
+}
+.applyGlowWavePink() when (@mosaicAnim =noanim) {
+    animation: glowWaveBlue 0s ease-in-out infinite !important;
+}
+.applyGlowWaveCitrus() when (@mosaicAnim =noanim) {
+    animation: glowWaveBlue 0s ease-in-out infinite !important;
+}
+.applyGlowWaveDrama() when (@mosaicAnim =noanim) {
+    animation: glowWaveBlue 0s ease-in-out infinite !important;
+}
+.applyGlowWaveNeon() when (@mosaicAnim =noanim) {
+    animation: glowWaveBlue 0s ease-in-out infinite !important;
+}
+
+.applyGlowWaveXmas() when (@mosaicAnim =noanim) {
+    animation: glowWaveBlue 0s ease-in-out infinite !important;
+}
+
+
+
+td[id^="contribution-day-component-"] {
+    .applyGlowWaveBlue();
+    .applyGlowWaveGreen();
+    .applyGlowWaveBerry();
+    .applyGlowWaveTwilight();
+    .applyGlowWavePink();
+    .applyGlowWaveCitrus();
+    .applyGlowWaveDrama();
+    .applyGlowWaveNeon();
+    .applyGlowWaveXmas();
+}
+
+/* Adjust animation wave effect */
+@max-columns: 52;
+@max-rows: 6;
+
+
+
+.applyDiagonal() when (@mosaicAnim =diagonal) {
+    @base-delay: 0.12s;
+    animation-delay: (@row * @base-delay) + (@column * @base-delay);
+}
+
+.applyWave() when (@mosaicAnim =wave) {
+    @base-delay: 0.05s;
+    animation-delay: (@column * @base-delay);
+}
+
+.applyTrippy() when (@mosaicAnim =trippy) {
+    @base-delay: 0.18s;
+    @a: 2;
+    @b: 3;
+    animation-delay: mod(((@a * @row + @b * @column) * @base-delay), 3);
+}
+
+.applyArches() when (@mosaicAnim =arches) {
+    @base-delay: 0.05s;
+    animation-delay: mod(((@row * @column + @row + 3* @column - 1) * @base-delay), 3);
+}
+
+
+.applyBalls() when (@mosaicAnim =balloon) {
+    @base-delay: 0.3s;
+    animation-delay: mod(((sin(@row)+cos(@column)+1) * @base-delay), 4);
+}
+
+.applyRipple() when (@mosaicAnim =ripple) {
+    @base-delay: 0.3s;
+    @distance-to-center: sqrt(pow(@row - @max-rows*0.5,
+    2) + pow(@column - @max-columns*0.5,
+    2));
+    animation-delay: @distance-to-center * @base-delay;
+}
+
+
+
+.generate-delays(@row,
+@column) when (@column <=@max-columns) {
+    td#contribution-day-component-@{row}-@{column} {
+        .applyDiagonal();
+        .applyWave();
+        .applyTrippy();
+        .applyArches();
+        .applyBalls();
+        .applyRipple();
     }
-
-    .dropdown-menu {
-        @backdrop();
-    }
-
-    .dropdown-menu:after {
-        @disappear();
-    }
-
-    .range-editor,
-    .branch-action-state-clean .branch-action-body::before {
-        background: transparent;
-    }
-
-    .TimelineItem-break,
-    .branch-action-body .merge-message {
-        background: transparent;
-    }
-
-    .notifications-list-item.notification-unread {
-        @disappear();
-    }
-
-    .file-header,
-    .branch-action-body {
-        background-color: rgba(5, 5, 5, .18) !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-    /*ANCHOR [COMMIT DETAILS] */
-    .TextInputWrapper__TextInputBaseWrapper-sc-1mqhpbi-0.TextInputWrapper-sc-1mqhpbi-1.gvtfsN.fCHmyD.TextInput-wrapper {
-        @textArea();
-    }
-
-
-    .hDaTHW {
-        @disappear();
-    }
-
-    .gClVUD,
-    .drELTT {
-        background-color: transparent;
-        border: 1px solid @creamColor !important;
-    }
-
-    .Diff-module__diffHeaderWrapper--rsdD4:before,
-    .Diff-module__diffHeaderWrapper--rsdD4 {
-        background-color: transparent;
-    }
-
-    .DiffFileHeader-module__diff-file-header--TjXyn,
-    .d-flex.flex-items-center.flex-justify-between.gap-2.pt-3.pt-lg-4.pb-2.position-sticky.top-0.color-bg-default {
-        background-color: rgba(5, 5, 5, .18) !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(100px) saturate(110%);
-        -webkit-backdrop-filter: blur(100px);
-        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        border: 1px solid @creamColor !important;
-    }
-
-    .dRfQdO {
-        @transparentButtons();
-        border: 0px solid @creamColor !important;
-        background: @creamColorMuted;
-        color: white !important;
-    }
-
-    .dRfQdO:hover {
-        @transparentButtonsHover();
-        background: @creamColor;
-        color: white !important;
-    }
-
-    /* ANCHOR JS Sidebar Styling */
-    .SidePanel,
-    .jBUQU,
-    .prc-Dialog-Dialog-luvDS {
-        opacity: 1;
-        position: fixed;
-        background-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(25px) saturate(200%) contrast(90%);
-        -webkit-backdrop-filter: blur(25px) saturate(200%) contrast(90%);
-        color: white;
-        z-index: 1001;
-        overflow-y: auto;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Optional: Sidebar Buttons Styling */
-    .SidePanel button,
-    .SidePanel a {
-        color: white;
-        opacity: 0.9;
-        transition: color 0.3s ease, opacity 0.3s ease;
-    }
-
-    .SidePanel button:hover,
-    .SidePanel a:hover {
-        color: rgba(255, 255, 255, 1);
-        opacity: 1;
-    }
-
-    .Overlay-closeButton.close-button:hover {
-        @buttonsHover();
-    }
-
-    .Overlay-closeButton:focus,
-    .Overlay-closeButton:hover {
-        background: transparent !important;
-    }
-
-    .Item__LiBox-sc-yeql7o-0.imEANS:hover,
-    .Item__LiBox-sc-yeql7o-0:hover {
-        @hoverChannelSlide();
-    }
-
-    /*ANCHOR [GITHUB SUPPORT] */
-    .Dialog__StyledDialog-sc-uaxjsn-1 {
-        @backdrop();
-    }
-
-
-    /*ANCHOR [MOSAIC DRAMA] */
-    @keyframes glowWaveBlue {
-        0%,
-        100% {
-            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
-            /* si tu veux add un truc plus smooth */
-            transform: translateY(0);
-        }
-        50% {
-            box-shadow: 0 0 2px rgba(149, 169, 186, .7), 0 0 5px rgb(13, 97, 203), 0 0 10px rgba(137, 189, 205, .58);
-            transform: translateY(-1px);
-        }
-    }
-
-    .applyGlowWaveBlue() when (@mosaicType =ocean) {
-        animation: glowWaveBlue 1.5s ease-in-out infinite;
-    }
-
-    @keyframes glowWaveXmas {
-        0%,
-        100% {
-            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
-            /* si tu veux add un truc plus smooth */
-            transform: translateY(0);
-        }
-        50% {
-            box-shadow: 0 0 2px rgba(255, 255, 255, .7), 0 0 5px rgba(145, 9, 9, .83), 0 0 10px rgba(255, 255, 255, .58);
-            transform: translateY(-1px);
-        }
-    }
-
-    .applyGlowWaveXmas() when (@mosaicType =xmas) {
-        animation: glowWaveXmas 1.5s ease-in-out infinite;
-    }
-
-    @keyframes glowWaveGreen {
-        0%,
-        100% {
-            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
-            /* si tu veux add un truc plus smooth */
-            transform: translateY(0);
-        }
-        50% {
-            box-shadow: 0 0 2px rgba(60, 214, 60, .7), 0 0 5px rgb(35, 203, 13), 0 0 10px rgba(64, 203, 46, .58);
-            transform: translateY(-1px);
-        }
-    }
-
-    .applyGlowWaveGreen() when (@mosaicType =forest) {
-        animation: glowWaveGreen 1.5s ease-in-out infinite;
-    }
-
-
-    @keyframes glowWaveBerry {
-        0%,
-        100% {
-            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
-            /* si tu veux add un truc plus smooth */
-            transform: translateY(0);
-        }
-        50% {
-            box-shadow: 0 0 2px rgba(214, 60, 147, .7), 0 0 5px rgb(203, 13, 130), 0 0 10px rgba(203, 46, 174, .58);
-            transform: translateY(-1px);
-        }
-    }
-
-    .applyGlowWaveBerry() when (@mosaicType =berry) {
-        animation: glowWaveBerry 1.5s ease-in-out infinite;
-    }
-
-
-    @keyframes glowWaveTwilight {
-        0%,
-        100% {
-            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
-            /* si tu veux add un truc plus smooth */
-            transform: translateY(0);
-        }
-        50% {
-            box-shadow: 0 0 2px rgba(168, 60, 214, .7), 0 0 5px rgb(81, 23, 190), 0 0 10px rgba(145, 46, 203, .58);
-            transform: translateY(-1px);
-        }
-    }
-
-    .applyGlowWaveTwilight() when (@mosaicType =twilight) {
-        animation: glowWaveTwilight 1.5s ease-in-out infinite;
-    }
-
-
-    @keyframes glowWaveCitrus {
-        0%,
-        100% {
-            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
-            /* si tu veux add un truc plus smooth */
-            transform: translateY(0);
-        }
-        50% {
-            box-shadow: 0 0 2px rgba(211, 214, 60, .49), 0 0 5px rgba(184, 175, 9, .56), 0 0 10px rgba(203, 143, 46, .58);
-            transform: translateY(-1px);
-        }
-    }
-
-    .applyGlowWaveCitrus() when (@mosaicType =citrus) {
-        animation: glowWaveCitrus 1.5s ease-in-out infinite;
-    }
-
-    @keyframes glowWavePink {
-        0%,
-        100% {
-            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
-            /* si tu veux add un truc plus smooth */
-            transform: translateY(0);
-        }
-        50% {
-            box-shadow: 0 0 2px rgba(214, 60, 178, .7), 0 0 5px rgba(181, 1, 103, .65), 0 0 10px rgba(203, 46, 193, .58);
-            transform: translateY(-1px);
-        }
-    }
-
-    .applyGlowWavePink() when (@mosaicType =pink) {
-        animation: glowWavePink 1.5s ease-in-out infinite;
-    }
-
-    @keyframes glowWaveDrama {
-        0%,
-        100% {
-            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
-            /* si tu veux add un truc plus smooth */
-            transform: translateY(0);
-        }
-        50% {
-            box-shadow: 0 0 2px rgba(28, 0, 39, .7), 0 0 5px rgb(11, 0, 33), 0 0 10px rgba(18, 0, 29, .58);
-            transform: translateY(-1px);
-        }
-    }
-
-    .applyGlowWaveDrama() when (@mosaicType =drama) {
-        animation: glowWaveDrama 1.5s ease-in-out infinite;
-    }
-
-    @keyframes glowWaveNeon {
-        0%,
-        100% {
-            box-shadow: 0 0 5px rgba(255, 255, 0, 0), 0 0 10px rgba(255, 255, 0, 0), 0 0 15px rgba(255, 255, 0, 0);
-            /* si tu veux add un truc plus smooth */
-            transform: translateY(0);
-        }
-        50% {
-            box-shadow: 0 0 2px rgba(255, 233, 0, .7), 0 0 5px rgba(255, 251, 0, .58), 0 0 10px rgba(255, 230, 6, .58);
-            transform: translateY(-1px);
-        }
-    }
-
-    .applyGlowWaveNeon() when (@mosaicType =neon) {
-        animation: glowWaveNeon 1.5s ease-in-out infinite;
-    }
-
-
-    .applyGlowWaveBlue() when (@mosaicAnim =noanim) {
-        animation: glowWaveBlue 0s ease-in-out infinite !important;
-    }
-
-    .applyGlowWaveGreen() when (@mosaicAnim =noanim) {
-        animation: glowWaveBlue 0s ease-in-out infinite !important;
-    }
-    .applyGlowWaveBerry() when (@mosaicAnim =noanim) {
-        animation: glowWaveBlue 0s ease-in-out infinite !important;
-    }
-    .applyGlowWavePink() when (@mosaicAnim =noanim) {
-        animation: glowWaveBlue 0s ease-in-out infinite !important;
-    }
-    .applyGlowWaveCitrus() when (@mosaicAnim =noanim) {
-        animation: glowWaveBlue 0s ease-in-out infinite !important;
-    }
-    .applyGlowWaveDrama() when (@mosaicAnim =noanim) {
-        animation: glowWaveBlue 0s ease-in-out infinite !important;
-    }
-    .applyGlowWaveNeon() when (@mosaicAnim =noanim) {
-        animation: glowWaveBlue 0s ease-in-out infinite !important;
-    }
-
-    .applyGlowWaveXmas() when (@mosaicAnim =noanim) {
-        animation: glowWaveBlue 0s ease-in-out infinite !important;
-    }
-
-
-
-    td[id^="contribution-day-component-"] {
-        .applyGlowWaveBlue();
-        .applyGlowWaveGreen();
-        .applyGlowWaveBerry();
-        .applyGlowWaveTwilight();
-        .applyGlowWavePink();
-        .applyGlowWaveCitrus();
-        .applyGlowWaveDrama();
-        .applyGlowWaveNeon();
-        .applyGlowWaveXmas();
-    }
-
-    /* Adjust animation wave effect */
-    @max-columns: 52;
-    @max-rows: 6;
-
-
-
-    .applyDiagonal() when (@mosaicAnim =diagonal) {
-        @base-delay: 0.12s;
-        animation-delay: (@row * @base-delay) + (@column * @base-delay);
-    }
-
-    .applyWave() when (@mosaicAnim =wave) {
-        @base-delay: 0.05s;
-        animation-delay: (@column * @base-delay);
-    }
-
-    .applyTrippy() when (@mosaicAnim =trippy) {
-        @base-delay: 0.18s;
-        @a: 2;
-        @b: 3;
-        animation-delay: mod(((@a * @row + @b * @column) * @base-delay), 3);
-    }
-
-    .applyArches() when (@mosaicAnim =arches) {
-        @base-delay: 0.05s;
-        animation-delay: mod(((@row * @column + @row + 3* @column - 1) * @base-delay), 3);
-    }
-
-
-    .applyBalls() when (@mosaicAnim =balloon) {
-        @base-delay: 0.3s;
-        animation-delay: mod(((sin(@row)+cos(@column)+1) * @base-delay), 4);
-    }
-
-    .applyRipple() when (@mosaicAnim =ripple) {
-        @base-delay: 0.3s;
-        @distance-to-center: sqrt(pow(@row - @max-rows*0.5,
-        2) + pow(@column - @max-columns*0.5,
-        2));
-        animation-delay: @distance-to-center * @base-delay;
-    }
-
-
-
     .generate-delays(@row,
-    @column) when (@column <=@max-columns) {
-        td#contribution-day-component-@{row}-@{column} {
-            .applyDiagonal();
-            .applyWave();
-            .applyTrippy();
-            .applyArches();
-            .applyBalls();
-            .applyRipple();
-        }
-        .generate-delays(@row,
-        @column + 1);
-    }
+    @column + 1);
+}
 
-    .generate-rows(@row) when (@row <=@max-rows) {
-        .generate-delays(@row,
-        0);
-        .generate-rows(@row + 1);
-    }
-    .generate-rows(0);
+.generate-rows(@row) when (@row <=@max-rows) {
+    .generate-delays(@row,
+    0);
+    .generate-rows(@row + 1);
+}
+.generate-rows(0);
 
-    .dotcom {
-        @disappear();
-    }
+.dotcom {
+    @disappear();
+}
 
-    /* ANCHOR [FOOTER] */
-    /* Select the footer element */
-    div.d-flex.flex-items-center.flex-shrink-0.mx-2 span {
-        visibility: hidden;
-        /* Hide the original content */
-        position: relative;
-    }
+/* ANCHOR [FOOTER] */
+/* Select the footer element */
+div.d-flex.flex-items-center.flex-shrink-0.mx-2 span {
+    visibility: hidden;
+    /* Hide the original content */
+    position: relative;
+}
 
-    div.d-flex.flex-items-center.flex-shrink-0.mx-2 span::after {
-        content: "@1984, SneshCorp";
-        visibility: visible;
-        position: absolute;
-        left: 0;
-    }
-    p.color-fg-subtle.text-small.text-light {
-        visibility: hidden;
-        position: relative;
-    }
+div.d-flex.flex-items-center.flex-shrink-0.mx-2 span::after {
+    content: "@1984, SneshCorp";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+}
+p.color-fg-subtle.text-small.text-light {
+    visibility: hidden;
+    position: relative;
+}
 
-    p.color-fg-subtle.text-small.text-light::after {
-        content: "SneshCorp. @1984. All rights reserved (to FallenStar).";
-        visibility: visible;
-        position: absolute;
-        left: 0;
-        font-size: 0.9em;
-    }
+p.color-fg-subtle.text-small.text-light::after {
+    content: "SneshCorp. @1984. All rights reserved (to FallenStar).";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    font-size: 0.9em;
+}
 
-    .js-selected-navigation-item.selected.menu-item {
-        border-bottom: 1px solid @creamColor;
-    }
+.js-selected-navigation-item.selected.menu-item {
+    border-bottom: 1px solid @creamColor;
+}
 
-    .community-checklist .progress {
-        background: @creamColor;
-    }
+.community-checklist .progress {
+    background: @creamColor;
+}
 
 
-    /* ANCHOR [FIX BUTTONS ONCE AND FOR ALL] */
-    :where(.prc-Button-ButtonBase-c50BI):where([data-variant=default]) {
-        @disappear();
-    }
+/* ANCHOR [FIX BUTTONS ONCE AND FOR ALL] */
+:where(.prc-Button-ButtonBase-c50BI):where([data-variant=default]) {
+    @disappear();
+}
 
 
-    :where(.prc-Button-ButtonBase-c50BI):where([data-variant=default]):hover {
-        @buttonsHover();
-    }
+:where(.prc-Button-ButtonBase-c50BI):where([data-variant=default]):hover {
+    @buttonsHover();
+}
 
 
-    .NotificationsSubscriptionsMenu-module__watchCounter--nAbhU,
-    .btn .Counter {
-        @gradientBackground();
-    }
+.NotificationsSubscriptionsMenu-module__watchCounter--nAbhU,
+.btn .Counter {
+    @gradientBackground();
+}
 
 
 
-    [aria-label="Previous reference"],
-    .bFCONy:hover {
-        @disappear();
-    }
+[aria-label="Previous reference"],
+.bFCONy:hover {
+    @disappear();
+}
 
-    /* ANCHOR [TOOLTIPS] */
-    #input-check-5698 {
-        @backdrop();
-        border: 1px solid @creamColor;
-    }
+/* ANCHOR [TOOLTIPS] */
+#input-check-5698, [role="menu"], #selectPanel {
+    @backdrop();
+    border: 1px solid @creamColor;
+}
 
-    .form-group.successed .success::before,
-    .form-group.successed .success::after {
-        background: transparent !important;
-    }
+.form-group.successed .success::before,
+.form-group.successed .success::after {
+    background: transparent !important;
+}
 
-    .Popover-message--bottom-left::before,
-    .Popover-message::before,
-    .timeline-comment--caret::before{
-        @backdrop();
-        border: none !important;
-    }
-    
-    .Popover-message--bottom-left::after,
-    .Popover-message:after,
-    .timeline-comment--caret::after{
-        display: none !important;
-    }
-    
-    .gh-header .gh-header-sticky.is-stuck+.gh-header-shadow{
-        @backdropSimpler();
-    }
-    
-    
-    .ajax-pagination-form .ajax-pagination-btn,
-    .fXBJSr,
-    :where(.prc-Button-ButtonBase-c50BI):where([data-variant=invisible]):disabled {
-        @backdrop();
-    }
+.Popover-message--bottom-left::before,
+.Popover-message::before,
+.timeline-comment--caret::before{
+    @backdrop();
+    border: none !important;
+}
+
+.Popover-message--bottom-left::after,
+.Popover-message:after,
+.timeline-comment--caret::after{
+    display: none !important;
+}
+
+.gh-header .gh-header-sticky.is-stuck+.gh-header-shadow{
+    @backdropSimpler();
+}
+
+
+.ajax-pagination-form .ajax-pagination-btn,
+.fXBJSr,
+:where(.prc-Button-ButtonBase-c50BI):where([data-variant=invisible]):disabled {
+    @backdrop();
+}
+
+@layer primer-react {
+.prc-Overlay-Overlay-dVyJl {
+background: transparent !important; 
+} 
+
+.CodeDropdownButton-module__TabNav--qDYNs {
+background: transparent !important; 
+}
+
+[role="none"]{
+@backdropSimpler();
+
+}
+
+
+.SelectMenu-modal{
+@disappear();
+border: transparent !important;
+backdrop-filter: none !important; 
+box-shadow: none !important; 
+background: transparent !important; 
+}
+}
 }
 
 /* .feed-item-content.d-flex.flex-column.pt-2.pb-2.border.color-border-default.rounded-2.color-shadow-small.width-full.height-fit 
 
 
 background-color: var(--control-transparent-bgColor-hover) !important;
-    color: var(--fgColor-default,var(--color-fg-default,#e6edf3));
-    box-shadow: inset 0 0 0 max(1px,0.0625rem) var(--control-transparent-borderColor-active,var(--color-action-list-item-default-active-border,transparent));
-	
+color: var(--fgColor-default,var(--color-fg-default,#e6edf3));
+box-shadow: inset 0 0 0 max(1px,0.0625rem) var(--control-transparent-borderColor-active,var(--color-action-list-item-default-active-border,transparent));
+
 
 */
