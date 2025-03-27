@@ -1296,6 +1296,7 @@ textarea:not(#read-only-cursor-text-area) {
 }
 
 /*colors mosaic gradient */
+/*colors mosaic gradient */
 :root when (@mosaicType =pink) {
 
     --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
@@ -1310,6 +1311,18 @@ textarea:not(#read-only-cursor-text-area) {
     /* Dark pink */
     --bgColor-accent-emphasis: @creamColor !important;
     --tooltip-bgColor: transparent !important;
+    
+    /* new globals */ 
+    --contribution-default-bgColor-0: rgba(255, 255, 255, 0.1) !important;
+    /* Almost transparent */
+    --contribution-default-bgColor-1: #ffd1e3 !important;
+    /* Softer blush pink */
+    --contribution-default-bgColor-2: #ff99c2 !important;
+    /* Slightly deeper soft pink */
+    --contribution-default-bgColor-3: #ff66b2 !important;
+    /* Medium pink */
+    --contribution-default-bgColor-4: #cc0052 !important;
+    /* Dark pink */
 }
 
 
@@ -1326,6 +1339,18 @@ textarea:not(#read-only-cursor-text-area) {
     --color-calendar-graph-day-L4-bg: #cc0052 !important;
     /* Dark pink */
     --bgColor-accent-emphasis: @creamColor !important;
+    
+    /* new globals */ 
+    --contribution-default-bgColor-0: rgba(255, 255, 255, 0.1) !important;
+    /* Almost transparent */
+    --contribution-default-bgColor-1: #ffd1e3 !important;
+    /* Softer blush pink */
+    --contribution-default-bgColor-2: #ff99c2 !important;
+    /* Slightly deeper soft pink */
+    --contribution-default-bgColor-3: #ff66b2 !important;
+    /* Medium pink */
+    --contribution-default-bgColor-4: #cc0052 !important;
+    /* Dark pink */
 }
 
 
@@ -1343,6 +1368,18 @@ textarea:not(#read-only-cursor-text-area) {
     /* Dark burnt orange */
     --bgColor-accent-emphasis: @creamColor !important;
     --tooltip-bgColor: transparent !important;
+    
+    /* new globals */ 
+    --contribution-default-bgColor-0: rgba(255, 255, 255, 0.1) !important;
+    /* Almost transparent */
+    --contribution-default-bgColor-1: #ffcc66 !important;
+    /* Light neon yellow */
+    --contribution-default-bgColor-2: #ff9900 !important;
+    /* Bright yellow-orange */
+    --contribution-default-bgColor-3: #cc5200 !important;
+    /* Bold orange */
+    --contribution-default-bgColor-4: #663300 !important;
+    /* Dark burnt orange */
 }
 
 
@@ -1360,11 +1397,24 @@ textarea:not(#read-only-cursor-text-area) {
     /* Dark magenta */
     --bgColor-accent-emphasis: @creamColor !important;
     --tooltip-bgColor: transparent !important;
+    
+    /* new globals */ 
+    --contribution-default-bgColor-0: rgba(255, 255, 255, 0.1) !important;
+    /* Almost transparent */
+    --contribution-default-bgColor-1: #ff99cc !important;
+    /* Light neon lavender */
+    --contribution-default-bgColor-2: #ff33a6 !important;
+    /* Neon pink */
+    --contribution-default-bgColor-3: #80004d !important;
+    /* Rich berry */
+    --contribution-default-bgColor-4: #4d0033 !important;
+    /* Dark magenta */
 }
 
 
 :root when (@mosaicType =ocean) {
-
+    
+    /* old globals */ 
     --color-calendar-graph-day-bg: rgba(255, 255, 255, 0.1) !important;
     /* Almost transparent */
     --color-calendar-graph-day-L1-bg: #80eaff !important;
@@ -1377,6 +1427,23 @@ textarea:not(#read-only-cursor-text-area) {
     /* Dark navy */
     --bgColor-accent-emphasis: @creamColor !important;
     --tooltip-bgColor: transparent !important;
+    
+    
+    /* new globals */ 
+    --contribution-default-bgColor-0: rgba(255, 255, 255, 0.1) !important;
+    /* Almost transparent */
+    --contribution-default-bgColor-1: #80eaff !important;
+    /* Light neon aqua */
+    --contribution-default-bgColor-2: #00bfff !important;
+    /* Neon aqua */
+    --contribution-default-bgColor-3: #004d99 !important;
+    /* Deep blue */
+    --contribution-default-bgColor-4: #002b66 !important;
+    /* Dark navy */
+    --bgColor-accent-emphasis: @creamColor !important;
+    --tooltip-bgColor: transparent !important;
+    
+    
 }
 
 :root when (@mosaicType =xmas) {
@@ -1389,6 +1456,19 @@ textarea:not(#read-only-cursor-text-area) {
     --color-calendar-graph-day-L3-bg: #004d00 !important;
     /* Evergreen */
     --color-calendar-graph-day-L4-bg: #ffd700 !important;
+    /* Gold */
+    --bgColor-accent-emphasis: @creamColor !important;
+    --tooltip-bgColor: transparent !important;
+    
+    --contribution-default-bgColor-0: rgba(178, 24, 55, 0.1) !important;
+    /* Almost transparent ruby red */
+    --contribution-default-bgColor-1: #5a0410 !important;
+    /* Lighter ruby red */
+    --contribution-default-bgColor-2: #9b0000 !important;
+    /* Dark ruby red */
+    --contribution-default-bgColor-3: #004d00 !important;
+    /* Evergreen */
+    --contribution-default-bgColor-4: #ffd700 !important;
     /* Gold */
     --bgColor-accent-emphasis: @creamColor !important;
     --tooltip-bgColor: transparent !important;
@@ -1409,6 +1489,18 @@ textarea:not(#read-only-cursor-text-area) {
     /* Deep teal */
     --bgColor-accent-emphasis: @creamColor !important;
     --tooltip-bgColor: transparent !important;
+    
+    /* new globals */ 
+    --contribution-default-bgColor-0: rgba(255, 255, 255, 0.1) !important;
+    /* Almost transparent */
+    --contribution-default-bgColor-4: #80ffbf !important;
+    /* Light neon green */
+    --contribution-default-bgColor-3: #00ff80 !important;
+    /* Fluorescent green */
+    --contribution-default-bgColor-2: #007f4f !important;
+    /* Dark neon green */
+    --contribution-default-bgColor-1: #004d26 !important;
+    /* Deep teal */
 }
 
 
@@ -1426,6 +1518,18 @@ textarea:not(#read-only-cursor-text-area) {
     /* Deep purple */
     --bgColor-accent-emphasis: @creamColor !important;
     --tooltip-bgColor: transparent !important;
+    
+    /* new globals */ 
+    --contribution-default-bgColor-0: rgba(255, 255, 255, 0.1) !important;
+    /* Almost transparent */
+    --contribution-default-bgColor-1: #ff99e6 !important;
+    /* Light neon pink */
+    --contribution-default-bgColor-2: #ff33cc !important;
+    /* Neon pink */
+    --contribution-default-bgColor-3: #8a00e6 !important;
+    /* Neon violet */
+    --contribution-default-bgColor-4: #4a007d !important;
+    /* Deep purple */
 }
 
 :root when (@mosaicType =drama) {
@@ -1442,6 +1546,18 @@ textarea:not(#read-only-cursor-text-area) {
     /* Soft, lighter maroon */
     --bgColor-accent-emphasis: @creamColor !important;
     --tooltip-bgColor: transparent !important;
+    
+    /* new globals */ 
+    --contribution-default-bgColor-0: rgba(10, 10, 20, 0.2) !important;
+    /* Subtle, dark base */
+    --contribution-default-bgColor-1: #1c1c30 !important;
+    /* Deep blue-gray */
+    --contribution-default-bgColor-2: #3a243b !important;
+    /* Smoky dark maroon */
+    --contribution-default-bgColor-3: #60253f !important;
+    /* Muted crimson */
+    --contribution-default-bgColor-4: #7a3a45 !important;
+    /* Soft, lighter maroon */
 }
 
 :root when (@mosaicType =neon) {
@@ -1458,6 +1574,18 @@ textarea:not(#read-only-cursor-text-area) {
     /* Bright neon yellow */
     --bgColor-accent-emphasis: @creamColor !important;
     --tooltip-bgColor: transparent !important;
+    
+    /* new globals */ 
+    --contribution-default-bgColor-0: rgba(255, 255, 200, 0.1) !important;
+    /* Almost transparent pale yellow */
+    --contribution-default-bgColor-1: #a76e0a !important;
+    /* Dark amber-yellow */
+    --contribution-default-bgColor-2: #ffb300 !important;
+    /* Bold bright yellow */
+    --contribution-default-bgColor-3: #ffda00 !important;
+    /* Vivid lemon yellow */
+    --contribution-default-bgColor-4: #ffff00 !important;
+    /* Bright neon yellow */
 }
 
 :root when (@mosaicType =nouss) {
@@ -2587,6 +2715,22 @@ p.color-fg-subtle.text-small.text-light::after {
 [aria-label="Previous reference"],
 .bFCONy:hover {
     @disappear();
+}
+
+/* comment page fix 27/03 */ 
+
+.dxnHPp,   .MarkdownEditor-module__header--i0pok, .gxwXUv, 
+.SubscriptionSection-module__button--WSUPv {
+    background: transparent !important;
+}
+
+.gOHzTT{
+    @backdropSimpler();
+}
+
+.bqJEpA, .fFvqfZ,   .MarkdownEditor-module__inputWrapper--MtV0d,   .MarkdownEditor-module__previewWrapper--UHhTL, 
+.kcVpNH {
+    @backdrop();
 }
 
 /* ANCHOR [TOOLTIPS] */
