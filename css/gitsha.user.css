@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gitsha
 @namespace      github.com/openstyles/stylus
-@version        1.3.0
+@version        1.3.1
 @description    A new userstyle
 @author         Snesh
 @preprocessor	less
@@ -1220,7 +1220,7 @@ textarea[name="commit_message"],
 .bclhiL,
 .input-contrast,
 .form-control, .form-select, 
-input:not([aria-label="Go to file"]), 
+input:not([aria-label="Go to file"], #repository-input), 
 textarea:not(#read-only-cursor-text-area) {
     @deep();
     border: none !important;
